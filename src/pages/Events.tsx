@@ -3,277 +3,274 @@ import React from 'react';
 import MainLayout from '@/components/MainLayout';
 import SectionTitle from '@/components/SectionTitle';
 import ContactForm from '@/components/ContactForm';
-import { CheckCircle, Calendar, Users, Trophy, Award, Camera } from 'lucide-react';
+import { CheckCircle, Calendar, Users, Star, Award, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-interface EventImageProps {
-  src: string;
-  alt: string;
-  className?: string;
-}
-
-const EventImage: React.FC<EventImageProps> = ({ src, alt, className }) => (
-  <div className={`overflow-hidden rounded-lg group ${className}`}>
-    <img 
-      src={src} 
-      alt={alt} 
-      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-    />
-  </div>
-);
-
-interface EventCategoryProps {
+const EventCard = ({ image, title, description }: {
+  image: string;
   title: string;
   description: string;
-  icon: React.ReactNode;
-}
-
-const EventCategory: React.FC<EventCategoryProps> = ({ title, description, icon }) => (
-  <div className="bg-white p-8 rounded-lg border border-earth-lightest shadow-sm hover:shadow-md transition-all reveal">
-    <div className="flex items-center mb-4">
-      <div className="p-3 bg-earth-lightest rounded-full">{icon}</div>
+}) => {
+  return (
+    <div className="group relative overflow-hidden rounded-lg">
+      <div className="aspect-[16/9] w-full overflow-hidden rounded-lg">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+        <h3 className="text-xl font-semibold text-white mb-2 font-playfair">{title}</h3>
+        <p className="text-white/90 text-sm">{description}</p>
+      </div>
     </div>
-    <h3 className="text-xl font-semibold mb-3 font-playfair">{title}</h3>
-    <p className="text-earth-dark">{description}</p>
-  </div>
-);
+  );
+};
 
 const Events = () => {
-  const eventCategories = [
+  const eventTypes = [
     {
+      image: "https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=1000",
+      title: "Celebrity & VIP Events",
+      description: "Intimate, secure, and highly personalized experiences for discerning clients."
+    },
+    {
+      image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1000",
+      title: "State Functions",
+      description: "Dignified ceremonies and celebrations for government and diplomatic events."
+    },
+    {
+      image: "https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?q=80&w=1000",
       title: "Corporate Events",
-      description: "From executive retreats to product launches and conferences, we create memorable corporate experiences.",
-      icon: <Trophy size={24} className="text-gold" />
-    },
-    {
-      title: "State & Diplomatic Events",
-      description: "High-profile gatherings planned with protocol expertise and sophisticated attention to detail.",
-      icon: <Award size={24} className="text-gold" />
-    },
-    {
-      title: "Social Celebrations",
-      description: "Weddings, birthdays, and special occasions crafted to reflect your personal style and vision.",
-      icon: <Users size={24} className="text-gold" />
-    },
-    {
-      title: "Cultural & Entertainment",
-      description: "Festivals, concerts, and cultural showcases designed to engage and inspire attendees.",
-      icon: <Camera size={24} className="text-gold" />
+      description: "Brand-aligned experiences from conferences to product launches and galas."
     }
   ];
   
-  const services = [
-    "Comprehensive event strategy and concept development",
-    "Venue selection and management",
+  const benefits = [
+    "Complete event planning and management",
+    "Venue selection and negotiation",
+    "Vendor coordination and management",
+    "Custom décor and ambiance design",
     "Guest management and VIP handling",
-    "Production and technical coordination",
-    "Catering and hospitality services",
-    "Bespoke Airbnb and accommodation solutions",
-    "Event branding and marketing support",
-    "On-site coordination and management"
+    "Post-event evaluation and reporting"
   ];
-
+  
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-b from-royal to-royal-light">
+      <section className="pt-32 pb-20 bg-gradient-to-b from-earth-dark to-earth">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair reveal">
-              Event Management Services
+              Event Management & Hospitality
             </h1>
-            <p className="text-xl mb-8 opacity-90 reveal">
-              Creating extraordinary experiences that leave lasting impressions and exceed expectations.
+            <p className="text-xl mb-8 text-earth-lighter reveal">
+              We curate moments that resonate — elevating occasions into unforgettable experiences.
             </p>
-            <Link to="#contact-form" className="btn-primary reveal">
+            <Link to="/contact" className="btn-primary reveal">
               Plan Your Event
             </Link>
           </div>
         </div>
       </section>
       
-      {/* Introduction Section */}
+      {/* Event Types Section */}
       <section className="py-20 bg-white">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="reveal">
-              <SectionTitle 
-                title="Crafting Memorable Experiences" 
-                subtitle="At Elfrida Park, we transform ordinary events into extraordinary experiences with meticulous planning and flawless execution."
-                align="left"
-                className="mb-8"
-              />
-              
-              <p className="text-earth-dark mb-6">
-                Our team of experienced event professionals brings creativity, precision, and a passion for excellence to every project. From intimate gatherings to large-scale productions, we handle every detail with the same level of care and attention.
-              </p>
-              
-              <p className="text-earth-dark">
-                With a deep understanding of Nigerian culture and international best practices, we create events that reflect the unique vision of our clients while meeting the highest standards of quality and sophistication.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-2 gap-4 reveal">
-              <EventImage 
-                src="https://images.unsplash.com/photo-1473177104440-ffee2f376098?q=80&w=1000" 
-                alt="Corporate Event"
-                className="h-48 md:h-64" 
-              />
-              <EventImage 
-                src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1000" 
-                alt="Wedding Celebration"
-                className="h-48 md:h-64 mt-6" 
-              />
-              <EventImage 
-                src="https://images.unsplash.com/photo-1492321936769-b49830bc1d1e?q=80&w=1000" 
-                alt="Gala Dinner"
-                className="h-48 md:h-64 mt-6" 
-              />
-              <EventImage 
-                src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1000" 
-                alt="Conference Setup"
-                className="h-48 md:h-64" 
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Event Categories */}
-      <section className="py-20 bg-earth-lightest">
         <div className="container-custom">
           <SectionTitle 
             title="Our Event Expertise" 
-            subtitle="We specialize in a range of event types, each tailored to meet specific objectives and create unforgettable moments."
+            subtitle="From intimate gatherings to grand celebrations, we create bespoke experiences that leave lasting impressions."
             className="reveal"
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            {eventCategories.map((category, index) => (
-              <EventCategory 
-                key={index} 
-                {...category} 
-              />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {eventTypes.map((event, index) => (
+              <div key={index} className="reveal">
+                <EventCard {...event} />
+              </div>
             ))}
           </div>
         </div>
       </section>
       
-      {/* Our Services */}
-      <section className="py-20 bg-white">
+      {/* Event Services Section */}
+      <section className="py-20 bg-earth-lightest">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <div className="relative reveal">
-                <img 
-                  src="https://images.unsplash.com/photo-1500673922987-e212871fec22?q=80&w=1000" 
-                  alt="Event Planning" 
-                  className="rounded-lg shadow-lg"
-                />
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-gold rounded-full flex items-center justify-center">
-                  <Calendar size={32} className="text-white" />
-                </div>
+          <SectionTitle 
+            title="Our Event Services" 
+            subtitle="Comprehensive event management tailored to your unique vision and requirements."
+            className="reveal"
+          />
+          
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white p-8 rounded-lg shadow-md reveal">
+              <div className="flex items-center mb-6">
+                <Calendar size={28} className="text-gold mr-4" />
+                <h3 className="text-2xl font-semibold font-playfair">Event Planning & Management</h3>
               </div>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>Concept development and creative direction</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>Timeline and logistics coordination</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>Budget management and optimization</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>Venue selection and management</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>Vendor sourcing and coordination</span>
+                </li>
+              </ul>
             </div>
             
-            <div className="order-1 lg:order-2 reveal">
-              <SectionTitle 
-                title="Our Comprehensive Services" 
-                subtitle="From concept to execution, we provide end-to-end event management services designed to bring your vision to life."
-                align="left"
-                className="mb-8"
-              />
-              
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {services.map((service, index) => (
-                  <li key={index} className="flex items-start">
-                    <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                    <span className="text-earth-dark">{service}</span>
-                  </li>
-                ))}
+            <div className="bg-white p-8 rounded-lg shadow-md reveal">
+              <div className="flex items-center mb-6">
+                <Users size={28} className="text-gold mr-4" />
+                <h3 className="text-2xl font-semibold font-playfair">Guest Experience</h3>
+              </div>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>Customized invitations and RSVP management</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>VIP handling and protocol management</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>Entertainment booking and coordination</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>Catering and menu design</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>Transportation and accommodation arrangements</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-white p-8 rounded-lg shadow-md reveal">
+              <div className="flex items-center mb-6">
+                <Star size={28} className="text-gold mr-4" />
+                <h3 className="text-2xl font-semibold font-playfair">Design & Production</h3>
+              </div>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>Custom décor and theme development</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>Lighting and sound design</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>Stage and set design</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>Floral arrangements and styling</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>Branded materials and signage</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-white p-8 rounded-lg shadow-md reveal">
+              <div className="flex items-center mb-6">
+                <Clock size={28} className="text-gold mr-4" />
+                <h3 className="text-2xl font-semibold font-playfair">Day-of Coordination</h3>
+              </div>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>On-site management and coordination</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>Timeline execution and monitoring</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>Vendor management and problem-solving</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>Guest assistance and emergency handling</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                  <span>Post-event breakdown and vendor settlement</span>
+                </li>
               </ul>
             </div>
           </div>
         </div>
       </section>
       
-      {/* Hospitality Section */}
-      <section className="py-20 bg-gradient-to-r from-gold-dark to-gold text-white">
+      {/* Hospitality Section - REMOVED */}
+      
+      {/* Why Choose Us */}
+      <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal">
               <SectionTitle 
-                title="Luxury Accommodation Solutions" 
-                subtitle="Elevate your event experience with our bespoke hospitality and Airbnb services."
+                title="Why Choose Us" 
+                subtitle="Experience the Elfrida Limited approach to event management — where moments become memories."
                 align="left"
-                light={true}
                 className="mb-8"
               />
               
-              <p className="text-white/90 mb-6">
-                As part of our comprehensive event services, we offer exclusive accommodation solutions for your guests, speakers, or VIPs. Our curated Airbnb properties and hospitality services ensure a seamless and luxurious experience from arrival to departure.
-              </p>
+              <ul className="space-y-4">
+                {benefits.map((benefit, index) => (
+                  <li key={index} className="flex items-start">
+                    <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
+                    <span>{benefit}</span>
+                  </li>
+                ))}
+              </ul>
               
-              <p className="text-white/90 mb-8">
-                Our team handles all aspects of accommodation management, including property selection, guest check-in, concierge services, and personalized amenities to create a truly memorable stay.
-              </p>
-              
-              <Link to="/services/hospitality" className="btn-secondary bg-white text-gold hover:bg-white/90">
-                Explore Hospitality Services
-              </Link>
+              <div className="mt-8">
+                <Link to="/about" className="inline-flex items-center text-gold hover:text-gold-dark transition-colors font-medium">
+                  <span>Learn more about our approach</span>
+                  <ArrowRight size={18} className="ml-2" />
+                </Link>
+              </div>
             </div>
             
             <div className="reveal">
-              <img 
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1000" 
-                alt="Luxury Accommodation" 
-                className="rounded-lg shadow-lg"
-              />
+              <div className="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1000" 
+                  alt="Elegant Event" 
+                  className="rounded-lg shadow-lg w-full h-auto"
+                />
+                <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg max-w-xs">
+                  <p className="text-earth-dark italic">
+                    "The team at Elfrida Limited transformed our vision into a flawless event that exceeded all expectations."
+                  </p>
+                  <p className="text-gold font-medium mt-2">
+                    — Lagos Business Forum
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Gallery Section */}
-      <section className="py-20 bg-white">
-        <div className="container-custom">
-          <SectionTitle 
-            title="Our Event Portfolio" 
-            subtitle="Browse through some of our past events and get inspired for your next occasion."
-            className="reveal"
-          />
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 reveal">
-            <EventImage 
-              src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1000" 
-              alt="Corporate Conference" 
-              className="col-span-2 h-64"
-            />
-            <EventImage 
-              src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?q=80&w=1000" 
-              alt="Outdoor Celebration" 
-              className="h-64"
-            />
-            <EventImage 
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000" 
-              alt="Business Meeting" 
-              className="h-64"
-            />
-            <EventImage 
-              src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?q=80&w=1000" 
-              alt="Social Gathering" 
-              className="h-64"
-            />
-            <EventImage 
-              src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=1000" 
-              alt="Tech Conference" 
-              className="h-64"
-            />
-            <EventImage 
-              src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1000" 
-              alt="Award Ceremony" 
-              className="col-span-2 h-64"
-            />
           </div>
         </div>
       </section>
@@ -285,7 +282,7 @@ const Events = () => {
             <div className="reveal">
               <SectionTitle 
                 title="Ready to Plan Your Next Event?" 
-                subtitle="Contact us today to discuss how we can bring your vision to life and create an unforgettable experience."
+                subtitle="Contact us today to discuss your vision and let our experts create an unforgettable experience."
                 align="left"
                 light={true}
                 className="mb-8"
@@ -293,10 +290,10 @@ const Events = () => {
               
               <div className="prose max-w-none text-earth-lighter">
                 <p>
-                  Whether you're planning a corporate conference, a social celebration, or a high-profile diplomatic event, our team at Elfrida Park Limited is ready to exceed your expectations.
+                  Whether you're planning a corporate conference, a state function, or an intimate gathering, our team at Elfrida Limited is here to bring your vision to life. We pride ourselves on attention to detail and exceptional service.
                 </p>
                 <p className="mt-4">
-                  Fill out the form, and one of our event specialists will contact you to begin the journey of creating your perfect event.
+                  Fill out the form, and one of our event specialists will contact you to discuss how we can create a memorable experience tailored to your needs.
                 </p>
               </div>
             </div>

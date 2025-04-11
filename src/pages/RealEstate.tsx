@@ -67,28 +67,20 @@ const RealEstate = () => {
   
   const featuredProperties = [
     {
-      image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1000",
-      title: "Luxury Villa",
-      location: "Victoria Island, Lagos",
-      type: "Residential",
-      price: "₦180,000,000",
-      link: "/property/luxury-villa"
-    },
-    {
-      image: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?q=80&w=1000",
-      title: "Executive Office Complex",
-      location: "Ikoyi, Lagos",
-      type: "Commercial",
-      price: "₦450,000,000",
-      link: "/property/executive-office"
-    },
-    {
-      image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=1000",
-      title: "Modern Apartment",
-      location: "Lekki Phase 1, Lagos",
-      type: "Residential",
+      image: "https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?q=80&w=1000",
+      title: "Prime Land Plot - Guzape Heights",
+      location: "Guzape District, Abuja",
+      type: "Land",
       price: "₦85,000,000",
-      link: "/property/modern-apartment"
+      link: "/contact"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=1000",
+      title: "Exclusive Land Plot - Guzape Valley",
+      location: "Guzape District, Abuja",
+      type: "Land",
+      price: "₦92,000,000",
+      link: "/contact"
     }
   ];
   
@@ -113,7 +105,7 @@ const RealEstate = () => {
             <p className="text-xl mb-8 text-earth-lighter reveal">
               Discover exceptional properties and comprehensive real estate services tailored to your unique needs.
             </p>
-            <Link to="#contact-form" className="btn-primary reveal">
+            <Link to="/contact" className="btn-primary reveal">
               Make an Inquiry
             </Link>
           </div>
@@ -148,22 +140,16 @@ const RealEstate = () => {
         <div className="container-custom">
           <SectionTitle 
             title="Featured Properties" 
-            subtitle="Explore our selection of premium properties available for sale or rent."
+            subtitle="Explore our selection of premium properties available for sale."
             className="reveal"
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 max-w-4xl mx-auto">
             {featuredProperties.map((property, index) => (
               <div key={index} className="reveal">
                 <PropertyCard {...property} />
               </div>
             ))}
-          </div>
-          
-          <div className="mt-12 text-center reveal">
-            <Link to="/properties" className="btn-primary">
-              View All Properties
-            </Link>
           </div>
         </div>
       </section>

@@ -74,13 +74,34 @@ const Index = () => {
       position: "Director, Global Solutions Ltd",
       content: "The advisory services provided by Elfrida Limited helped us navigate complex regulatory challenges and optimize our CSR strategy. Highly recommended for any business seeking strategic guidance.",
       rating: 4,
+    },
+    {
+      id: 4,
+      name: "Mrs. Stella Nwosu",
+      position: "Event Planner",
+      content: "Collaborating with Elfrida Limited on our client's wedding was a joy. Their attention to cultural details and flawless execution created a celebration that will be remembered for generations.",
+      rating: 5,
+    },
+    {
+      id: 5,
+      name: "Dr. Olufemi Adeyemi",
+      position: "Property Developer",
+      content: "As a developer, finding a partner who understands both real estate and community impact is rare. Elfrida Limited brings that perfect balance of business acumen and social responsibility.",
+      rating: 5,
+    },
+    {
+      id: 6,
+      name: "Halima Suleiman",
+      position: "First-time Homebuyer",
+      content: "The team at Elfrida Limited guided me through every step of purchasing my first home. Their patience, expertise, and genuine care made what could have been an overwhelming process feel simple and exciting.",
+      rating: 5,
     }
   ];
 
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="h-screen relative flex items-center bg-[url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1000')] bg-cover bg-center">
+      <section className="h-screen relative flex items-center bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="container-custom relative z-10 text-white">
           <div className="max-w-3xl mx-auto text-center">

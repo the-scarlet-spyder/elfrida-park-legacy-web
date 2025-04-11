@@ -3,111 +3,78 @@ import React from 'react';
 import MainLayout from '@/components/MainLayout';
 import SectionTitle from '@/components/SectionTitle';
 import ContactForm from '@/components/ContactForm';
-import { CheckCircle, Brain, Scale, Briefcase, LineChart, Users, Heart } from 'lucide-react';
+import { CheckCircle, Scale, TrendingUp, Heart, Shield, BarChart3, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-interface ServiceCardProps {
+const ServiceCard = ({ icon, title, description }: {
   icon: React.ReactNode;
   title: string;
   description: string;
-}
-
-const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) => (
-  <div className="bg-white p-8 border border-earth-lightest rounded-lg hover:shadow-lg transition-all reveal">
-    <div className="w-14 h-14 bg-earth-lightest rounded-full flex items-center justify-center mb-6">
-      {icon}
+}) => {
+  return (
+    <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all reveal">
+      <div className="mb-6">
+        <div className="w-14 h-14 rounded-full bg-earth-lightest flex items-center justify-center">
+          {icon}
+        </div>
+      </div>
+      <h3 className="text-xl font-semibold mb-3 font-playfair">{title}</h3>
+      <p className="text-earth-dark">{description}</p>
     </div>
-    <h3 className="text-xl font-semibold mb-4 font-playfair">{title}</h3>
-    <p className="text-earth-dark">{description}</p>
-  </div>
-);
-
-const CaseStudyCard = ({ title, client, outcome, image }: {
-  title: string;
-  client: string;
-  outcome: string;
-  image: string;
-}) => (
-  <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all group reveal">
-    <div className="aspect-[16/9] overflow-hidden">
-      <img 
-        src={image} 
-        alt={title} 
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-      />
-    </div>
-    <div className="p-6">
-      <h3 className="text-xl font-semibold mb-2 font-playfair">{title}</h3>
-      <p className="text-earth mb-4">Client: {client}</p>
-      <p className="text-earth-dark">{outcome}</p>
-    </div>
-  </div>
-);
+  );
+};
 
 const Advisory = () => {
   const services = [
     {
       icon: <Scale size={28} className="text-gold" />,
       title: "Legal Advisory",
-      description: "Expert guidance on legal matters specific to Nigerian business environments, regulatory compliance, and contract negotiations."
+      description: "Expert guidance on due diligence, documentation, compliance, and legal risk management for individuals and businesses."
     },
     {
-      icon: <LineChart size={28} className="text-gold" />,
-      title: "Financial Strategy",
-      description: "Comprehensive financial planning, investment advisory, and capital raising strategies for businesses and high-net-worth individuals."
+      icon: <TrendingUp size={28} className="text-gold" />,
+      title: "Financial & Investment Advisory",
+      description: "Strategic financial planning, investment guidance, and wealth management solutions tailored to your goals."
     },
     {
       icon: <Heart size={28} className="text-gold" />,
-      title: "CSR & Impact",
-      description: "Development and implementation of meaningful corporate social responsibility initiatives that create genuine community impact."
-    },
-    {
-      icon: <Briefcase size={28} className="text-gold" />,
-      title: "Business Development",
-      description: "Strategic planning for business growth, market entry, partnership development, and operational optimization."
-    },
-    {
-      icon: <Users size={28} className="text-gold" />,
-      title: "Stakeholder Management",
-      description: "Building and maintaining effective relationships with key stakeholders, including government bodies, investors, and community leaders."
-    },
-    {
-      icon: <Brain size={28} className="text-gold" />,
-      title: "Strategic Consulting",
-      description: "Holistic business advisory services addressing complex challenges and identifying opportunities for sustainable growth."
-    }
-  ];
-  
-  const caseStudies = [
-    {
-      title: "Corporate Governance Restructuring",
-      client: "Major Financial Institution",
-      outcome: "Implemented governance reforms resulting in improved compliance and operational efficiency.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1000"
-    },
-    {
-      title: "Community Impact Program",
-      client: "Multinational Energy Company",
-      outcome: "Developed a sustainable CSR initiative that benefited over 10,000 community members.",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1000"
-    },
-    {
-      title: "Investment Strategy",
-      client: "High-Net-Worth Family Office",
-      outcome: "Created a diversified portfolio strategy yielding consistent above-market returns.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=1000"
+      title: "Community Development & CSR Planning",
+      description: "Purpose-driven project design and implementation to create meaningful social impact aligned with your values."
     }
   ];
   
   const benefits = [
-    "Access to seasoned experts with deep industry knowledge",
-    "Tailored solutions addressing your specific challenges",
-    "Strategic approach focused on long-term sustainability",
-    "Integrated service model combining legal, financial, and social expertise",
-    "Local insights with international best practices",
-    "Measurable outcomes and impact-driven methodology"
+    "Personalized strategic guidance",
+    "Risk analysis and mitigation",
+    "Compliance with regulatory requirements",
+    "Transparent communication and reporting",
+    "Long-term partnership approach",
+    "Integrated solutions across disciplines"
   ];
-
+  
+  const impactStats = [
+    {
+      value: "₦250M+",
+      label: "Advised Investments",
+      description: "Total value of investments guided through our advisory services"
+    },
+    {
+      value: "85%",
+      label: "Client Retention",
+      description: "Percentage of clients who continue working with us after initial engagement"
+    },
+    {
+      value: "12+",
+      label: "Communities Impacted",
+      description: "Nigerian communities positively affected by our CSR initiatives"
+    },
+    {
+      value: "100%",
+      label: "Compliance Rate",
+      description: "Success rate in ensuring client regulatory compliance"
+    }
+  ];
+  
   return (
     <MainLayout>
       {/* Hero Section */}
@@ -115,100 +82,64 @@ const Advisory = () => {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair reveal">
-              Strategic Advisory Services
+              Advisory Services
             </h1>
             <p className="text-xl mb-8 text-earth-lighter reveal">
-              Expert guidance and solutions to navigate complex business challenges and create lasting impact.
+              Strategic guidance to help you navigate complex decisions and build sustainable futures.
             </p>
-            <Link to="#contact-form" className="btn-primary reveal">
+            <Link to="/contact" className="btn-primary reveal">
               Book a Consultation
             </Link>
           </div>
         </div>
       </section>
       
-      {/* Introduction Section */}
+      {/* Services Section */}
       <section className="py-20 bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="reveal">
-              <SectionTitle 
-                title="Guidance for Complex Challenges" 
-                subtitle="Our advisory services combine local expertise with global insights to deliver strategic solutions that drive growth and impact."
-                align="left"
-                className="mb-8"
-              />
-              
-              <p className="text-earth-dark mb-6">
-                At Elfrida Park, we understand the unique challenges and opportunities in the Nigerian business landscape. Our advisory team brings together seasoned professionals with diverse expertise in legal matters, financial strategy, business development, and corporate social responsibility.
-              </p>
-              
-              <p className="text-earth-dark">
-                We work closely with clients to understand their specific needs and develop tailored solutions that address immediate challenges while building a foundation for long-term success and sustainability.
-              </p>
-            </div>
-            
-            <div className="reveal">
-              <img 
-                src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1000" 
-                alt="Strategic Advisory Meeting" 
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Services Section */}
-      <section className="py-20 bg-earth-lightest">
-        <div className="container-custom">
           <SectionTitle 
-            title="Our Advisory Services" 
-            subtitle="Comprehensive solutions designed to address your most pressing business and strategic challenges."
+            title="Our Advisory Expertise" 
+            subtitle="With integrity as our compass, we help you build smart, safe, and sustainable futures."
             className="reveal"
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
+              <ServiceCard 
+                key={index}
+                {...service}
+              />
             ))}
           </div>
         </div>
       </section>
       
       {/* Why Choose Us */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-earth-lightest">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1 reveal">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gold/10 rounded-lg p-6 flex flex-col items-center text-center">
-                  <Scale size={36} className="text-gold mb-4" />
-                  <h4 className="font-semibold mb-2">Legal Expertise</h4>
-                  <p className="text-sm text-earth-dark">Navigation of complex regulatory frameworks</p>
-                </div>
-                <div className="bg-gold/10 rounded-lg p-6 flex flex-col items-center text-center mt-6">
-                  <LineChart size={36} className="text-gold mb-4" />
-                  <h4 className="font-semibold mb-2">Financial Acumen</h4>
-                  <p className="text-sm text-earth-dark">Strategic financial planning and optimization</p>
-                </div>
-                <div className="bg-gold/10 rounded-lg p-6 flex flex-col items-center text-center">
-                  <Heart size={36} className="text-gold mb-4" />
-                  <h4 className="font-semibold mb-2">Social Impact</h4>
-                  <p className="text-sm text-earth-dark">Purpose-driven CSR initiatives</p>
-                </div>
-                <div className="bg-gold/10 rounded-lg p-6 flex flex-col items-center text-center mt-6">
-                  <Users size={36} className="text-gold mb-4" />
-                  <h4 className="font-semibold mb-2">Relationship Building</h4>
-                  <p className="text-sm text-earth-dark">Strategic stakeholder management</p>
+            <div className="reveal">
+              <div className="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1638450520420-9a2bff0aa744?q=80&w=1000" 
+                  alt="Advisory Meeting" 
+                  className="rounded-lg shadow-lg w-full h-auto"
+                />
+                <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-lg shadow-lg max-w-xs">
+                  <p className="text-earth-dark italic">
+                    "The strategic guidance from Elfrida Limited helped us navigate a complex regulatory landscape while maintaining our growth trajectory."
+                  </p>
+                  <p className="text-gold font-medium mt-2">
+                    — Lighthouse Industries
+                  </p>
                 </div>
               </div>
             </div>
             
-            <div className="order-1 lg:order-2 reveal">
+            <div className="reveal">
               <SectionTitle 
-                title="The Elfrida Park Advantage" 
-                subtitle="Our unique approach combines expertise, experience, and a commitment to excellence."
+                title="Why Choose Our Advisory Services" 
+                subtitle="Experience the Elfrida Limited approach to advisory — where insight meets impact."
                 align="left"
                 className="mb-8"
               />
@@ -217,95 +148,138 @@ const Advisory = () => {
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start">
                     <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                    <span className="text-earth-dark">{benefit}</span>
+                    <span>{benefit}</span>
                   </li>
                 ))}
               </ul>
+              
+              <div className="mt-8">
+                <Link to="/about" className="inline-flex items-center text-gold hover:text-gold-dark transition-colors font-medium">
+                  <span>Learn more about our approach</span>
+                  <ArrowRight size={18} className="ml-2" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
       
-      {/* Case Studies */}
-      <section className="py-20 bg-earth-lightest">
+      {/* Impact Stats Section */}
+      <section className="py-20 bg-white">
         <div className="container-custom">
           <SectionTitle 
-            title="Case Studies" 
-            subtitle="Examples of how our advisory services have created tangible impact for our clients."
+            title="Our Impact" 
+            subtitle="The difference our advisory services have made for clients and communities."
             className="reveal"
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {caseStudies.map((study, index) => (
-              <CaseStudyCard key={index} {...study} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+            {impactStats.map((stat, index) => (
+              <div key={index} className="text-center p-6 border border-earth-lightest rounded-lg reveal">
+                <div className="text-3xl font-bold text-gold mb-2">{stat.value}</div>
+                <h4 className="text-lg font-medium mb-2">{stat.label}</h4>
+                <p className="text-sm text-earth">{stat.description}</p>
+              </div>
             ))}
+          </div>
+          
+          <div className="mt-12 text-center reveal">
+            <p className="text-lg text-earth-dark max-w-3xl mx-auto">
+              Our advisory work extends beyond transactions, focusing on creating long-term value and sustainable impact for our clients and the communities they serve.
+            </p>
           </div>
         </div>
       </section>
       
-      {/* CSR Impact Section */}
-      <section className="py-20 bg-gradient-to-r from-royal to-royal-light text-white">
+      {/* Process Section */}
+      <section className="py-20 bg-earth-lightest">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="reveal">
-              <SectionTitle 
-                title="Creating Meaningful Social Impact" 
-                subtitle="Our CSR advisory focuses on developing sustainable initiatives that deliver genuine value to communities."
-                align="left"
-                light={true}
-                className="mb-8"
-              />
-              
-              <p className="text-white/90 mb-6">
-                At Elfrida Park, we believe that corporate social responsibility goes beyond philanthropy. Our approach integrates social impact into business strategy, creating shared value for companies and communities alike.
-              </p>
-              
-              <p className="text-white/90 mb-8">
-                From youth empowerment programs to women's initiatives and community development projects, we help organizations design and implement impactful CSR strategies that align with their values and business objectives.
-              </p>
-              
-              <Link to="/impact" className="btn-secondary bg-white text-royal hover:bg-white/90">
-                Explore Our Impact Work
-              </Link>
-            </div>
+          <SectionTitle 
+            title="Our Advisory Process" 
+            subtitle="A structured approach to understanding your needs and delivering tailored solutions."
+            className="reveal"
+          />
+          
+          <div className="mt-12 relative">
+            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-earth-light -translate-y-1/2"></div>
             
-            <div className="reveal">
-              <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000" 
-                alt="Community Impact" 
-                className="rounded-lg shadow-lg"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="bg-white p-6 rounded-lg shadow-md relative reveal">
+                <div className="w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center font-semibold absolute -top-5 left-1/2 transform -translate-x-1/2">1</div>
+                <div className="mt-6 text-center">
+                  <h3 className="text-lg font-semibold mb-3">Consultation</h3>
+                  <p className="text-earth-dark text-sm">In-depth discovery session to understand your goals, challenges, and vision.</p>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md relative reveal">
+                <div className="w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center font-semibold absolute -top-5 left-1/2 transform -translate-x-1/2">2</div>
+                <div className="mt-6 text-center">
+                  <h3 className="text-lg font-semibold mb-3">Analysis</h3>
+                  <p className="text-earth-dark text-sm">Comprehensive assessment of your situation and potential strategic options.</p>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md relative reveal">
+                <div className="w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center font-semibold absolute -top-5 left-1/2 transform -translate-x-1/2">3</div>
+                <div className="mt-6 text-center">
+                  <h3 className="text-lg font-semibold mb-3">Strategy Development</h3>
+                  <p className="text-earth-dark text-sm">Creation of tailored solutions and actionable implementation plans.</p>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md relative reveal">
+                <div className="w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center font-semibold absolute -top-5 left-1/2 transform -translate-x-1/2">4</div>
+                <div className="mt-6 text-center">
+                  <h3 className="text-lg font-semibold mb-3">Implementation & Support</h3>
+                  <p className="text-earth-dark text-sm">Ongoing guidance, monitoring, and refinement as your journey evolves.</p>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* CTA Section */}
+      <section className="py-16 bg-earth-dark text-white">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center reveal">
+            <BarChart3 size={48} className="text-gold mx-auto mb-6" />
+            <h2 className="text-3xl font-bold mb-4 font-playfair">Ready to Build a Strategic Future?</h2>
+            <p className="text-xl mb-8 text-earth-lighter">
+              Partner with Elfrida Limited's advisory team to navigate complexity and unlock sustainable growth.
+            </p>
+            <Link to="/contact" className="btn-primary">
+              Schedule a Consultation
+            </Link>
           </div>
         </div>
       </section>
       
       {/* Contact Form */}
-      <section id="contact-form" className="py-20 bg-earth-dark text-white">
+      <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="reveal">
               <SectionTitle 
-                title="Ready to Transform Your Strategy?" 
-                subtitle="Book a consultation with our advisory team to discuss your specific challenges and opportunities."
+                title="Get Expert Guidance" 
+                subtitle="Contact us today to discuss how our advisory services can help you achieve your goals."
                 align="left"
-                light={true}
                 className="mb-8"
               />
               
-              <div className="prose max-w-none text-earth-lighter">
+              <div className="prose max-w-none text-earth-dark">
                 <p>
-                  Our advisory services begin with a thorough understanding of your current situation, challenges, and objectives. From there, we develop a tailored approach that addresses your specific needs and creates a roadmap for success.
+                  Our team of experts is ready to provide the strategic guidance you need to navigate complex challenges and seize opportunities. Whether you're seeking legal advice, financial planning, or CSR strategies, Elfrida Limited is your trusted partner.
                 </p>
                 <p className="mt-4">
-                  Fill out the form, and one of our advisory specialists will contact you to schedule your consultation.
+                  Fill out the form, and one of our advisory specialists will contact you to schedule a consultation tailored to your needs.
                 </p>
               </div>
             </div>
             
-            <div className="reveal">
+            <div className="bg-earth-lightest p-8 rounded-lg shadow-md reveal">
               <ContactForm 
-                dark={true}
                 title=""
                 subtitle=""
               />
