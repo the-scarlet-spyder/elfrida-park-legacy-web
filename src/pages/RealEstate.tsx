@@ -3,7 +3,7 @@ import React from 'react';
 import MainLayout from '@/components/MainLayout';
 import SectionTitle from '@/components/SectionTitle';
 import ContactForm from '@/components/ContactForm';
-import { CheckCircle, Home, Building, Landmark, ArrowRight } from 'lucide-react';
+import { CheckCircle, Home, Building, Landmark, ArrowRight, Leaf, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const PropertyCard = ({ image, title, location, type, price, link }: {
@@ -39,19 +39,29 @@ const PropertyCard = ({ image, title, location, type, price, link }: {
 const RealEstate = () => {
   const services = [
     {
-      title: "Property Sales",
-      description: "Premium residential and commercial properties available for purchase across Nigeria's most desirable locations.",
+      title: "Sales & Rentals",
+      description: "Trusted brokerage for high-value commercial and residential properties across Nigeria's most desirable locations.",
       icon: <Home size={24} className="text-gold" />
     },
     {
-      title: "Property Rentals",
-      description: "Luxury homes and office spaces available for short and long-term leases with comprehensive management.",
+      title: "Development & Renovation",
+      description: "From blueprint to beauty — we bring visions to life with comprehensive development and renovation services.",
       icon: <Building size={24} className="text-gold" />
     },
     {
-      title: "Property Development",
-      description: "End-to-end development services from land acquisition to construction and final delivery.",
+      title: "Mortgage Advisory",
+      description: "Navigating financing with insight and strategy to help you make the right investment decisions.",
       icon: <Landmark size={24} className="text-gold" />
+    },
+    {
+      title: "Horticulture & Landscaping",
+      description: "Creating sustainable, beautiful environments that enhance property value and quality of life.",
+      icon: <Leaf size={24} className="text-gold" />
+    },
+    {
+      title: "Facility Management",
+      description: "Professional property oversight with long-term value in mind, ensuring optimal maintenance and operation.",
+      icon: <Wrench size={24} className="text-gold" />
     }
   ];
   
@@ -98,7 +108,7 @@ const RealEstate = () => {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair reveal">
-              Real Estate Services
+              Real Estate Solutions
             </h1>
             <p className="text-xl mb-8 text-earth-lighter reveal">
               Discover exceptional properties and comprehensive real estate services tailored to your unique needs.
@@ -115,11 +125,11 @@ const RealEstate = () => {
         <div className="container-custom">
           <SectionTitle 
             title="Our Real Estate Services" 
-            subtitle="Elfrida Park Limited offers a complete range of premium real estate services designed to meet your property needs."
+            subtitle="Elfrida Limited offers a comprehensive, end-to-end real estate experience designed to meet your property needs."
             className="reveal"
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {services.map((service, index) => (
               <div key={index} className="p-8 border border-earth-lightest rounded-lg hover:shadow-md transition-all reveal">
                 <div className="flex items-center mb-4">
@@ -165,7 +175,7 @@ const RealEstate = () => {
             <div className="reveal">
               <SectionTitle 
                 title="Why Choose Us" 
-                subtitle="Experience the Elfrida Park advantage with our client-focused approach to real estate."
+                subtitle="Experience the Elfrida Limited approach to real estate — where lifestyle meets legacy."
                 align="left"
                 className="mb-8"
               />
@@ -196,7 +206,7 @@ const RealEstate = () => {
                 />
                 <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg max-w-xs">
                   <p className="text-earth-dark italic">
-                    "Elfrida Park helped us find our dream home with unparalleled professionalism and attention to detail."
+                    "Elfrida Limited helped us find our dream home with unparalleled professionalism and attention to detail."
                   </p>
                   <p className="text-gold font-medium mt-2">
                     — The Adewale Family
@@ -223,7 +233,7 @@ const RealEstate = () => {
               
               <div className="prose max-w-none text-earth-lighter">
                 <p>
-                  Whether you're looking to buy, sell, rent, or develop property, our team at Elfrida Park Limited is here to assist you every step of the way. We pride ourselves on delivering personalized service that exceeds expectations.
+                  Whether you're looking to buy, sell, rent, or develop property, our team at Elfrida Limited is here to assist you every step of the way. We pride ourselves on delivering personalized service that exceeds expectations.
                 </p>
                 <p className="mt-4">
                   Fill out the form, and one of our real estate specialists will contact you to discuss how we can help you achieve your property goals.

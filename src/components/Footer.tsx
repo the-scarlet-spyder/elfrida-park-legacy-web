@@ -15,21 +15,18 @@ const Footer = () => {
             <Link to="/" className="inline-block">
               <img 
                 src="/lovable-uploads/ebd4b774-c523-499b-8523-ec2e0b49f0fb.png" 
-                alt="Elfrida Park Limited" 
+                alt="Elfrida Limited" 
                 className="h-12 mb-4" 
               />
             </Link>
             <p className="text-earth-lighter text-sm leading-relaxed">
-              Nurturing Dreams, Building Legacies. Elfrida Park Limited offers integrated solutions in Real Estate, Event Management, and Strategic Advisory Services.
+              Nurturing Dreams, Building Legacies. Elfrida Limited offers integrated solutions in Real Estate, Event Management, and Strategic Advisory Services.
             </p>
             <div className="flex items-center space-x-4 pt-2">
-              <a href="#" className="text-white hover:text-gold transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-white hover:text-gold transition-colors">
+              <a href="https://www.instagram.com/elfridasltd" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-white hover:text-gold transition-colors">
+              <a href="https://www.linkedin.com/company/elfridas-ltd" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold transition-colors">
                 <Linkedin size={20} />
               </a>
             </div>
@@ -89,14 +86,20 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={20} className="text-gold flex-shrink-0" />
-                <a href="tel:+2341234567890" className="text-earth-lighter hover:text-gold transition-colors">
-                  +234 123 456 7890
+                <a href="tel:09160002771" className="text-earth-lighter hover:text-gold transition-colors">
+                  09160002771
+                </a>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Phone size={20} className="text-gold flex-shrink-0" />
+                <a href="tel:09160002772" className="text-earth-lighter hover:text-gold transition-colors">
+                  09160002772
                 </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={20} className="text-gold flex-shrink-0" />
-                <a href="mailto:info@elfridapark.com" className="text-earth-lighter hover:text-gold transition-colors">
-                  info@elfridapark.com
+                <a href="mailto:info@elfridas.com" className="text-earth-lighter hover:text-gold transition-colors">
+                  info@elfridas.com
                 </a>
               </li>
             </ul>
@@ -128,7 +131,7 @@ const Footer = () => {
         <div className="border-t border-earth/30 mt-12 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-earth-lighter text-sm">
-              © {currentYear} Elfrida Park Limited. All rights reserved.
+              © {currentYear} Elfrida Limited. All rights reserved.
             </p>
             <div className="flex space-x-4 mt-4 md:mt-0">
               <Link to="/privacy-policy" className="text-earth-lighter hover:text-gold text-sm">

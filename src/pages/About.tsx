@@ -2,7 +2,7 @@
 import React from 'react';
 import MainLayout from '@/components/MainLayout';
 import SectionTitle from '@/components/SectionTitle';
-import { CheckCircle, Target, Eye, Star, Layers } from 'lucide-react';
+import { CheckCircle, Target, Eye, Star, Layers, Shield, Award, Users, Gem, Heart, Church } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface TeamMemberProps {
@@ -53,20 +53,34 @@ const About = () => {
   
   const values = [
     {
-      title: "Integrity",
-      description: "We conduct our business with the highest ethical standards, transparency, and accountability in all our dealings."
+      title: "Divine Inspiration",
+      description: "We act with a higher purpose in mind",
+      icon: <Church size={32} className="text-gold" />
     },
     {
-      title: "Excellence",
-      description: "We are committed to delivering exceptional quality and exceeding expectations in every project we undertake."
+      title: "Integrity First",
+      description: "Transparent, honest, and trustworthy in all dealings",
+      icon: <Shield size={32} className="text-gold" />
     },
     {
-      title: "Connection",
-      description: "We build meaningful relationships with our clients, partners, and communities, fostering trust and collaboration."
+      title: "Passion-Driven",
+      description: "We're emotionally invested in your success",
+      icon: <Heart size={32} className="text-gold" />
     },
     {
-      title: "Growth",
-      description: "We embrace continuous learning and innovation, striving to evolve and create greater impact and value."
+      title: "People-Centric",
+      description: "Clients aren't transactions — they're partners",
+      icon: <Users size={32} className="text-gold" />
+    },
+    {
+      title: "Excellence Always",
+      description: "High standards are our baseline",
+      icon: <Award size={32} className="text-gold" />
+    },
+    {
+      title: "Nurturing Growth",
+      description: "We support your journey at every stage",
+      icon: <Gem size={32} className="text-gold" />
     }
   ];
   
@@ -74,7 +88,7 @@ const About = () => {
     {
       year: 2015,
       title: "Company Founded",
-      description: "Elfrida Park Limited was established with a vision to deliver integrated solutions in real estate and advisory services."
+      description: "Elfrida Limited was established with a vision to deliver integrated solutions in real estate and advisory services."
     },
     {
       year: 2017,
@@ -105,7 +119,7 @@ const About = () => {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair reveal">
-              About Elfrida Park
+              About Elfrida Limited
             </h1>
             <p className="text-xl mb-8 text-earth-lighter reveal">
               Our story, our mission, and the values that drive us to nurture dreams and build legacies.
@@ -127,22 +141,22 @@ const About = () => {
               />
               
               <p className="text-earth-dark mb-6">
-                Elfrida Park Limited was established in 2015 with a clear vision: to create a company that delivers integrated solutions across key sectors while maintaining a strong commitment to integrity, excellence, and social impact.
+                Elfrida Limited is a dynamic, people-first company built on a foundation of purpose, integrity, and innovation. We offer integrated solutions across Real Estate, Event Management, and Strategic Advisory Services — designed to empower individuals, elevate businesses, and drive sustainable growth.
               </p>
               
               <p className="text-earth-dark mb-6">
-                What began as a boutique real estate advisory firm has grown into a multifaceted organization offering comprehensive services in real estate, event management, and strategic advisory. Throughout our journey, we have remained true to our founding principles, prioritizing quality, relationships, and purpose in everything we do.
+                Our approach is deeply rooted in value creation. Whether helping a family secure their dream home, curating unforgettable events, or guiding organizations toward sound investment decisions, we operate with a singular focus: to enrich lives, build legacies, and lead change.
               </p>
               
               <p className="text-earth-dark">
-                Today, Elfrida Park stands as a trusted partner for individuals, corporations, and institutions seeking premium solutions that combine commercial success with meaningful impact.
+                With a growing reputation for excellence, impact, and trust, we have become a preferred partner to both local and international clients who seek meaningful, tailored experiences and results. At Elfrida Limited, we don't just provide services — we build stories, create memories, and catalyze generational transformation.
               </p>
             </div>
             
             <div className="reveal">
               <img 
-                src="https://images.unsplash.com/photo-1493397212122-2b85dda8106b?q=80&w=1000" 
-                alt="Elfrida Park Building" 
+                src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?q=80&w=1000" 
+                alt="Elfrida Limited Building" 
                 className="rounded-lg shadow-lg"
               />
             </div>
@@ -160,7 +174,7 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-semibold mb-4 font-playfair">Our Mission</h3>
               <p className="text-earth-dark">
-                To deliver exceptional integrated solutions in real estate, event management, and advisory services, creating value for our clients while making a positive impact on communities.
+                Driven by a passion for creating value beyond transactions, we are committed to nurturing authentic relationships, delivering exceptional services, and fostering environments that promote growth, connection, and faith in a brighter future.
               </p>
             </div>
             
@@ -170,7 +184,7 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-semibold mb-4 font-playfair">Our Vision</h3>
               <p className="text-earth-dark">
-                To be the premier provider of integrated business solutions in Africa, recognized for our commitment to excellence, integrity, and social responsibility, while nurturing dreams and building legacies for generations to come.
+                To be Nigeria's heartbeat company, delivering integrated solutions that transcend real estate — shaping lives, communities, and industries with bold innovation and timeless impact.
               </p>
             </div>
           </div>
@@ -181,18 +195,27 @@ const About = () => {
       <section className="py-20 bg-white">
         <div className="container-custom">
           <SectionTitle 
-            title="Our Core Values" 
+            title="Our Core Values: D.I.P.P.E.N." 
             subtitle="The principles that guide every aspect of our operations and relationships."
             className="reveal"
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {values.map((value, index) => (
               <div key={index} className="p-8 border border-earth-lightest rounded-lg hover:shadow-md transition-all text-center reveal">
+                <div className="mx-auto mb-4 w-16 h-16 flex items-center justify-center bg-gold/10 rounded-full">
+                  {value.icon}
+                </div>
                 <h3 className="text-xl font-semibold mb-4 font-playfair text-gold">{value.title}</h3>
                 <p className="text-earth-dark">{value.description}</p>
               </div>
             ))}
+          </div>
+          
+          <div className="text-center mt-10 reveal">
+            <p className="text-earth-dark text-lg italic">
+              "We don't just deliver — we care, connect, and create value that lasts."
+            </p>
           </div>
         </div>
       </section>
@@ -202,7 +225,7 @@ const About = () => {
         <div className="container-custom">
           <SectionTitle 
             title="Our Journey" 
-            subtitle="Key milestones in the evolution of Elfrida Park Limited."
+            subtitle="Key milestones in the evolution of Elfrida Limited."
             className="reveal"
           />
           
@@ -240,7 +263,7 @@ const About = () => {
         <div className="container-custom">
           <SectionTitle 
             title="Our Leadership Team" 
-            subtitle="Meet the experienced professionals guiding Elfrida Park's vision and operations."
+            subtitle="Meet the experienced professionals guiding Elfrida Limited's vision and operations."
             className="reveal"
           />
           
@@ -258,7 +281,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal">
               <SectionTitle 
-                title="Our Approach: DIP.P.E.N." 
+                title="Our Approach: D.I.P.P.E.N." 
                 subtitle="The methodology that defines how we deliver excellence across all our services."
                 align="left"
                 light={true}
@@ -269,48 +292,48 @@ const About = () => {
                 <div className="flex items-start">
                   <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-medium mb-1">Discover</h4>
-                    <p className="text-white/80">We begin by thoroughly understanding your needs, challenges, and aspirations.</p>
+                    <h4 className="text-lg font-medium mb-1">Divine Inspiration</h4>
+                    <p className="text-white/80">We act with a higher purpose in mind, guided by principles that transcend mere business interests.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
                   <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-medium mb-1">Ideate</h4>
-                    <p className="text-white/80">We develop innovative and tailored solutions specific to your unique situation.</p>
+                    <h4 className="text-lg font-medium mb-1">Integrity First</h4>
+                    <p className="text-white/80">We maintain transparency, honesty, and trustworthiness in all our dealings and relationships.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
                   <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-medium mb-1">Plan</h4>
-                    <p className="text-white/80">We create a detailed roadmap with clear milestones, responsibilities, and timelines.</p>
+                    <h4 className="text-lg font-medium mb-1">Passion-Driven</h4>
+                    <p className="text-white/80">We're emotionally invested in your success, bringing enthusiasm and dedication to every project.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
                   <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-medium mb-1">Perform</h4>
-                    <p className="text-white/80">We execute the strategy with precision, attention to detail, and a commitment to excellence.</p>
+                    <h4 className="text-lg font-medium mb-1">People-Centric</h4>
+                    <p className="text-white/80">We view our clients as partners, not transactions, focusing on building meaningful relationships.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
                   <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-medium mb-1">Evaluate</h4>
-                    <p className="text-white/80">We measure results against objectives, gathering insights for continuous improvement.</p>
+                    <h4 className="text-lg font-medium mb-1">Excellence Always</h4>
+                    <p className="text-white/80">High standards are our baseline, and we continuously strive to exceed expectations.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
                   <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-medium mb-1">Nurture</h4>
-                    <p className="text-white/80">We foster ongoing relationships and support, ensuring sustained success and growth.</p>
+                    <h4 className="text-lg font-medium mb-1">Nurturing Growth</h4>
+                    <p className="text-white/80">We support your journey at every stage, fostering sustainable development and advancement.</p>
                   </div>
                 </div>
               </div>

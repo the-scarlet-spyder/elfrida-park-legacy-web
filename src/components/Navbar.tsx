@@ -61,7 +61,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-2">
           <img 
             src="/lovable-uploads/ebd4b774-c523-499b-8523-ec2e0b49f0fb.png" 
-            alt="Elfrida Park Limited" 
+            alt="Elfrida Limited" 
             className="h-12"
           />
         </Link>
