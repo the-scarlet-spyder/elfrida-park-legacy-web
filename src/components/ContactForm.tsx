@@ -34,24 +34,53 @@ const ContactForm: React.FC<ContactFormProps> = ({
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll respond shortly.",
-      duration: 5000,
-    });
-    
-    setFormState({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-    });
-    
-    setIsSubmitting(false);
+    try {
+      // Create form data to submit
+      const formData = new FormData();
+      Object.entries(formState).forEach(([key, value]) => {
+        formData.append(key, value);
+      });
+      
+      // Set the receiving email address
+      formData.append('_to', 'info@elfridas.com');
+      formData.append('_subject', `Elfrida Limited Website Inquiry: ${formState.subject}`);
+      
+      // Submit the form using formspree or a similar service
+      const response = await fetch('https://formspree.io/f/info@elfridas.com', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for contacting us. We'll respond shortly.",
+          duration: 5000,
+        });
+        
+        setFormState({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      toast({
+        title: "Message Could Not Be Sent",
+        description: "Please try again later or contact us directly at info@elfridas.com",
+        variant: "destructive",
+        duration: 5000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -59,12 +88,12 @@ const ContactForm: React.FC<ContactFormProps> = ({
       {(title || subtitle) && (
         <div className="mb-8">
           {title && (
-            <h3 className={`text-2xl font-semibold ${dark ? 'text-white' : 'text-foreground'}`}>
+            <h3 className="text-2xl font-semibold text-white">
               {title}
             </h3>
           )}
           {subtitle && (
-            <p className={`mt-2 ${dark ? 'text-earth-lighter' : 'text-earth-dark'}`}>
+            <p className="mt-2 text-white/80">
               {subtitle}
             </p>
           )}
@@ -76,7 +105,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
           <div>
             <label 
               htmlFor="name" 
-              className={`block mb-2 text-sm font-medium ${dark ? 'text-earth-lighter' : 'text-earth-dark'}`}
+              className="block mb-2 text-sm font-medium text-white"
             >
               Full Name
             </label>
@@ -87,11 +116,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
               value={formState.name}
               onChange={handleChange}
               required
-              className={`w-full p-3 rounded-md border focus:ring-gold focus:border-gold ${
-                dark 
-                  ? 'bg-earth-dark border-earth text-white placeholder-earth-light' 
-                  : 'bg-white border-earth-lighter text-foreground'
-              }`}
+              className="w-full p-3 rounded-md border bg-earth-dark border-earth text-white placeholder-earth-light focus:ring-gold focus:border-gold"
               placeholder="John Doe"
             />
           </div>
@@ -99,7 +124,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
           <div>
             <label 
               htmlFor="email" 
-              className={`block mb-2 text-sm font-medium ${dark ? 'text-earth-lighter' : 'text-earth-dark'}`}
+              className="block mb-2 text-sm font-medium text-white"
             >
               Email Address
             </label>
@@ -110,11 +135,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
               value={formState.email}
               onChange={handleChange}
               required
-              className={`w-full p-3 rounded-md border focus:ring-gold focus:border-gold ${
-                dark 
-                  ? 'bg-earth-dark border-earth text-white placeholder-earth-light' 
-                  : 'bg-white border-earth-lighter text-foreground'
-              }`}
+              className="w-full p-3 rounded-md border bg-earth-dark border-earth text-white placeholder-earth-light focus:ring-gold focus:border-gold"
               placeholder="john@example.com"
             />
           </div>
@@ -124,7 +145,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
           <div>
             <label 
               htmlFor="phone" 
-              className={`block mb-2 text-sm font-medium ${dark ? 'text-earth-lighter' : 'text-earth-dark'}`}
+              className="block mb-2 text-sm font-medium text-white"
             >
               Phone Number
             </label>
@@ -134,11 +155,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
               type="tel"
               value={formState.phone}
               onChange={handleChange}
-              className={`w-full p-3 rounded-md border focus:ring-gold focus:border-gold ${
-                dark 
-                  ? 'bg-earth-dark border-earth text-white placeholder-earth-light' 
-                  : 'bg-white border-earth-lighter text-foreground'
-              }`}
+              className="w-full p-3 rounded-md border bg-earth-dark border-earth text-white placeholder-earth-light focus:ring-gold focus:border-gold"
               placeholder="+234 123 456 7890"
             />
           </div>
@@ -146,7 +163,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
           <div>
             <label 
               htmlFor="subject" 
-              className={`block mb-2 text-sm font-medium ${dark ? 'text-earth-lighter' : 'text-earth-dark'}`}
+              className="block mb-2 text-sm font-medium text-white"
             >
               Subject
             </label>
@@ -156,11 +173,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
               value={formState.subject}
               onChange={handleChange}
               required
-              className={`w-full p-3 rounded-md border focus:ring-gold focus:border-gold ${
-                dark 
-                  ? 'bg-earth-dark border-earth text-white placeholder-earth-light' 
-                  : 'bg-white border-earth-lighter text-foreground'
-              }`}
+              className="w-full p-3 rounded-md border bg-earth-dark border-earth text-white placeholder-earth-light focus:ring-gold focus:border-gold"
             >
               <option value="">Select a subject</option>
               <option value="Real Estate Inquiry">Real Estate Inquiry</option>
@@ -174,7 +187,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
         <div>
           <label 
             htmlFor="message" 
-            className={`block mb-2 text-sm font-medium ${dark ? 'text-earth-lighter' : 'text-earth-dark'}`}
+            className="block mb-2 text-sm font-medium text-white"
           >
             Message
           </label>
@@ -185,11 +198,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
             onChange={handleChange}
             required
             rows={5}
-            className={`w-full p-3 rounded-md border focus:ring-gold focus:border-gold ${
-              dark 
-                ? 'bg-earth-dark border-earth text-white placeholder-earth-light' 
-                : 'bg-white border-earth-lighter text-foreground'
-            }`}
+            className="w-full p-3 rounded-md border bg-earth-dark border-earth text-white placeholder-earth-light focus:ring-gold focus:border-gold"
             placeholder="How can we help you?"
           ></textarea>
         </div>
