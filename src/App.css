@@ -60,13 +60,21 @@
   transform: translateY(-5px);
 }
 
-/* Text visibility fixes */
+/* Text visibility fixes - ensuring dark text on white backgrounds */
 p, h1, h2, h3, h4, h5, h6, label, span, a {
   color: #fff;
 }
 
+.bg-white p, .bg-white span, .bg-white h1, .bg-white h2, .bg-white h3, .bg-white h4, .bg-white h5, .bg-white h6, .bg-white label, .bg-white a {
+  color: #333;
+}
+
 p.text-black, span.text-black, div.text-black {
-  color: #fff !important;
+  color: #333 !important;
+}
+
+.bg-white .text-earth, .bg-white .text-earth-dark, .bg-white .text-earth-light, .bg-white .text-earth-lighter {
+  color: #333 !important;
 }
 
 .text-earth, .text-earth-dark, .text-earth-light, .text-earth-lighter {

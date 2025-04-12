@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import MainLayout from '@/components/MainLayout';
@@ -127,7 +128,7 @@ const Index = () => {
 
   return (
     <MainLayout>
-      {/* Hero Section with updated styling */}
+      {/* Updated Hero Section with reformatted content */}
       <section className="hero-container">
         <div className="hero-overlay"></div>
         <div className="hero-image-container">
@@ -140,7 +141,6 @@ const Index = () => {
         </div>
         <div className="hero-content">
           <div className="max-w-2xl">
-            <h5 className="text-gold mb-3 tracking-wider font-medium reveal">EXCELLENCE PERSONIFIED</h5>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight reveal">
               <span className="text-white">Transform Your </span>
               <span className="gold-gradient">Vision</span><br />

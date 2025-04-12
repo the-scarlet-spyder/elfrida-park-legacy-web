@@ -34,7 +34,7 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
     setActiveIndex((current) => (current === 0 ? testimonials.length - 1 : current - 1));
   };
   
-  // Auto-slide functionality
+  // Auto-slide functionality - always enabled
   useEffect(() => {
     if (!isPaused && testimonials.length > 1) {
       const interval = setInterval(() => {
@@ -46,8 +46,10 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
     return undefined;
   }, [isPaused, nextSlide, testimonials.length, autoSlideInterval]);
   
-  // Display at least 3 testimonials
-  const displayedTestimonials = testimonials.slice(0, Math.max(3, testimonials.length));
+  // Ensure we have at least 3 testimonials
+  const displayedTestimonials = testimonials.length < 3
+    ? [...testimonials, ...testimonials, ...testimonials].slice(0, 3)
+    : testimonials;
   
   return (
     <div 
