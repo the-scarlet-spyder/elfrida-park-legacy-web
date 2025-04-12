@@ -58,7 +58,7 @@ const Navbar = () => {
       )}
     >
       <div className="container-custom flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center">
           <img 
             src="/lovable-uploads/ebd4b774-c523-499b-8523-ec2e0b49f0fb.png" 
             alt="Elfrida Limited" 

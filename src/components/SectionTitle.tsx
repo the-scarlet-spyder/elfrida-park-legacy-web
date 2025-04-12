@@ -29,7 +29,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
     )}>
       <h2 className={cn(
         'section-title relative inline-block',
-        'text-white gold-gradient',
+        'gold-gradient',
         'after:content-[""] after:block after:w-1/3 after:h-[2px] after:bg-gold after:mt-2'
       )}>
         {title}
@@ -40,7 +40,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
           'mt-4 max-w-2xl',
           align === 'center' && 'mx-auto',
           align === 'right' && 'ml-auto',
-          'text-white/80',
+          'text-white/90',
           subtitleClassName
         )}>
           {subtitle}

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import MainLayout from '@/components/MainLayout';
@@ -128,25 +127,26 @@ const Index = () => {
 
   return (
     <MainLayout>
-      {/* Hero Section inspired by reference image */}
+      {/* Hero Section with updated styling */}
       <section className="hero-container">
         <div className="hero-overlay"></div>
         <div className="hero-image-container">
           <img 
-            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2000" 
+            src="https://images.unsplash.com/photo-1460574283810-2aab119d8511?q=80&w=2000" 
             alt="Luxury Property" 
             className="hero-image"
+            style={{objectPosition: "center 30%"}}
           />
         </div>
         <div className="hero-content">
           <div className="max-w-2xl">
-            <h5 className="text-gold mb-3 tracking-wider font-medium reveal">ELFRIDA LIMITED</h5>
+            <h5 className="text-gold mb-3 tracking-wider font-medium reveal">EXCELLENCE PERSONIFIED</h5>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight reveal">
-              <span className="text-white">Masters of </span>
-              <span className="gold-gradient">Excellence</span> and
-              <span className="gold-gradient block mt-2">Value Creation.</span>
+              <span className="text-white">Transform Your </span>
+              <span className="gold-gradient">Vision</span><br />
+              <span className="gold-gradient">Into Reality</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-ash-light reveal max-w-xl">
+            <p className="text-xl md:text-2xl mb-8 text-white/90 reveal max-w-xl leading-relaxed">
               Integrated solutions in Real Estate, Event Management, and Strategic Advisory Services.
             </p>
             <div className="flex flex-col sm:flex-row items-start gap-4 reveal">
@@ -296,4 +296,3 @@ const Index = () => {
 };
 
 export default Index;
-

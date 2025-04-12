@@ -35,7 +35,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           {title}
         </h3>
         
-        <p className="text-ash-light mb-6 text-center md:text-left flex-grow">
+        <p className="text-white/90 mb-6 text-center md:text-left flex-grow">
           {description}
         </p>
         
