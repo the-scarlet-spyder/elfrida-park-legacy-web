@@ -96,14 +96,23 @@ const RealEstate = () => {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-b from-black-light to-black relative">
-        <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2000')] bg-cover bg-center"></div>
-        <div className="container-custom relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair reveal gold-gradient gold-glow">
-              Real Estate Solutions
+      <section className="hero-container">
+        <div className="hero-overlay"></div>
+        <div className="hero-image-container">
+          <img 
+            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2000" 
+            alt="Luxury Property" 
+            className="hero-image"
+          />
+        </div>
+        <div className="hero-content">
+          <div className="max-w-2xl">
+            <h5 className="text-gold mb-3 tracking-wider font-medium reveal">EXPERTISE & EXCELLENCE</h5>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight reveal">
+              <span className="text-white">Real Estate</span>
+              <span className="gold-gradient block mt-2">Solutions</span>
             </h1>
-            <p className="text-xl mb-8 text-ash-light reveal">
+            <p className="text-xl mb-8 text-ash-light reveal max-w-xl">
               Discover exceptional properties and comprehensive real estate services tailored to your unique needs.
             </p>
             <Link to="/contact" className="btn-primary reveal hover:shadow-gold/20 hover:shadow-md">
@@ -114,7 +123,7 @@ const RealEstate = () => {
       </section>
       
       {/* Services Section */}
-      <section className="py-20 bg-black-light">
+      <section className="service-section">
         <div className="container-custom">
           <SectionTitle 
             title="Our Real Estate Services" 
@@ -124,10 +133,12 @@ const RealEstate = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {services.map((service, index) => (
-              <div key={index} className="p-8 border border-ash-dark/30 glass-card rounded-lg hover:shadow-md hover:shadow-gold/10 transition-all reveal">
-                <div className="flex items-center mb-4">
-                  {service.icon}
-                  <h3 className="text-xl font-semibold ml-3 group-hover:text-gold transition-colors">{service.title}</h3>
+              <div key={index} className="glass-card p-8 hover:shadow-gold/10 hover:border-gold/30 transition-all reveal">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 rounded-full bg-black-light/80 border border-gold/20 flex items-center justify-center">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold ml-4 group-hover:text-gold transition-colors">{service.title}</h3>
                 </div>
                 <p className="text-ash-light">{service.description}</p>
               </div>
@@ -137,7 +148,7 @@ const RealEstate = () => {
       </section>
       
       {/* Featured Properties */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-black-light">
         <div className="container-custom">
           <SectionTitle 
             title="Featured Properties" 
@@ -156,7 +167,7 @@ const RealEstate = () => {
       </section>
       
       {/* Why Choose Us */}
-      <section className="py-20 bg-black-light">
+      <section className="py-20 bg-black">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal">
@@ -191,7 +202,7 @@ const RealEstate = () => {
                   alt="Luxury Building" 
                   className="rounded-lg shadow-lg w-full h-auto"
                 />
-                <div className="absolute -bottom-6 -left-6 bg-black-light p-6 rounded-lg shadow-lg border border-gold/20 max-w-xs">
+                <div className="absolute -bottom-6 -left-6 glass-card p-6 rounded-lg shadow-lg border border-gold/20 max-w-xs">
                   <p className="text-ash-light italic">
                     "Elfrida Limited helped us find our dream home with unparalleled professionalism and attention to detail."
                   </p>
@@ -206,7 +217,7 @@ const RealEstate = () => {
       </section>
       
       {/* Contact Form */}
-      <section id="contact-form" className="py-20 bg-black text-white">
+      <section id="contact-form" className="py-20 bg-black-light text-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="reveal">

@@ -21,15 +21,17 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
   return (
     <div className={cn(
-      "glass-card p-8 hover:shadow-gold/10 hover:shadow-xl transition-all duration-300 group",
+      "glass-card p-8 hover:shadow-gold/10 hover:shadow-xl hover:border-gold/30 transition-all duration-300 group",
       className
     )}>
       <div className="flex flex-col h-full">
-        <div className="text-gold mb-4 flex justify-center md:justify-start">
-          {icon}
+        <div className="text-gold mb-6 flex justify-center md:justify-start">
+          <div className="w-16 h-16 rounded-full bg-black-light/80 border border-gold/20 flex items-center justify-center">
+            {icon}
+          </div>
         </div>
         
-        <h3 className="text-xl md:text-2xl font-semibold mb-3 text-center md:text-left group-hover:text-gold transition-colors">
+        <h3 className="text-xl md:text-2xl font-semibold mb-4 text-center md:text-left group-hover:text-gold transition-colors">
           {title}
         </h3>
         

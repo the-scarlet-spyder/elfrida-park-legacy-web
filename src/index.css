@@ -46,7 +46,7 @@
   }
   
   body {
-    @apply bg-black text-ash-lighter antialiased;
+    @apply bg-black text-white antialiased;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -72,7 +72,7 @@
   }
   
   .section-subtitle {
-    @apply text-xl text-ash-light font-medium mb-12 max-w-2xl;
+    @apply text-xl text-white/80 font-medium mb-12 max-w-2xl;
   }
   
   .section-padding {
@@ -133,3 +133,80 @@
 .glass-card {
   @apply bg-black-light/70 backdrop-blur-md border border-ash-dark/30 rounded-lg shadow-lg;
 }
+
+/* Hero section inspired by the reference image */
+.hero-container {
+  @apply relative overflow-hidden h-screen flex items-center bg-gradient-to-r from-black to-black-light;
+}
+
+.hero-content {
+  @apply container-custom z-20 relative;
+}
+
+.hero-image-container {
+  @apply absolute top-0 right-0 w-full lg:w-3/5 h-full z-10 overflow-hidden;
+}
+
+.hero-image {
+  @apply w-full h-full object-cover opacity-80;
+}
+
+.hero-overlay {
+  @apply absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent z-10;
+}
+
+.hero-stats {
+  @apply mt-12 grid grid-cols-3 gap-8 max-w-xl border-t border-gold/30 pt-8;
+}
+
+.hero-stat {
+  @apply text-center;
+}
+
+.hero-stat-number {
+  @apply text-3xl md:text-4xl font-bold text-gold mb-1;
+}
+
+.hero-stat-label {
+  @apply text-xs md:text-sm text-ash-light;
+}
+
+/* Service page consistent styling */
+.service-section {
+  @apply py-20 bg-black;
+}
+
+.service-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+.service-card {
+  @apply glass-card p-8 hover:shadow-gold/20 hover:border-gold/30 transition-all duration-300;
+}
+
+.service-icon {
+  @apply text-gold mb-4 w-12 h-12 flex items-center justify-center rounded-full bg-black-light border border-gold/20;
+}
+
+.service-title {
+  @apply text-xl font-semibold mb-3 text-white;
+}
+
+.service-description {
+  @apply text-ash-light;
+}
+
+/* Updated feature section */
+.feature-section {
+  @apply py-20 bg-black-light relative overflow-hidden;
+}
+
+.feature-bg {
+  @apply absolute inset-0 opacity-10;
+  background-image: radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 40%);
+}
+
+.feature-content {
+  @apply container-custom relative z-10;
+}
+
