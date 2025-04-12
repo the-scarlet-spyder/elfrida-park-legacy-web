@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -12,10 +13,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #D4AF37);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #D4AF37);
 }
 
 @keyframes logo-spin {
@@ -39,4 +40,22 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Add enhancing styles */
+.gold-border {
+  border: 1px solid #D4AF37;
+}
+
+.gold-shadow {
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
+}
+
+.gold-hover:hover {
+  color: #D4AF37;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
 }
