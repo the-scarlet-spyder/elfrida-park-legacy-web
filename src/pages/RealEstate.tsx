@@ -24,17 +24,16 @@ const PropertyCard = ({ image, title, location, size, type, price, link }: {
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
-     <div className="p-6">
-  <h3 className="text-xl font-semibold mb-2 font-playfair">{title}</h3>
-  <p className="text-earth mb-2"><strong>Location:</strong> {location}</p>
-  <p className="text-earth mb-2"><strong>Size:</strong> {size}</p>
-  <p className="text-earth mb-2"><strong>Type:</strong> {type}</p>
-  <div className="flex justify-between items-center mb-4">
-    <span className="text-sm text-earth-dark px-3 py-1 bg-earth-lightest rounded-full">{type}</span>
-    <span className="font-medium text-gold">{price}</span>
-  </div>
-  <Link to={link} className="btn-secondary w-full text-center">Contact Us</Link>
-</div>
+      <div className="p-6">
+        <h3 className="text-xl font-semibold mb-2 font-playfair">{title}</h3>
+        <p className="text-earth mb-2">{location}</p>
+        <p className="text-earth mb-2"><strong>Size:</strong> {size}</p>
+        <div className="flex justify-between items-center mb-4">
+          <span className="text-sm text-earth-dark px-3 py-1 bg-earth-lightest rounded-full">{type}</span>
+          <span className="font-medium text-gold">{price}</span>
+        </div>
+        <Link to={link} className="btn-secondary w-full text-center">View Details</Link>
+      </div>
     </div>
   );
 };
