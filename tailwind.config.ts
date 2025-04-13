@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -34,21 +33,16 @@ export default {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         gold: {
-          DEFAULT: '#C5A56F',
-          light: '#D9BE94',
-          dark: '#A48A5A',
+          DEFAULT: '#D4AF37',
+          light: '#E5C76B',
+          dark: '#B3911C',
         },
-        royal: {
-          DEFAULT: '#1E3A8A',
-          light: '#2563EB',
-          dark: '#1E3A5F',
-        },
-        earth: {
-          DEFAULT: '#8B735A',
-          light: '#A89078',
-          dark: '#5F4D3D',
-          lighter: '#D6CBC0',
-          lightest: '#EAE5E0',
+        darkgrey: {
+          DEFAULT: '#333333',
+          light: '#555555',
+          dark: '#222222',
+          lightest: '#777777',
+          lighter: '#666666',
         },
         primary: {
           DEFAULT: 'hsl(var(--primary))',
@@ -77,6 +71,19 @@ export default {
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'
+        },
+        // Keep earth colors for backwards compatibility
+        earth: {
+          DEFAULT: '#8B735A',
+          light: '#A89078',
+          dark: '#5F4D3D',
+          lighter: '#D6CBC0',
+          lightest: '#EAE5E0',
+        },
+        royal: {
+          DEFAULT: '#1E3A8A',
+          light: '#2563EB',
+          dark: '#1E3A5F',
         },
       },
       borderRadius: {

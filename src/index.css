@@ -8,33 +8,33 @@
 
 @layer base {
   :root {
-    --background: 30 33% 98%;
-    --foreground: 30 10% 15%;
+    --background: 0 0% 13%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 30 10% 15%;
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 30 10% 15%;
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 37 45% 60%;
+    --primary: 46 65% 52%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 70% 33%;
+    --secondary: 0 0% 20%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 30 5% 96%;
-    --muted-foreground: 30 5% 45%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 220 70% 33%;
+    --accent: 46 65% 52%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 30 15% 90%;
-    --input: 30 15% 90%;
-    --ring: 37 45% 60%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 46 65% 52%;
 
     --radius: 0.5rem;
   }
@@ -46,11 +46,11 @@
   }
   
   body {
-    @apply bg-background text-foreground font-inter antialiased;
+    @apply bg-darkgrey text-foreground font-inter antialiased;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-playfair font-medium;
+    @apply font-playfair font-medium text-gold;
   }
 }
 
@@ -60,7 +60,7 @@
   }
   
   .btn-primary {
-    @apply bg-gold text-white hover:bg-gold-dark px-6 py-3 rounded-md transition-all duration-300 inline-flex items-center justify-center font-medium;
+    @apply bg-gold text-darkgrey hover:bg-gold-dark px-6 py-3 rounded-md transition-all duration-300 inline-flex items-center justify-center font-medium;
   }
   
   .btn-secondary {
@@ -68,11 +68,11 @@
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-playfair;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-playfair text-gold;
   }
   
   .section-subtitle {
-    @apply text-xl text-earth font-medium mb-12 max-w-2xl;
+    @apply text-xl text-white font-medium mb-12 max-w-2xl;
   }
   
   .section-padding {

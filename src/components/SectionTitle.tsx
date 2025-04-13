@@ -29,7 +29,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
     )}>
       <h2 className={cn(
         'section-title relative inline-block',
-        light && 'text-white',
+        light ? 'text-gold-light' : 'text-gold',
         'after:content-[""] after:block after:w-2/3 after:h-[3px] after:bg-gold after:mt-2'
       )}>
         {title}
@@ -37,10 +37,10 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
       
       {subtitle && (
         <p className={cn(
-          'mt-4 max-w-2xl mx-auto',
+          'mt-4 max-w-2xl',
           align === 'center' && 'mx-auto',
           align === 'right' && 'ml-auto',
-          light ? 'text-earth-lightest' : 'text-earth',
+          light ? 'text-white' : 'text-darkgrey-lightest',
           subtitleClassName
         )}>
           {subtitle}

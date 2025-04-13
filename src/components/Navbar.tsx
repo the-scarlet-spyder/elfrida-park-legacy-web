@@ -54,7 +54,7 @@ const Navbar = () => {
     <nav 
       className={cn(
         "fixed top-0 left-0 w-full z-50 transition-all duration-300 py-3",
-        isScrolled ? "bg-white/90 backdrop-blur-md shadow-md" : "bg-transparent"
+        isScrolled ? "bg-darkgrey/90 backdrop-blur-md shadow-md" : "bg-transparent"
       )}
     >
       <div className="container-custom flex justify-between items-center">
@@ -76,7 +76,7 @@ const Navbar = () => {
                     onClick={() => toggleDropdown(link.name)}
                     className={cn(
                       "flex items-center gap-1 px-2 py-1 text-sm font-medium",
-                      isScrolled ? "text-foreground" : "text-white",
+                      "text-white hover:text-gold",
                       activeDropdown === link.name ? "text-gold" : ""
                     )}
                   >
@@ -84,7 +84,7 @@ const Navbar = () => {
                     <ChevronDown size={16} />
                   </button>
                   <div className={cn(
-                    "absolute top-full left-0 w-48 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-300 transform origin-top",
+                    "absolute top-full left-0 w-48 bg-darkgrey shadow-lg rounded-md overflow-hidden transition-all duration-300 transform origin-top",
                     activeDropdown === link.name ? "scale-100 opacity-100" : "scale-95 opacity-0 pointer-events-none"
                   )}>
                     {link.children.map((child, idx) => (
@@ -92,7 +92,7 @@ const Navbar = () => {
                         key={idx}
                         to={child.path}
                         onClick={closeMenu}
-                        className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                        className="block px-4 py-2 text-sm text-white hover:text-gold hover:bg-darkgrey-light transition-colors"
                       >
                         {child.name}
                       </Link>
@@ -102,10 +102,7 @@ const Navbar = () => {
               ) : (
                 <Link 
                   to={link.path}
-                  className={cn(
-                    "px-2 py-1 text-sm font-medium",
-                    isScrolled ? "text-foreground hover:text-gold" : "text-white hover:text-gold-light"
-                  )}
+                  className="px-2 py-1 text-sm font-medium text-white hover:text-gold"
                 >
                   {link.name}
                 </Link>
@@ -118,14 +115,14 @@ const Navbar = () => {
         </div>
         
         {/* Mobile Nav Toggle */}
-        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-foreground">
+        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-white">
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
       
       {/* Mobile Nav */}
       <div className={cn(
-        "fixed inset-0 bg-white z-40 pt-20 pb-6 px-4 transition-transform duration-300 lg:hidden overflow-y-auto",
+        "fixed inset-0 bg-darkgrey z-40 pt-20 pb-6 px-4 transition-transform duration-300 lg:hidden overflow-y-auto",
         isOpen ? "translate-x-0" : "translate-x-full"
       )}>
         <div className="flex flex-col space-y-4">
@@ -135,7 +132,7 @@ const Navbar = () => {
                 <div>
                   <button 
                     onClick={() => toggleDropdown(link.name)}
-                    className="flex items-center justify-between w-full py-2 text-lg font-medium text-foreground"
+                    className="flex items-center justify-between w-full py-2 text-lg font-medium text-white"
                   >
                     <span>{link.name}</span>
                     <ChevronDown 
@@ -155,7 +152,7 @@ const Navbar = () => {
                         key={idx}
                         to={child.path}
                         onClick={closeMenu}
-                        className="block py-2 text-foreground/80 hover:text-gold"
+                        className="block py-2 text-white hover:text-gold"
                       >
                         {child.name}
                       </Link>
@@ -166,7 +163,7 @@ const Navbar = () => {
                 <Link 
                   to={link.path}
                   onClick={closeMenu}
-                  className="block py-2 text-lg font-medium text-foreground hover:text-gold"
+                  className="block py-2 text-lg font-medium text-white hover:text-gold"
                 >
                   {link.name}
                 </Link>
