@@ -65,24 +65,24 @@ const RealEstate = () => {
     }
   ];
   
-  const featuredProperties = [
-    {
-      image: "https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?q=80&w=1000",
-      title: "Prime Land Plot - Guzape Heights",
-      location: "Guzape District, Abuja",
-      type: "Land",
-      price: "₦85,000,000",
-      link: "/contact"
-    },
-    {
-      image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=1000",
-      title: "Exclusive Land Plot - Guzape Valley",
-      location: "Guzape District, Abuja",
-      type: "Land",
-      price: "₦92,000,000",
-      link: "/contact"
-    }
-  ];
+ const featuredProperties = [
+  {
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000", // Consider updating to a relevant image later
+    title: "Exclusive Prime Land – Apo-Tafyi, Abuja",
+    location: "Apo-Tafyi, Abuja",
+    type: "Land – 47.9 Hectares",
+    price: "₦7.5 Billion (Slightly Negotiable)",
+    link: "/contact"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1594673213454-5e4b9d2b6e8a?q=80&w=1000", // Consider updating to a relevant image later
+    title: "Exclusive Prime Land – Guzape II, Abuja",
+    location: "Guzape II, Abuja",
+    type: "Land – 20 Hectares",
+    price: "₦5 Billion (Slightly Negotiable)",
+    link: "/contact"
+  }
+];
   
   const benefits = [
     "Access to exclusive property listings",
