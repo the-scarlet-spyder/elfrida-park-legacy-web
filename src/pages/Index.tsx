@@ -101,7 +101,7 @@ const Index = () => {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="h-screen relative flex items-center bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000')] bg-cover bg-center">
+      <section className="h-screen relative flex items-center bg-[url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1000')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="container-custom relative z-10 text-white">
           <div className="max-w-3xl mx-auto text-center">
