@@ -1,13 +1,16 @@
+
 import React from 'react';
 import MainLayout from '@/components/MainLayout';
 import SectionTitle from '@/components/SectionTitle';
 import { CheckCircle, Target, Eye, Star, Layers, Shield, Award, Users, Gem, Heart, Church } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 interface TeamMemberProps {
   name: string;
   position: string;
   image: string;
 }
+
 const TeamMember: React.FC<TeamMemberProps> = ({
   name,
   position,
@@ -21,6 +24,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({
       <p className="text-black">{position}</p>
     </div>
   </div>;
+
 const About = () => {
   const teamMembers = [{
     name: "Oluwaseun Adeyemi",
@@ -39,6 +43,7 @@ const About = () => {
     position: "Director of Advisory Services",
     image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?q=80&w=1000"
   }];
+  
   const values = [{
     title: "Divine Inspiration",
     description: "We act with a higher purpose in mind",
@@ -64,10 +69,11 @@ const About = () => {
     description: "We support your journey at every stage",
     icon: <Gem size={32} className="text-gold" />
   }];
+  
   const milestones = [{
     year: 2015,
     title: "Company Founded",
-    description: "Elfrida Limited was established with a vision to deliver integrated solutions in real estate and advisory services."
+    description: "Elfrida Park Limited was established with a vision to deliver integrated solutions in real estate and advisory services."
   }, {
     year: 2017,
     title: "Event Management Division",
@@ -85,16 +91,17 @@ const About = () => {
     title: "Portfolio Expansion",
     description: "Significantly grew our real estate portfolio and expanded client base across West Africa."
   }];
+  
   return <MainLayout>
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-b from-earth-dark to-earth">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center text-black">
+          <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair gold-gradient reveal">
-              About Elfrida Limited
+              About Elfrida Park Limited
             </h1>
-            <p className="text-xl mb-8 text-black/90 reveal">
-              Our story, our mission, and the values that drive us to nurture dreams and build legacies.
+            <p className="text-xl mb-8 text-black reveal">
+              Our story, our mission, and the values that drive us at Elfrida's to nurture dreams and build legacies.
             </p>
           </div>
         </div>
@@ -108,7 +115,7 @@ const About = () => {
               <SectionTitle title="Our Story" subtitle="Founded with a vision to transform industries through purpose-driven excellence." align="left" className="mb-8" />
               
               <p className="text-black mb-6">
-                Elfrida Limited is a dynamic, people-first company built on a foundation of purpose, integrity, and innovation. We offer integrated solutions across Real Estate, Event Management, and Strategic Advisory Services — designed to empower individuals, elevate businesses, and drive sustainable growth.
+                Elfrida Park Limited is a dynamic, people-first company built on a foundation of purpose, integrity, and innovation. At Elfrida's, we offer integrated solutions across Real Estate, Event Management, and Strategic Advisory Services — designed to empower individuals, elevate businesses, and drive sustainable growth.
               </p>
               
               <p className="text-black mb-6">
@@ -116,12 +123,12 @@ const About = () => {
               </p>
               
               <p className="text-black">
-                With a growing reputation for excellence, impact, and trust, we have become a preferred partner to both local and international clients who seek meaningful, tailored experiences and results. At Elfrida Limited, we don't just provide services — we build stories, create memories, and catalyze generational transformation.
+                With a growing reputation for excellence, impact, and trust, we have become a preferred partner to both local and international clients who seek meaningful, tailored experiences and results. At Elfrida's, we don't just provide services — we build stories, create memories, and catalyze generational transformation.
               </p>
             </div>
             
             <div className="reveal">
-              <img src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?q=80&w=1000" alt="Elfrida Limited Building" className="rounded-lg shadow-lg" />
+              <img src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?q=80&w=1000" alt="Elfrida Park Limited Building" className="rounded-lg shadow-lg" />
             </div>
           </div>
         </div>
@@ -180,7 +187,7 @@ const About = () => {
       {/* Our Journey Timeline */}
       <section className="py-20 bg-earth-lightest">
         <div className="container-custom">
-          <SectionTitle title="Our Journey" subtitle="Key milestones in the evolution of Elfrida Limited." className="reveal" />
+          <SectionTitle title="Our Journey" subtitle="Key milestones in the evolution of Elfrida Park Limited." className="reveal" />
           
           <div className="relative mt-16">
             {/* Timeline Line */}
@@ -207,47 +214,41 @@ const About = () => {
       {/* Team Section */}
       <section className="py-20 bg-white">
         <div className="container-custom">
-          <SectionTitle title="Our Leadership Team" subtitle="Meet the experienced professionals guiding Elfrida Limited's vision and operations." className="reveal" />
+          <SectionTitle title="Our Leadership Team" subtitle="Meet the experienced professionals guiding Elfrida's vision and operations." className="reveal" />
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             {teamMembers.map((member, index) => 
-              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all text-center group reveal">
-                <div className="aspect-square overflow-hidden">
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold font-playfair gold-gradient">{member.name}</h3>
-                  <p className="text-black">{member.position}</p>
-                </div>
-              </div>
+              <TeamMember key={index} name={member.name} position={member.position} image={member.image} />
             )}
           </div>
         </div>
       </section>
       
       {/* Approach Section */}
-      <section className="py-20 bg-gradient-to-r from-royal to-royal-light text-white">
+      <section className="py-20 bg-gradient-to-r from-royal to-royal-light">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal">
               <SectionTitle title="Our Approach: D.I.P.P.E.N." subtitle="The methodology that defines how we deliver excellence across all our services." align="left" light={true} className="mb-8" />
               
               <div className="space-y-6">
-                
                 <div className="flex items-start">
                   <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-medium mb-1 gold-gradient">Divine Inspiration</h4>
-                    <p className="text-black/80">We act with a higher purpose in mind, guided by principles that transcend mere business interests.</p>
+                    <p className="text-white">
+                      We act with a higher purpose in mind, guided by principles that transcend mere business interests.
+                    </p>
                   </div>
                 </div>
-                
                 
                 <div className="flex items-start">
                   <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-medium mb-1 gold-gradient">Integrity First</h4>
-                    <p className="text-black/80">We maintain transparency, honesty, and trustworthiness in all our dealings and relationships.</p>
+                    <p className="text-white">
+                      We maintain transparency, honesty, and trustworthiness in all our dealings and relationships.
+                    </p>
                   </div>
                 </div>
                 
@@ -255,7 +256,9 @@ const About = () => {
                   <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-medium mb-1 gold-gradient">Passion-Driven</h4>
-                    <p className="text-black/80">We're emotionally invested in your success, bringing enthusiasm and dedication to every project.</p>
+                    <p className="text-white">
+                      We're emotionally invested in your success, bringing enthusiasm and dedication to every project.
+                    </p>
                   </div>
                 </div>
                 
@@ -263,7 +266,9 @@ const About = () => {
                   <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-medium mb-1 gold-gradient">People-Centric</h4>
-                    <p className="text-black/80">We view our clients as partners, not transactions, focusing on building meaningful relationships.</p>
+                    <p className="text-white">
+                      We view our clients as partners, not transactions, focusing on building meaningful relationships.
+                    </p>
                   </div>
                 </div>
                 
@@ -271,7 +276,9 @@ const About = () => {
                   <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-medium mb-1 gold-gradient">Excellence Always</h4>
-                    <p className="text-black/80">High standards are our baseline, and we continuously strive to exceed expectations.</p>
+                    <p className="text-white">
+                      High standards are our baseline, and we continuously strive to exceed expectations.
+                    </p>
                   </div>
                 </div>
                 
@@ -279,7 +286,9 @@ const About = () => {
                   <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-medium mb-1 gold-gradient">Nurturing Growth</h4>
-                    <p className="text-black/80">We support your journey at every stage, fostering sustainable development and advancement.</p>
+                    <p className="text-white">
+                      We support your journey at every stage, fostering sustainable development and advancement.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -300,12 +309,12 @@ const About = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-20 bg-earth-dark text-white text-center">
+      <section className="py-20 bg-earth-dark">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto reveal">
+          <div className="max-w-3xl mx-auto reveal text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 font-playfair gold-gradient">Ready to Partner with Us?</h2>
-            <p className="text-xl mb-8 text-black/80">
-              Let us help you nurture your dreams and build lasting legacies. Get in touch today.
+            <p className="text-white mb-8">
+              Let us help you nurture your dreams and build lasting legacies. Get in touch with Elfrida's today.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link to="/contact" className="btn-primary">

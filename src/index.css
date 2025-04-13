@@ -289,15 +289,45 @@
 
 /* Text visibility fixes */
 p, h1, h2, h3, h4, h5, h6, label, span, a {
-  color: #fff;
+  @apply text-white;
 }
 
-p.text-black, span.text-black, div.text-black {
-  color: #fff !important;
+.bg-white p, 
+.bg-white span, 
+.bg-white div, 
+.bg-white label, 
+.bg-earth-lightest p, 
+.bg-earth-lightest span, 
+.bg-earth-lightest div, 
+.bg-earth-lightest label {
+  @apply text-black;
 }
 
-.text-earth, .text-earth-dark, .text-earth-light, .text-earth-lighter {
-  color: rgba(255, 255, 255, 0.9) !important;
+h1.gold-gradient, 
+h2.gold-gradient, 
+h3.gold-gradient, 
+h4.gold-gradient, 
+h5.gold-gradient, 
+h6.gold-gradient {
+  background: linear-gradient(to right, #D4AF37, #F2D87A, #D4AF37);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Fix for blue or royal gradients sections */
+.bg-gradient-to-r.from-royal p,
+.bg-gradient-to-b.from-royal p,
+.bg-royal p,
+.bg-royal-light p {
+  @apply text-white;
+}
+
+/* Fix for dark backgrounds where text needs to be white */
+.bg-earth-dark p,
+.bg-black p,
+.bg-black-dark p {
+  @apply text-white;
 }
 
 /* Shimmer effect for elements */
