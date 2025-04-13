@@ -19,6 +19,7 @@ const properties = {
     description: "Strategic land in the fast-developing Apo-Tafyi axis – perfect for residential estates, commercial hubs, or institutional projects. With excellent road access and great development potential, this is a prime investment in one of Abuja's growing areas.",
     contact: {
       company: "Elfrida Park Ltd.",
+      address: "Elfrida's Suite, No 235 RIVTAF Shopping Complex (Golf Estate), Off Peter Odili Road, Port Harcourt, Rivers State",
       phone: "+2347044414004",
       email: "info@elfridas.com",
       website: "www.elfridas.com",
