@@ -33,10 +33,8 @@ const PropertyCard = ({ image, title, location, size, type, price, link }: {
     <span className="text-sm text-earth-dark px-3 py-1 bg-earth-lightest rounded-full">{type}</span>
     <span className="font-medium text-gold">{price}</span>
   </div>
-  <Link to={link} className="btn-secondary w-full text-center">View Details</Link>
+  <Link to={link} className="btn-secondary w-full text-center">Contact Us</Link>
 </div>
-        <Link to={link} className="btn-secondary w-full text-center">View Details</Link>
-      </div>
     </div>
   );
 };
