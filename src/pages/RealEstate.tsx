@@ -6,10 +6,11 @@ import ContactForm from '@/components/ContactForm';
 import { CheckCircle, Home, Building, Landmark, ArrowRight, Leaf, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const PropertyCard = ({ image, title, location, type, price, link }: {
+const PropertyCard = ({ image, title, location, size, type, price, link }: {
   image: string;
   title: string;
   location: string;
+  size: string;
   type: string;
   price: string;
   link: string;
@@ -26,6 +27,7 @@ const PropertyCard = ({ image, title, location, type, price, link }: {
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2 font-playfair">{title}</h3>
         <p className="text-earth mb-2">{location}</p>
+        <p className="text-earth mb-2">{size}</p>
         <div className="flex justify-between items-center mb-4">
           <span className="text-sm text-earth-dark px-3 py-1 bg-earth-lightest rounded-full">{type}</span>
           <span className="font-medium text-gold">{price}</span>
@@ -70,6 +72,7 @@ const RealEstate = () => {
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000", // Consider updating to a relevant image later
     title: "Exclusive Prime Land",
     location: "Apo-Tafyi, Abuja",
+    size:"47.9 Hectares",
     type: "Land",
     price: "₦7.5 Billion",
     link: "/contact"
@@ -78,6 +81,7 @@ const RealEstate = () => {
     image: "https://images.unsplash.com/photo-1594673213454-5e4b9d2b6e8a?q=80&w=1000", // Consider updating to a relevant image later
     title: "Exclusive Prime Land",
     location: "Guzape II, Abuja",
+    size:"20 Hectares",
     type: "Land",
     price: "₦5 Billion",
     link: "/contact"
