@@ -15,12 +15,12 @@ const Footer = () => {
             <Link to="/" className="inline-block">
               <img 
                 src="/lovable-uploads/ebd4b774-c523-499b-8523-ec2e0b49f0fb.png" 
-                alt="Elfrida Limited" 
+                alt="Elfrida Park Limited" 
                 className="h-12 mb-4" 
               />
             </Link>
             <p className="text-ash-light text-sm leading-relaxed">
-              Nurturing Dreams, Building Legacies. Elfrida Limited offers integrated solutions in Real Estate, Event Management, and Strategic Advisory Services.
+              Nurturing Dreams, Building Legacies. At Elfrida's, we offer integrated solutions in Real Estate, Event Management, and Strategic Advisory Services.
             </p>
             <div className="flex items-center space-x-4 pt-2">
               <a href="https://www.instagram.com/elfridasltd" target="_blank" rel="noopener noreferrer" className="text-ash-light hover:text-gold transition-colors">
@@ -81,7 +81,7 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <MapPin size={20} className="text-gold mt-1 flex-shrink-0" />
                 <span className="text-ash-light">
-                  123 Lagos Business District, Victoria Island, Lagos, Nigeria
+                  Elfrida's Suite, No 235 RIVTAF Shopping Complex (Golf Estate), Off Peter Odili Road, Port Harcourt, Rivers State
                 </span>
               </li>
               <li className="flex items-center space-x-3">
@@ -131,7 +131,7 @@ const Footer = () => {
         <div className="border-t border-ash-dark/30 mt-12 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-ash-light text-sm">
-              © {currentYear} Elfrida Limited. All rights reserved.
+              © {currentYear} Elfrida Park Limited. All rights reserved.
             </p>
             <div className="flex space-x-4 mt-4 md:mt-0">
               <Link to="/privacy-policy" className="text-ash-light hover:text-gold text-sm">

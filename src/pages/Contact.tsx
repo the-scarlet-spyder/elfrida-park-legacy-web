@@ -1,4 +1,3 @@
-
 import React from 'react';
 import MainLayout from '@/components/MainLayout';
 import SectionTitle from '@/components/SectionTitle';
@@ -59,9 +58,9 @@ const Contact = () => {
                   title="Visit Us"
                   content={
                     <p>
-                      123 Lagos Business District<br />
-                      Victoria Island, Lagos<br />
-                      Nigeria
+                      Elfrida's Suite, No 235 RIVTAF Shopping Complex (Golf Estate)<br />
+                      Off Peter Odili Road<br />
+                      Port Harcourt, Rivers State
                     </p>
                   }
                 />
@@ -146,19 +145,19 @@ const Contact = () => {
         <div className="container-custom">
           <SectionTitle 
             title="Find Us" 
-            subtitle="Visit our office in the heart of Lagos Business District."
+            subtitle="Visit us at Elfrida's in Port Harcourt, Rivers State."
             className="reveal"
           />
           
           <div className="mt-8 rounded-lg overflow-hidden shadow-md h-96 reveal">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63427.97620499433!2d3.3790121935070164!3d6.45478826727042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sVictoria%20Island%2C%20Lagos!5e0!3m2!1sen!2sng!4v1650000000000!5m2!1sen!2sng" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127157.42054966926!2d6.930672406536907!3d4.8159045933151865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069cea39f2c48e3%3A0x53562bdd7d8832a9!2sPort%20Harcourt%2C%20Rivers%20State!5e0!3m2!1sen!2sng!4v1650000000000!5m2!1sen!2sng" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
               allowFullScreen 
               loading="lazy" 
-              title="Elfrida Limited Office Location"
+              title="Elfrida Park Limited Office Location"
             ></iframe>
           </div>
         </div>
@@ -169,16 +168,16 @@ const Contact = () => {
         <div className="container-custom">
           <SectionTitle 
             title="Frequently Asked Questions" 
-            subtitle="Find answers to common inquiries about Elfrida Limited and our services."
+            subtitle="Find answers to common inquiries about Elfrida Park Limited and our services."
             className="reveal"
           />
           
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="reveal">
               <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-3 font-playfair text-white">What services does Elfrida Limited offer?</h3>
+                <h3 className="text-xl font-semibold mb-3 font-playfair text-white">What services does Elfrida Park Limited offer?</h3>
                 <p className="text-white/90">
-                  Elfrida Limited offers integrated solutions in Real Estate (property sales, rentals, and development), Event Management (corporate, state, and social events), and Strategic Advisory Services (legal, financial, and CSR consulting).
+                  At Elfrida's, we offer integrated solutions in Real Estate (property sales, rentals, and development), Event Management (corporate, state, and social events), and Strategic Advisory Services (legal, financial, and CSR consulting).
                 </p>
               </div>
               
@@ -190,7 +189,7 @@ const Contact = () => {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3 font-playfair text-white">How can I invest with Elfrida Limited?</h3>
+                <h3 className="text-xl font-semibold mb-3 font-playfair text-white">How can I invest with Elfrida Park Limited?</h3>
                 <p className="text-white/90">
                   We offer various investment opportunities in real estate and other sectors. Contact our investment advisory team for personalized guidance on investment options that align with your goals.
                 </p>
@@ -229,7 +228,7 @@ const Contact = () => {
           <div className="max-w-3xl mx-auto reveal">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 font-playfair">Ready to Begin Your Journey?</h2>
             <p className="text-xl mb-8 text-black/90">
-              Whether you're interested in real estate, planning an event, or seeking advisory services, we're here to help you achieve your goals.
+              Whether you're interested in real estate, planning an event, or seeking advisory services, at Elfrida's, we're here to help you achieve your goals.
             </p>
             <a href="tel:09160002771" className="btn-secondary bg-black text-gold hover:bg-black/90 border-black">
               Call Us Today

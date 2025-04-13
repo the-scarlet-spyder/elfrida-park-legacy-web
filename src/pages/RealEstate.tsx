@@ -1,4 +1,3 @@
-
 import React from 'react';
 import MainLayout from '@/components/MainLayout';
 import SectionTitle from '@/components/SectionTitle';
@@ -113,7 +112,7 @@ const RealEstate = () => {
               <span className="gold-gradient block mt-2">Solutions</span>
             </h1>
             <p className="text-xl mb-8 text-ash-light reveal max-w-xl">
-              Discover exceptional properties and comprehensive real estate services tailored to your unique needs.
+              At Elfrida's, discover exceptional properties and comprehensive real estate services tailored to your unique needs.
             </p>
             <Link to="/contact" className="btn-primary reveal hover:shadow-gold/20 hover:shadow-md">
               Make an Inquiry
@@ -127,7 +126,7 @@ const RealEstate = () => {
         <div className="container-custom">
           <SectionTitle 
             title="Our Real Estate Services" 
-            subtitle="Elfrida Limited offers a comprehensive, end-to-end real estate experience designed to meet your property needs."
+            subtitle="At Elfrida Park Limited, we offer a comprehensive, end-to-end real estate experience designed to meet your property needs."
             className="reveal"
           />
           
@@ -173,7 +172,7 @@ const RealEstate = () => {
             <div className="reveal">
               <SectionTitle 
                 title="Why Choose Us" 
-                subtitle="Experience the Elfrida Limited approach to real estate — where lifestyle meets legacy."
+                subtitle="Experience the Elfrida's approach to real estate — where lifestyle meets legacy."
                 align="left"
                 className="mb-8"
               />
@@ -204,7 +203,7 @@ const RealEstate = () => {
                 />
                 <div className="absolute -bottom-6 -left-6 glass-card p-6 rounded-lg shadow-lg border border-gold/20 max-w-xs">
                   <p className="text-ash-light italic">
-                    "Elfrida Limited helped us find our dream home with unparalleled professionalism and attention to detail."
+                    "At Elfrida's, they helped us find our dream home with unparalleled professionalism and attention to detail."
                   </p>
                   <p className="text-gold font-medium mt-2">
                     — The Adewale Family
@@ -231,7 +230,7 @@ const RealEstate = () => {
               
               <div className="prose max-w-none text-ash-light">
                 <p>
-                  Whether you're looking to buy, sell, rent, or develop property, our team at Elfrida Limited is here to assist you every step of the way. We pride ourselves on delivering personalized service that exceeds expectations.
+                  Whether you're looking to buy, sell, rent, or develop property, our team at Elfrida's is here to assist you every step of the way. We pride ourselves on delivering personalized service that exceeds expectations.
                 </p>
                 <p className="mt-4">
                   Fill out the form, and one of our real estate specialists will contact you to discuss how we can help you achieve your property goals.

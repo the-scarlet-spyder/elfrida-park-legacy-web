@@ -39,9 +39,9 @@ export default {
           dark: '#B39229',
         },
         black: {
-          DEFAULT: '#000000',
-          light: '#1A1A1A',
-          dark: '#000000',
+          DEFAULT: '#403E43', // Changed from #000000 to dark grey
+          light: '#555555', // Changed from #1A1A1A to medium grey
+          dark: '#221F26', // Changed from #000000 to dark charcoal
         },
         ash: {
           DEFAULT: '#8A898C',
