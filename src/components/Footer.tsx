@@ -81,7 +81,7 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <MapPin size={20} className="text-gold mt-1 flex-shrink-0" />
                 <span className="text-darkgrey-lightest">
-                  123 Lagos Business District, Victoria Island, Lagos, Nigeria
+                  Elfrida’s Suite, No 235 RIVTAF Shopping Complex (Golf Estate), Off Peter Odili Road, Port Harcourt, Rivers State
                 </span>
               </li>
               <li className="flex items-center space-x-3">
