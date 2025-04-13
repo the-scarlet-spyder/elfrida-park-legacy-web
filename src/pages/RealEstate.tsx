@@ -6,11 +6,12 @@ import ContactForm from '@/components/ContactForm';
 import { CheckCircle, Home, Building, Landmark, ArrowRight, Leaf, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const PropertyCard = ({ image, title, location, type, price, link }: {
+const PropertyCard = ({ image, title, location, type, size, price, link }: {
   image: string;
   title: string;
   location: string;
   type: string;
+  size: string;
   price: string;
   link: string;
 }) => {
@@ -28,6 +29,7 @@ const PropertyCard = ({ image, title, location, type, price, link }: {
         <p className="text-earth mb-2">{location}</p>
         <div className="flex justify-between items-center mb-4">
           <span className="text-sm text-earth-dark px-3 py-1 bg-earth-lightest rounded-full">{type}</span>
+          <span className="font-medium text-gold">{size}</span>
           <span className="font-medium text-gold">{price}</span>
         </div>
         <Link to={link} className="btn-secondary w-full text-center">View Details</Link>
