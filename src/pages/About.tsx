@@ -1,119 +1,91 @@
-
 import React from 'react';
 import MainLayout from '@/components/MainLayout';
 import SectionTitle from '@/components/SectionTitle';
 import { CheckCircle, Target, Eye, Star, Layers, Shield, Award, Users, Gem, Heart, Church } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 interface TeamMemberProps {
   name: string;
   position: string;
   image: string;
 }
-
-const TeamMember: React.FC<TeamMemberProps> = ({ name, position, image }) => (
-  <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all text-center group reveal">
+const TeamMember: React.FC<TeamMemberProps> = ({
+  name,
+  position,
+  image
+}) => <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all text-center group reveal">
     <div className="aspect-square overflow-hidden">
-      <img 
-        src={image} 
-        alt={name} 
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-      />
+      <img src={image} alt={name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
     </div>
     <div className="p-6">
       <h3 className="text-xl font-semibold font-playfair">{name}</h3>
       <p className="text-earth">{position}</p>
     </div>
-  </div>
-);
-
+  </div>;
 const About = () => {
-  const teamMembers = [
-    {
-      name: "Oluwaseun Adeyemi",
-      position: "Founder & Chief Executive Officer",
-      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1000"
-    },
-    {
-      name: "Amara Okafor",
-      position: "Director of Real Estate",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000"
-    },
-    {
-      name: "Chidi Nweze",
-      position: "Head of Event Management",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1000"
-    },
-    {
-      name: "Fatima Mohammed",
-      position: "Director of Advisory Services",
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?q=80&w=1000"
-    }
-  ];
-  
-  const values = [
-    {
-      title: "Divine Inspiration",
-      description: "We act with a higher purpose in mind",
-      icon: <Church size={32} className="text-gold" />
-    },
-    {
-      title: "Integrity First",
-      description: "Transparent, honest, and trustworthy in all dealings",
-      icon: <Shield size={32} className="text-gold" />
-    },
-    {
-      title: "Passion-Driven",
-      description: "We're emotionally invested in your success",
-      icon: <Heart size={32} className="text-gold" />
-    },
-    {
-      title: "People-Centric",
-      description: "Clients aren't transactions — they're partners",
-      icon: <Users size={32} className="text-gold" />
-    },
-    {
-      title: "Excellence Always",
-      description: "High standards are our baseline",
-      icon: <Award size={32} className="text-gold" />
-    },
-    {
-      title: "Nurturing Growth",
-      description: "We support your journey at every stage",
-      icon: <Gem size={32} className="text-gold" />
-    }
-  ];
-  
-  const milestones = [
-    {
-      year: 2015,
-      title: "Company Founded",
-      description: "Elfrida Limited was established with a vision to deliver integrated solutions in real estate and advisory services."
-    },
-    {
-      year: 2017,
-      title: "Event Management Division",
-      description: "Expanded services to include luxury event planning and execution for corporate and private clients."
-    },
-    {
-      year: 2019,
-      title: "Advisory Services Launch",
-      description: "Formalized our strategic advisory offerings with a focus on legal, financial, and CSR consulting."
-    },
-    {
-      year: 2021,
-      title: "Impact Initiative",
-      description: "Launched our flagship CSR program focused on youth empowerment and community development."
-    },
-    {
-      year: 2023,
-      title: "Portfolio Expansion",
-      description: "Significantly grew our real estate portfolio and expanded client base across West Africa."
-    }
-  ];
-
-  return (
-    <MainLayout>
+  const teamMembers = [{
+    name: "Oluwaseun Adeyemi",
+    position: "Founder & Chief Executive Officer",
+    image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1000"
+  }, {
+    name: "Amara Okafor",
+    position: "Director of Real Estate",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000"
+  }, {
+    name: "Chidi Nweze",
+    position: "Head of Event Management",
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1000"
+  }, {
+    name: "Fatima Mohammed",
+    position: "Director of Advisory Services",
+    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?q=80&w=1000"
+  }];
+  const values = [{
+    title: "Divine Inspiration",
+    description: "We act with a higher purpose in mind",
+    icon: <Church size={32} className="text-gold" />
+  }, {
+    title: "Integrity First",
+    description: "Transparent, honest, and trustworthy in all dealings",
+    icon: <Shield size={32} className="text-gold" />
+  }, {
+    title: "Passion-Driven",
+    description: "We're emotionally invested in your success",
+    icon: <Heart size={32} className="text-gold" />
+  }, {
+    title: "People-Centric",
+    description: "Clients aren't transactions — they're partners",
+    icon: <Users size={32} className="text-gold" />
+  }, {
+    title: "Excellence Always",
+    description: "High standards are our baseline",
+    icon: <Award size={32} className="text-gold" />
+  }, {
+    title: "Nurturing Growth",
+    description: "We support your journey at every stage",
+    icon: <Gem size={32} className="text-gold" />
+  }];
+  const milestones = [{
+    year: 2015,
+    title: "Company Founded",
+    description: "Elfrida Limited was established with a vision to deliver integrated solutions in real estate and advisory services."
+  }, {
+    year: 2017,
+    title: "Event Management Division",
+    description: "Expanded services to include luxury event planning and execution for corporate and private clients."
+  }, {
+    year: 2019,
+    title: "Advisory Services Launch",
+    description: "Formalized our strategic advisory offerings with a focus on legal, financial, and CSR consulting."
+  }, {
+    year: 2021,
+    title: "Impact Initiative",
+    description: "Launched our flagship CSR program focused on youth empowerment and community development."
+  }, {
+    year: 2023,
+    title: "Portfolio Expansion",
+    description: "Significantly grew our real estate portfolio and expanded client base across West Africa."
+  }];
+  return <MainLayout>
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-b from-earth-dark to-earth">
         <div className="container-custom">
@@ -133,12 +105,7 @@ const About = () => {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal">
-              <SectionTitle 
-                title="Our Story" 
-                subtitle="Founded with a vision to transform industries through purpose-driven excellence."
-                align="left"
-                className="mb-8"
-              />
+              <SectionTitle title="Our Story" subtitle="Founded with a vision to transform industries through purpose-driven excellence." align="left" className="mb-8" />
               
               <p className="text-earth-dark mb-6">
                 Elfrida Limited is a dynamic, people-first company built on a foundation of purpose, integrity, and innovation. We offer integrated solutions across Real Estate, Event Management, and Strategic Advisory Services — designed to empower individuals, elevate businesses, and drive sustainable growth.
@@ -154,11 +121,7 @@ const About = () => {
             </div>
             
             <div className="reveal">
-              <img 
-                src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?q=80&w=1000" 
-                alt="Elfrida Limited Building" 
-                className="rounded-lg shadow-lg"
-              />
+              <img src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?q=80&w=1000" alt="Elfrida Limited Building" className="rounded-lg shadow-lg" />
             </div>
           </div>
         </div>
@@ -194,22 +157,16 @@ const About = () => {
       {/* Our Values */}
       <section className="py-20 bg-white">
         <div className="container-custom">
-          <SectionTitle 
-            title="Our Core Values: D.I.P.P.E.N." 
-            subtitle="The principles that guide every aspect of our operations and relationships."
-            className="reveal"
-          />
+          <SectionTitle title="Our Core Values: D.I.P.P.E.N." subtitle="The principles that guide every aspect of our operations and relationships." className="reveal" />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            {values.map((value, index) => (
-              <div key={index} className="p-8 border border-earth-lightest rounded-lg hover:shadow-md transition-all text-center reveal">
+            {values.map((value, index) => <div key={index} className="p-8 border border-earth-lightest rounded-lg hover:shadow-md transition-all text-center reveal">
                 <div className="mx-auto mb-4 w-16 h-16 flex items-center justify-center bg-gold/10 rounded-full">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-4 font-playfair text-gold">{value.title}</h3>
-                <p className="text-earth-dark">{value.description}</p>
-              </div>
-            ))}
+                <p className="text-earth-dark text-gray-950">{value.description}</p>
+              </div>)}
           </div>
           
           <div className="text-center mt-10 reveal">
@@ -223,23 +180,13 @@ const About = () => {
       {/* Our Journey Timeline */}
       <section className="py-20 bg-earth-lightest">
         <div className="container-custom">
-          <SectionTitle 
-            title="Our Journey" 
-            subtitle="Key milestones in the evolution of Elfrida Limited."
-            className="reveal"
-          />
+          <SectionTitle title="Our Journey" subtitle="Key milestones in the evolution of Elfrida Limited." className="reveal" />
           
           <div className="relative mt-16">
             {/* Timeline Line */}
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gold/30"></div>
             
-            {milestones.map((milestone, index) => (
-              <div 
-                key={index} 
-                className={`relative z-10 mb-12 flex flex-col md:flex-row items-center ${
-                  index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                } reveal`}
-              >
+            {milestones.map((milestone, index) => <div key={index} className={`relative z-10 mb-12 flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} reveal`}>
                 <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:text-left md:pl-12' : 'md:text-right md:pr-12'}`}>
                   <div className={`bg-white p-6 rounded-lg shadow-md ${index % 2 === 0 ? '' : 'ml-auto'}`}>
                     <span className="text-gold font-bold text-lg">{milestone.year}</span>
@@ -252,8 +199,7 @@ const About = () => {
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-gold items-center justify-center">
                   <Star size={20} className="text-white" />
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -261,16 +207,10 @@ const About = () => {
       {/* Team Section */}
       <section className="py-20 bg-white">
         <div className="container-custom">
-          <SectionTitle 
-            title="Our Leadership Team" 
-            subtitle="Meet the experienced professionals guiding Elfrida Limited's vision and operations."
-            className="reveal"
-          />
+          <SectionTitle title="Our Leadership Team" subtitle="Meet the experienced professionals guiding Elfrida Limited's vision and operations." className="reveal" />
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-            {teamMembers.map((member, index) => (
-              <TeamMember key={index} {...member} />
-            ))}
+            {teamMembers.map((member, index) => <TeamMember key={index} {...member} />)}
           </div>
         </div>
       </section>
@@ -280,13 +220,7 @@ const About = () => {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal">
-              <SectionTitle 
-                title="Our Approach: D.I.P.P.E.N." 
-                subtitle="The methodology that defines how we deliver excellence across all our services."
-                align="left"
-                light={true}
-                className="mb-8"
-              />
+              <SectionTitle title="Our Approach: D.I.P.P.E.N." subtitle="The methodology that defines how we deliver excellence across all our services." align="left" light={true} className="mb-8" />
               
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -341,11 +275,7 @@ const About = () => {
             
             <div className="reveal">
               <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1000" 
-                  alt="Our Approach" 
-                  className="rounded-lg shadow-lg"
-                />
+                <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1000" alt="Our Approach" className="rounded-lg shadow-lg" />
                 <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
                   <div className="w-24 h-24 bg-gold/80 backdrop-blur-sm rounded-full flex items-center justify-center">
                     <Layers size={40} className="text-white" />
@@ -376,8 +306,6 @@ const About = () => {
           </div>
         </div>
       </section>
-    </MainLayout>
-  );
+    </MainLayout>;
 };
-
 export default About;
