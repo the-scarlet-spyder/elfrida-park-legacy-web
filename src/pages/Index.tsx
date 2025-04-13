@@ -95,82 +95,29 @@ const Index = () => {
       position: "First-time Homebuyer",
       content: "The team at Elfrida Limited guided me through every step of purchasing my first home. Their patience, expertise, and genuine care made what could have been an overwhelming process feel simple and exciting.",
       rating: 5,
-    },
-    {
-      id: 7,
-      name: "Victor Ekong",
-      position: "Corporate Finance Director",
-      content: "The strategic advisory from Elfrida Limited transformed our approach to real estate investments. Their insights helped us maximize returns while maintaining alignment with our core values.",
-      rating: 5,
-    },
-    {
-      id: 8,
-      name: "Lola Ademola",
-      position: "Event Host",
-      content: "From concept to execution, Elfrida Limited delivered an extraordinary experience for our corporate gala. The attention to detail and flawless coordination exceeded all expectations.",
-      rating: 5,
-    },
-    {
-      id: 9,
-      name: "Ibrahim Hassan",
-      position: "Investment Banker",
-      content: "Working with Elfrida Limited has been transformative for our property portfolio. Their market intelligence and negotiation skills secured us prime locations at competitive rates.",
-      rating: 5,
-    },
-    {
-      id: 10,
-      name: "Chief Mrs. Folasade Ogunlesi",
-      position: "Philanthropist",
-      content: "The CSR advisory services from Elfrida Limited helped our foundation create measurable impact in underserved communities. Their strategic approach ensures sustainable outcomes.",
-      rating: 5,
     }
   ];
 
   return (
     <MainLayout>
-      {/* Updated Hero Section with reformatted content */}
-      <section className="hero-container">
-        <div className="hero-overlay"></div>
-        <div className="hero-image-container">
-          <img 
-            src="https://images.unsplash.com/photo-1460574283810-2aab119d8511?q=80&w=2000" 
-            alt="Luxury Property" 
-            className="hero-image"
-            style={{objectPosition: "center 30%"}}
-          />
-        </div>
-        <div className="hero-content">
-          <div className="max-w-2xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight reveal">
-              <span className="text-white">Transform Your </span>
-              <span className="gold-gradient">Vision</span><br />
-              <span className="gold-gradient">Into Reality</span>
+      {/* Hero Section */}
+      <section className="h-screen relative flex items-center bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="container-custom relative z-10 text-white">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-playfair reveal">
+              Nurturing Dreams,<br />Building Legacies
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white/90 reveal max-w-xl leading-relaxed">
+            <p className="text-xl md:text-2xl mb-8 text-white/90 reveal">
               Integrated solutions in Real Estate, Event Management, and Strategic Advisory Services.
             </p>
-            <div className="flex flex-col sm:flex-row items-start gap-4 reveal">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
               <Link to="/contact" className="btn-primary">
                 Get in Touch
               </Link>
               <Link to="/about" className="btn-secondary">
                 Learn More
               </Link>
-            </div>
-            
-            <div className="hero-stats reveal">
-              <div className="hero-stat">
-                <div className="hero-stat-number">25+</div>
-                <div className="hero-stat-label">Projects Completed</div>
-              </div>
-              <div className="hero-stat">
-                <div className="hero-stat-number">15+</div>
-                <div className="hero-stat-label">Properties Managed</div>
-              </div>
-              <div className="hero-stat">
-                <div className="hero-stat-number">100%</div>
-                <div className="hero-stat-label">Client Satisfaction</div>
-              </div>
             </div>
           </div>
         </div>
@@ -185,7 +132,7 @@ const Index = () => {
       </section>
       
       {/* Services Section */}
-      <section id="services" className="service-section">
+      <section id="services" className="py-20 bg-earth-lightest">
         <div className="container-custom">
           <SectionTitle 
             title="Our Services" 
@@ -206,7 +153,7 @@ const Index = () => {
       </section>
       
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-black-light">
+      <section className="py-20 bg-white">
         <div className="container-custom">
           <SectionTitle 
             title="Why Elfrida Limited?" 
@@ -216,12 +163,12 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             {values.map((value, index) => (
-              <div key={index} className="glass-card p-8 text-center reveal hover:border-gold/20 transition-all duration-300">
-                <div className="mx-auto mb-4 w-16 h-16 flex items-center justify-center bg-black rounded-full border border-gold/20">
+              <div key={index} className="bg-earth-lightest p-8 rounded-lg text-center reveal">
+                <div className="mx-auto mb-4 w-16 h-16 flex items-center justify-center bg-white rounded-full">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                <p className="text-ash-light">{value.description}</p>
+                <p className="text-earth-dark">{value.description}</p>
               </div>
             ))}
           </div>
@@ -229,12 +176,12 @@ const Index = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-24 bg-black text-white text-center bg-[url('https://images.unsplash.com/photo-1460574283810-2aab119d8511?q=80&w=1000')] bg-cover bg-center relative">
-        <div className="absolute inset-0 bg-black/80"></div>
+      <section className="py-24 bg-earth-dark text-white text-center bg-[url('https://images.unsplash.com/photo-1460574283810-2aab119d8511?q=80&w=1000')] bg-cover bg-center relative">
+        <div className="absolute inset-0 bg-earth-dark/80"></div>
         <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto reveal">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-playfair">Ready to Transform Your Vision into Reality?</h2>
-            <p className="text-xl mb-8 text-white/80">
+            <p className="text-xl mb-8 text-earth-lighter">
               Partner with Elfrida Limited to bring your dreams to life with our expertise and dedication to excellence.
             </p>
             <Link to="/contact" className="btn-primary">
@@ -245,7 +192,7 @@ const Index = () => {
       </section>
       
       {/* Testimonials Section */}
-      <section className="py-20 bg-black-light">
+      <section className="py-20 bg-white">
         <div className="container-custom">
           <SectionTitle 
             title="What Our Clients Say" 
@@ -260,7 +207,7 @@ const Index = () => {
       </section>
       
       {/* Contact Form Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-earth-lightest">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="reveal">
@@ -271,7 +218,7 @@ const Index = () => {
                 className="mb-8"
               />
               
-              <div className="prose max-w-none text-white/80">
+              <div className="prose max-w-none text-earth-dark">
                 <p>
                   At Elfrida Limited, we believe in building lasting relationships with our clients. Whether you're looking to invest in real estate, plan a memorable event, or seek strategic advisory services, our team is here to help you achieve your goals.
                 </p>
@@ -281,11 +228,10 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="glass-card p-8 reveal">
+            <div className="bg-white p-8 rounded-lg shadow-md reveal">
               <ContactForm 
                 title="" 
                 subtitle=""
-                dark={true}
               />
             </div>
           </div>

@@ -59,26 +59,16 @@ const Events = () => {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="hero-container">
-        <div className="hero-overlay"></div>
-        <div className="hero-image-container">
-          <img 
-            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2000" 
-            alt="Luxury Event" 
-            className="hero-image"
-          />
-        </div>
-        <div className="hero-content">
-          <div className="max-w-2xl">
-            <h5 className="text-gold mb-3 tracking-wider font-medium reveal">EXCEPTIONAL EXPERIENCES</h5>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight reveal">
-              <span className="text-white">Event</span>
-              <span className="gold-gradient block mt-2">Management</span>
+      <section className="pt-32 pb-20 bg-gradient-to-b from-earth-dark to-earth">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center text-white">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair reveal">
+              Event Management & Hospitality
             </h1>
-            <p className="text-xl mb-8 text-ash-light reveal max-w-xl">
+            <p className="text-xl mb-8 text-earth-lighter reveal">
               We curate moments that resonate — elevating occasions into unforgettable experiences.
             </p>
-            <Link to="/contact" className="btn-primary reveal hover:shadow-gold/20 hover:shadow-md">
+            <Link to="/contact" className="btn-primary reveal">
               Plan Your Event
             </Link>
           </div>
@@ -86,7 +76,7 @@ const Events = () => {
       </section>
       
       {/* Event Types Section */}
-      <section className="service-section">
+      <section className="py-20 bg-white">
         <div className="container-custom">
           <SectionTitle 
             title="Our Event Expertise" 
@@ -105,7 +95,7 @@ const Events = () => {
       </section>
       
       {/* Event Services Section */}
-      <section className="py-20 bg-black-light">
+      <section className="py-20 bg-earth-lightest">
         <div className="container-custom">
           <SectionTitle 
             title="Our Event Services" 
@@ -114,126 +104,118 @@ const Events = () => {
           />
           
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="glass-card p-8 reveal hover:border-gold/30 hover:shadow-gold/10 transition-all duration-300">
+            <div className="bg-white p-8 rounded-lg shadow-md reveal">
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 rounded-full bg-black-light/80 border border-gold/20 flex items-center justify-center">
-                  <Calendar size={24} className="text-gold" />
-                </div>
-                <h3 className="text-2xl font-semibold font-playfair ml-4">Event Planning & Management</h3>
+                <Calendar size={28} className="text-gold mr-4" />
+                <h3 className="text-2xl font-semibold font-playfair">Event Planning & Management</h3>
               </div>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">Concept development and creative direction</span>
+                  <span>Concept development and creative direction</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">Timeline and logistics coordination</span>
+                  <span>Timeline and logistics coordination</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">Budget management and optimization</span>
+                  <span>Budget management and optimization</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">Venue selection and management</span>
+                  <span>Venue selection and management</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">Vendor sourcing and coordination</span>
+                  <span>Vendor sourcing and coordination</span>
                 </li>
               </ul>
             </div>
             
-            <div className="glass-card p-8 reveal hover:border-gold/30 hover:shadow-gold/10 transition-all duration-300">
+            <div className="bg-white p-8 rounded-lg shadow-md reveal">
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 rounded-full bg-black-light/80 border border-gold/20 flex items-center justify-center">
-                  <Users size={24} className="text-gold" />
-                </div>
-                <h3 className="text-2xl font-semibold font-playfair ml-4">Guest Experience</h3>
+                <Users size={28} className="text-gold mr-4" />
+                <h3 className="text-2xl font-semibold font-playfair">Guest Experience</h3>
               </div>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">Customized invitations and RSVP management</span>
+                  <span>Customized invitations and RSVP management</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">VIP handling and protocol management</span>
+                  <span>VIP handling and protocol management</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">Entertainment booking and coordination</span>
+                  <span>Entertainment booking and coordination</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">Catering and menu design</span>
+                  <span>Catering and menu design</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">Transportation and accommodation arrangements</span>
+                  <span>Transportation and accommodation arrangements</span>
                 </li>
               </ul>
             </div>
             
-            <div className="glass-card p-8 reveal hover:border-gold/30 hover:shadow-gold/10 transition-all duration-300">
+            <div className="bg-white p-8 rounded-lg shadow-md reveal">
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 rounded-full bg-black-light/80 border border-gold/20 flex items-center justify-center">
-                  <Star size={24} className="text-gold" />
-                </div>
-                <h3 className="text-2xl font-semibold font-playfair ml-4">Design & Production</h3>
+                <Star size={28} className="text-gold mr-4" />
+                <h3 className="text-2xl font-semibold font-playfair">Design & Production</h3>
               </div>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">Custom décor and theme development</span>
+                  <span>Custom décor and theme development</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">Lighting and sound design</span>
+                  <span>Lighting and sound design</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">Stage and set design</span>
+                  <span>Stage and set design</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">Floral arrangements and styling</span>
+                  <span>Floral arrangements and styling</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">Branded materials and signage</span>
+                  <span>Branded materials and signage</span>
                 </li>
               </ul>
             </div>
             
-            <div className="glass-card p-8 reveal hover:border-gold/30 hover:shadow-gold/10 transition-all duration-300">
+            <div className="bg-white p-8 rounded-lg shadow-md reveal">
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 rounded-full bg-black-light/80 border border-gold/20 flex items-center justify-center">
-                  <Clock size={24} className="text-gold" />
-                </div>
-                <h3 className="text-2xl font-semibold font-playfair ml-4">Day-of Coordination</h3>
+                <Clock size={28} className="text-gold mr-4" />
+                <h3 className="text-2xl font-semibold font-playfair">Day-of Coordination</h3>
               </div>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">On-site management and coordination</span>
+                  <span>On-site management and coordination</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">Timeline execution and monitoring</span>
+                  <span>Timeline execution and monitoring</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">Vendor management and problem-solving</span>
+                  <span>Vendor management and problem-solving</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">Guest assistance and emergency handling</span>
+                  <span>Guest assistance and emergency handling</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle size={18} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-ash-light">Post-event breakdown and vendor settlement</span>
+                  <span>Post-event breakdown and vendor settlement</span>
                 </li>
               </ul>
             </div>
@@ -241,8 +223,10 @@ const Events = () => {
         </div>
       </section>
       
+      {/* Hospitality Section - REMOVED */}
+      
       {/* Why Choose Us */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal">
@@ -257,13 +241,13 @@ const Events = () => {
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start">
                     <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                    <span className="text-ash-light">{benefit}</span>
+                    <span>{benefit}</span>
                   </li>
                 ))}
               </ul>
               
               <div className="mt-8">
-                <Link to="/about" className="inline-flex items-center text-gold hover:text-gold-light transition-colors font-medium">
+                <Link to="/about" className="inline-flex items-center text-gold hover:text-gold-dark transition-colors font-medium">
                   <span>Learn more about our approach</span>
                   <ArrowRight size={18} className="ml-2" />
                 </Link>
@@ -277,8 +261,8 @@ const Events = () => {
                   alt="Elegant Event" 
                   className="rounded-lg shadow-lg w-full h-auto"
                 />
-                <div className="absolute -bottom-6 -left-6 glass-card p-6 rounded-lg shadow-lg border border-gold/20 max-w-xs">
-                  <p className="text-ash-light italic">
+                <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg max-w-xs">
+                  <p className="text-earth-dark italic">
                     "The team at Elfrida Limited transformed our vision into a flawless event that exceeded all expectations."
                   </p>
                   <p className="text-gold font-medium mt-2">
@@ -292,7 +276,7 @@ const Events = () => {
       </section>
       
       {/* Contact Form */}
-      <section id="contact-form" className="py-20 bg-black-light text-white">
+      <section id="contact-form" className="py-20 bg-earth-dark text-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="reveal">
@@ -304,7 +288,7 @@ const Events = () => {
                 className="mb-8"
               />
               
-              <div className="prose max-w-none text-ash-light">
+              <div className="prose max-w-none text-earth-lighter">
                 <p>
                   Whether you're planning a corporate conference, a state function, or an intimate gathering, our team at Elfrida Limited is here to bring your vision to life. We pride ourselves on attention to detail and exceptional service.
                 </p>

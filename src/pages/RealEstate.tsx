@@ -1,3 +1,4 @@
+
 import React from 'react';
 import MainLayout from '@/components/MainLayout';
 import SectionTitle from '@/components/SectionTitle';
@@ -14,7 +15,7 @@ const PropertyCard = ({ image, title, location, type, price, link }: {
   link: string;
 }) => {
   return (
-    <div className="glass-card overflow-hidden shadow-md hover:shadow-gold/20 hover:shadow-xl transition-all group">
+    <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all">
       <div className="aspect-[16/10] overflow-hidden">
         <img
           src={image}
@@ -23,13 +24,13 @@ const PropertyCard = ({ image, title, location, type, price, link }: {
         />
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2 font-playfair group-hover:text-gold transition-colors">{title}</h3>
-        <p className="text-ash-light mb-2">{location}</p>
+        <h3 className="text-xl font-semibold mb-2 font-playfair">{title}</h3>
+        <p className="text-earth mb-2">{location}</p>
         <div className="flex justify-between items-center mb-4">
-          <span className="text-sm text-ash-dark px-3 py-1 bg-ash-dark/20 rounded-full">{type}</span>
+          <span className="text-sm text-earth-dark px-3 py-1 bg-earth-lightest rounded-full">{type}</span>
           <span className="font-medium text-gold">{price}</span>
         </div>
-        <Link to={link} className="btn-secondary w-full text-center hover:bg-gold/20">View Details</Link>
+        <Link to={link} className="btn-secondary w-full text-center">View Details</Link>
       </div>
     </div>
   );
@@ -95,26 +96,16 @@ const RealEstate = () => {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="hero-container">
-        <div className="hero-overlay"></div>
-        <div className="hero-image-container">
-          <img 
-            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2000" 
-            alt="Luxury Property" 
-            className="hero-image"
-          />
-        </div>
-        <div className="hero-content">
-          <div className="max-w-2xl">
-            <h5 className="text-gold mb-3 tracking-wider font-medium reveal">EXPERTISE & EXCELLENCE</h5>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight reveal">
-              <span className="text-white">Real Estate</span>
-              <span className="gold-gradient block mt-2">Solutions</span>
+      <section className="pt-32 pb-20 bg-gradient-to-b from-earth-dark to-earth">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center text-white">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair reveal">
+              Real Estate Solutions
             </h1>
-            <p className="text-xl mb-8 text-ash-light reveal max-w-xl">
-              At Elfrida's, discover exceptional properties and comprehensive real estate services tailored to your unique needs.
+            <p className="text-xl mb-8 text-earth-lighter reveal">
+              Discover exceptional properties and comprehensive real estate services tailored to your unique needs.
             </p>
-            <Link to="/contact" className="btn-primary reveal hover:shadow-gold/20 hover:shadow-md">
+            <Link to="/contact" className="btn-primary reveal">
               Make an Inquiry
             </Link>
           </div>
@@ -122,24 +113,22 @@ const RealEstate = () => {
       </section>
       
       {/* Services Section */}
-      <section className="service-section">
+      <section className="py-20 bg-white">
         <div className="container-custom">
           <SectionTitle 
             title="Our Real Estate Services" 
-            subtitle="At Elfrida Park Limited, we offer a comprehensive, end-to-end real estate experience designed to meet your property needs."
+            subtitle="Elfrida Limited offers a comprehensive, end-to-end real estate experience designed to meet your property needs."
             className="reveal"
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {services.map((service, index) => (
-              <div key={index} className="glass-card p-8 hover:shadow-gold/10 hover:border-gold/30 transition-all reveal">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 rounded-full bg-black-light/80 border border-gold/20 flex items-center justify-center">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold ml-4 group-hover:text-gold transition-colors">{service.title}</h3>
+              <div key={index} className="p-8 border border-earth-lightest rounded-lg hover:shadow-md transition-all reveal">
+                <div className="flex items-center mb-4">
+                  {service.icon}
+                  <h3 className="text-xl font-semibold ml-3">{service.title}</h3>
                 </div>
-                <p className="text-ash-light">{service.description}</p>
+                <p className="text-earth-dark">{service.description}</p>
               </div>
             ))}
           </div>
@@ -147,7 +136,7 @@ const RealEstate = () => {
       </section>
       
       {/* Featured Properties */}
-      <section className="py-20 bg-black-light">
+      <section className="py-20 bg-earth-lightest">
         <div className="container-custom">
           <SectionTitle 
             title="Featured Properties" 
@@ -166,13 +155,13 @@ const RealEstate = () => {
       </section>
       
       {/* Why Choose Us */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal">
               <SectionTitle 
                 title="Why Choose Us" 
-                subtitle="Experience the Elfrida's approach to real estate — where lifestyle meets legacy."
+                subtitle="Experience the Elfrida Limited approach to real estate — where lifestyle meets legacy."
                 align="left"
                 className="mb-8"
               />
@@ -181,13 +170,13 @@ const RealEstate = () => {
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start">
                     <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                    <span className="text-ash-light">{benefit}</span>
+                    <span>{benefit}</span>
                   </li>
                 ))}
               </ul>
               
               <div className="mt-8">
-                <Link to="/about" className="inline-flex items-center text-gold hover:text-gold-light transition-colors font-medium">
+                <Link to="/about" className="inline-flex items-center text-gold hover:text-gold-dark transition-colors font-medium">
                   <span>Learn more about our approach</span>
                   <ArrowRight size={18} className="ml-2" />
                 </Link>
@@ -201,9 +190,9 @@ const RealEstate = () => {
                   alt="Luxury Building" 
                   className="rounded-lg shadow-lg w-full h-auto"
                 />
-                <div className="absolute -bottom-6 -left-6 glass-card p-6 rounded-lg shadow-lg border border-gold/20 max-w-xs">
-                  <p className="text-ash-light italic">
-                    "At Elfrida's, they helped us find our dream home with unparalleled professionalism and attention to detail."
+                <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg max-w-xs">
+                  <p className="text-earth-dark italic">
+                    "Elfrida Limited helped us find our dream home with unparalleled professionalism and attention to detail."
                   </p>
                   <p className="text-gold font-medium mt-2">
                     — The Adewale Family
@@ -216,7 +205,7 @@ const RealEstate = () => {
       </section>
       
       {/* Contact Form */}
-      <section id="contact-form" className="py-20 bg-black-light text-white">
+      <section id="contact-form" className="py-20 bg-earth-dark text-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="reveal">
@@ -228,9 +217,9 @@ const RealEstate = () => {
                 className="mb-8"
               />
               
-              <div className="prose max-w-none text-ash-light">
+              <div className="prose max-w-none text-earth-lighter">
                 <p>
-                  Whether you're looking to buy, sell, rent, or develop property, our team at Elfrida's is here to assist you every step of the way. We pride ourselves on delivering personalized service that exceeds expectations.
+                  Whether you're looking to buy, sell, rent, or develop property, our team at Elfrida Limited is here to assist you every step of the way. We pride ourselves on delivering personalized service that exceeds expectations.
                 </p>
                 <p className="mt-4">
                   Fill out the form, and one of our real estate specialists will contact you to discuss how we can help you achieve your property goals.

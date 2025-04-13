@@ -21,27 +21,25 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
   return (
     <div className={cn(
-      "glass-card p-8 hover:shadow-gold/10 hover:shadow-xl hover:border-gold/30 transition-all duration-300 group",
+      "bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-earth-lightest group",
       className
     )}>
       <div className="flex flex-col h-full">
-        <div className="text-gold mb-6 flex justify-center md:justify-start">
-          <div className="w-16 h-16 rounded-full bg-black-light/80 border border-gold/20 flex items-center justify-center">
-            {icon}
-          </div>
+        <div className="text-gold mb-4 flex justify-center md:justify-start">
+          {icon}
         </div>
         
-        <h3 className="text-xl md:text-2xl font-semibold mb-4 text-center md:text-left group-hover:text-gold transition-colors">
+        <h3 className="text-xl md:text-2xl font-semibold mb-3 text-center md:text-left">
           {title}
         </h3>
         
-        <p className="text-white/90 mb-6 text-center md:text-left flex-grow">
+        <p className="text-earth-dark mb-6 text-center md:text-left flex-grow">
           {description}
         </p>
         
         <Link 
           to={link} 
-          className="inline-flex items-center text-gold hover:text-gold-light transition-colors font-medium group-hover:gap-2 mt-auto justify-center md:justify-start"
+          className="inline-flex items-center text-gold hover:text-gold-dark transition-colors font-medium group-hover:gap-2 mt-auto justify-center md:justify-start"
         >
           <span>Learn More</span>
           <ArrowRight 

@@ -1,20 +1,8 @@
 
 import React from 'react';
 import MainLayout from '@/components/MainLayout';
-import { Card, CardContent } from '@/components/ui/card';
-import { 
-  Heart, 
-  Users, 
-  Sprout, 
-  GraduationCap, 
-  Award, 
-  ArrowRight,
-  Gift,
-  Target,
-  BadgeCheck,
-  Star,
-  BarChart3
-} from 'lucide-react';
+import SectionTitle from '@/components/SectionTitle';
+import { Heart, Users, Sprout, GraduationCap, Award, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface ImpactCardProps {
@@ -24,98 +12,39 @@ interface ImpactCardProps {
   stats: string[];
 }
 
-const ImpactCard: React.FC<ImpactCardProps> = ({ title, description, image, stats }) => {
-  return (
-    <Card className="overflow-hidden h-full border-ash-dark hover:border-gold transition-all reveal">
-      <div className="aspect-[16/9] overflow-hidden">
-        <img 
-          src={image} 
-          alt={title} 
-          className="w-full h-full object-cover"
-        />
+const ImpactCard: React.FC<ImpactCardProps> = ({ title, description, image, stats }) => (
+  <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all reveal">
+    <div className="aspect-[16/9] overflow-hidden">
+      <img 
+        src={image} 
+        alt={title} 
+        className="w-full h-full object-cover"
+      />
+    </div>
+    <div className="p-6">
+      <h3 className="text-xl font-semibold mb-3 font-playfair">{title}</h3>
+      <p className="text-earth-dark mb-6">{description}</p>
+      <div className="grid grid-cols-2 gap-4 mt-4">
+        {stats.map((stat, index) => (
+          <div key={index} className="bg-earth-lightest p-3 rounded-md text-center">
+            <p className="text-earth-dark text-sm">{stat}</p>
+          </div>
+        ))}
       </div>
-      <CardContent className="p-6">
-        <h3 className="text-xl font-semibold mb-3 font-playfair gold-gradient">{title}</h3>
-        <p className="text-black mb-6">{description}</p>
-        <div className="grid grid-cols-2 gap-4 mt-4">
-          {stats.map((stat, index) => (
-            <div key={index} className="bg-earth-lightest p-3 rounded-md text-center">
-              <p className="text-black text-sm">{stat}</p>
-            </div>
-          ))}
-        </div>
-      </CardContent>
-    </Card>
-  );
-};
+    </div>
+  </div>
+);
 
 interface PartnerLogoProps {
   name: string;
   logo: string;
 }
 
-const PartnerLogo: React.FC<PartnerLogoProps> = ({ name, logo }) => {
-  return (
-    <div className="bg-white p-4 rounded-lg shadow-sm flex items-center justify-center h-24 border border-ash-dark/20 hover:border-gold/50 transition-all">
-      <img src={logo} alt={name} className="max-h-12 max-w-full" />
-    </div>
-  );
-};
-
-interface SDGGoalProps {
-  number: number;
-  title: string;
-  description: string;
-}
-
-const SDGGoal: React.FC<SDGGoalProps> = ({ number, title, description }) => {
-  return (
-    <Card className="border-ash-dark hover:border-gold transition-colors p-6 text-center reveal h-full">
-      <div className="w-16 h-16 rounded-full bg-gold flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-        {number}
-      </div>
-      <h3 className="text-lg font-semibold mb-2 gold-gradient">{title}</h3>
-      <p className="text-black text-sm">{description}</p>
-    </Card>
-  );
-};
-
-interface TestimonialProps {
-  quote: string;
-  name: string;
-  role: string;
-}
-
-const Testimonial: React.FC<TestimonialProps> = ({ quote, name, role }) => {
-  return (
-    <Card className="bg-white/10 backdrop-blur-sm p-8 shadow-lg reveal border border-white/20">
-      <p className="text-white/90 italic text-lg mb-6">"{quote}"</p>
-      <div className="flex items-center">
-        <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center">
-          <Users size={20} className="text-white" />
-        </div>
-        <div className="ml-4">
-          <p className="font-medium text-white">{name}</p>
-          <p className="text-sm text-white/70">{role}</p>
-        </div>
-      </div>
-    </Card>
-  );
-};
-
-interface ImpactStatProps {
-  value: string;
-  label: string;
-}
-
-const ImpactStat: React.FC<ImpactStatProps> = ({ value, label }) => {
-  return (
-    <div className="text-center p-6 reveal">
-      <div className="text-4xl font-bold text-gold mb-2">{value}</div>
-      <p className="text-black">{label}</p>
-    </div>
-  );
-};
+const PartnerLogo: React.FC<PartnerLogoProps> = ({ name, logo }) => (
+  <div className="bg-white p-4 rounded-lg shadow-sm flex items-center justify-center h-24">
+    <img src={logo} alt={name} className="max-h-12 max-w-full" />
+  </div>
+);
 
 const Impact = () => {
   const initiatives = [
@@ -178,50 +107,19 @@ const Impact = () => {
       role: "Program Beneficiary"
     },
     {
-      quote: "Elfrida's support for female entrepreneurs has created opportunities that simply didn't exist before.",
+      quote: "Elfrida Park's support for female entrepreneurs has created opportunities that simply didn't exist before.",
       name: "Aisha Bello",
       role: "Women in Business Initiative Participant"
-    }
-  ];
-
-  const impactStats = [
-    { value: "800+", label: "Lives Impacted" },
-    { value: "12", label: "Communities Served" },
-    { value: "₦100M+", label: "Invested in Impact" },
-    { value: "25", label: "Impact Projects" }
-  ];
-
-  const impactPhilosophyCards = [
-    {
-      icon: <Heart size={32} className="text-gold mx-auto mb-4" />,
-      title: "Purpose-Driven",
-      description: "Creating meaningful impact aligned with community needs"
-    },
-    {
-      icon: <Users size={32} className="text-gold mx-auto mb-4" />,
-      title: "Community-Centered",
-      description: "Engaging communities as partners in development"
-    },
-    {
-      icon: <Sprout size={32} className="text-gold mx-auto mb-4" />,
-      title: "Sustainable",
-      description: "Building solutions that last and scale over time"
-    },
-    {
-      icon: <GraduationCap size={32} className="text-gold mx-auto mb-4" />,
-      title: "Skills-Focused",
-      description: "Developing capabilities for long-term success"
     }
   ];
 
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="page-hero bg-gradient-to-b from-gold-dark to-gold">
-        <div className="page-hero-overlay"></div>
-        <div className="page-hero-content">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-playfair text-white reveal">
+      <section className="pt-32 pb-20 bg-gradient-to-b from-gold-dark to-gold">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center text-white">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair reveal">
               Our Social Impact
             </h1>
             <p className="text-xl mb-8 text-white/90 reveal">
@@ -232,42 +130,65 @@ const Impact = () => {
       </section>
       
       {/* Impact Philosophy */}
-      <section className="section-padding bg-white">
+      <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal">
-              <h2 className="section-title gold-gradient mb-8">Our Impact Philosophy</h2>
-              <p className="text-black mb-6">
+              <SectionTitle 
+                title="Our Impact Philosophy" 
+                subtitle="We believe in creating sustainable, measurable social impact that transforms lives and communities."
+                align="left"
+                className="mb-8"
+              />
+              
+              <p className="text-earth-dark mb-6">
                 At Elfrida Park, social impact is not an afterthought but a core component of our business strategy. We believe that businesses have a responsibility to contribute positively to society, and we are committed to making a difference in the communities where we operate.
               </p>
               
-              <p className="text-black">
+              <p className="text-earth-dark">
                 Our approach to social impact focuses on three key areas: youth empowerment, women's economic inclusion, and community development. By focusing on these areas, we aim to create sustainable change that addresses systemic challenges and creates opportunities for long-term growth and development.
               </p>
             </div>
             
             <div className="grid grid-cols-2 gap-6 reveal">
-              {impactPhilosophyCards.map((card, index) => (
-                <Card key={index} className={`p-6 text-center border-ash-dark ${index % 2 !== 0 ? 'mt-8' : ''}`}>
-                  {card.icon}
-                  <h3 className="text-lg font-semibold mb-2 gold-gradient">{card.title}</h3>
-                  <p className="text-black text-sm">{card.description}</p>
-                </Card>
-              ))}
+              <div className="bg-earth-lightest p-6 rounded-lg text-center">
+                <Heart size={32} className="text-gold mx-auto mb-4" />
+                <h3 className="text-lg font-semibold mb-2">Purpose-Driven</h3>
+                <p className="text-earth-dark text-sm">Creating meaningful impact aligned with community needs</p>
+              </div>
+              
+              <div className="bg-earth-lightest p-6 rounded-lg text-center mt-8">
+                <Users size={32} className="text-gold mx-auto mb-4" />
+                <h3 className="text-lg font-semibold mb-2">Community-Centered</h3>
+                <p className="text-earth-dark text-sm">Engaging communities as partners in development</p>
+              </div>
+              
+              <div className="bg-earth-lightest p-6 rounded-lg text-center">
+                <Sprout size={32} className="text-gold mx-auto mb-4" />
+                <h3 className="text-lg font-semibold mb-2">Sustainable</h3>
+                <p className="text-earth-dark text-sm">Building solutions that last and scale over time</p>
+              </div>
+              
+              <div className="bg-earth-lightest p-6 rounded-lg text-center mt-8">
+                <GraduationCap size={32} className="text-gold mx-auto mb-4" />
+                <h3 className="text-lg font-semibold mb-2">Skills-Focused</h3>
+                <p className="text-earth-dark text-sm">Developing capabilities for long-term success</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
       
       {/* Impact Initiatives */}
-      <section className="section-padding bg-earth-lightest">
+      <section className="py-20 bg-earth-lightest">
         <div className="container-custom">
-          <h2 className="section-title gold-gradient text-center mb-4 reveal">Our Impact Initiatives</h2>
-          <p className="section-subtitle text-center mx-auto mb-12 text-black reveal">
-            See how our programs are making a difference in communities across Nigeria.
-          </p>
+          <SectionTitle 
+            title="Our Impact Initiatives" 
+            subtitle="See how our programs are making a difference in communities across Nigeria."
+            className="reveal"
+          />
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {initiatives.map((initiative, index) => (
               <ImpactCard key={index} {...initiative} />
             ))}
@@ -276,56 +197,67 @@ const Impact = () => {
       </section>
       
       {/* SDG Alignment */}
-      <section className="section-padding bg-white">
+      <section className="py-20 bg-white">
         <div className="container-custom">
-          <h2 className="section-title gold-gradient text-center mb-4 reveal">Aligned with Global Goals</h2>
-          <p className="section-subtitle text-center mx-auto mb-12 text-black reveal">
-            Our initiatives contribute to the United Nations Sustainable Development Goals.
-          </p>
+          <SectionTitle 
+            title="Aligned with Global Goals" 
+            subtitle="Our initiatives contribute to the United Nations Sustainable Development Goals."
+            className="reveal"
+          />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             {sdgGoals.map((goal) => (
-              <SDGGoal 
-                key={goal.number}
-                number={goal.number}
-                title={goal.title}
-                description={goal.description}
-              />
+              <div key={goal.number} className="border border-earth-lighter rounded-lg p-6 text-center hover:border-gold transition-colors reveal">
+                <div className="w-16 h-16 rounded-full bg-gold flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+                  {goal.number}
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{goal.title}</h3>
+                <p className="text-earth-dark text-sm">{goal.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
       
       {/* Impact Testimonials */}
-      <section className="section-padding bg-gradient-to-r from-earth-dark to-earth">
+      <section className="py-20 bg-gradient-to-r from-earth-dark to-earth text-white">
         <div className="container-custom">
-          <h2 className="section-title gold-gradient text-center mb-4 reveal">Impact Stories</h2>
-          <p className="section-subtitle text-center mx-auto mb-12 text-white/90 reveal">
-            Hear from those whose lives have been transformed through our initiatives.
-          </p>
+          <SectionTitle 
+            title="Impact Stories" 
+            subtitle="Hear from those whose lives have been transformed through our initiatives."
+            light={true}
+            className="reveal"
+          />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             {testimonials.map((testimonial, index) => (
-              <Testimonial 
-                key={index}
-                quote={testimonial.quote}
-                name={testimonial.name}
-                role={testimonial.role}
-              />
+              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-8 shadow-lg reveal">
+                <p className="text-white/90 italic text-lg mb-6">"{testimonial.quote}"</p>
+                <div className="flex items-center">
+                  <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center">
+                    <Users size={20} className="text-white" />
+                  </div>
+                  <div className="ml-4">
+                    <p className="font-medium">{testimonial.name}</p>
+                    <p className="text-sm text-white/70">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
       
       {/* Partners */}
-      <section className="section-padding bg-white">
+      <section className="py-20 bg-white">
         <div className="container-custom">
-          <h2 className="section-title gold-gradient text-center mb-4 reveal">Our Impact Partners</h2>
-          <p className="section-subtitle text-center mx-auto mb-12 text-black reveal">
-            Collaborating with organizations that share our commitment to creating positive change.
-          </p>
+          <SectionTitle 
+            title="Our Impact Partners" 
+            subtitle="Collaborating with organizations that share our commitment to creating positive change."
+            className="reveal"
+          />
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-12">
             {partnerLogos.map((partner, index) => (
               <PartnerLogo key={index} {...partner} />
             ))}
@@ -334,36 +266,47 @@ const Impact = () => {
       </section>
       
       {/* Impact Metrics */}
-      <section className="section-padding bg-earth-lightest">
+      <section className="py-20 bg-earth-lightest">
         <div className="container-custom">
-          <h2 className="section-title gold-gradient text-center mb-4 reveal">Our Impact in Numbers</h2>
-          <p className="section-subtitle text-center mx-auto mb-12 text-black reveal">
-            Measuring the difference we've made through our initiatives.
-          </p>
+          <SectionTitle 
+            title="Our Impact in Numbers" 
+            subtitle="Measuring the difference we've made through our initiatives."
+            className="reveal"
+          />
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {impactStats.map((stat, index) => (
-              <ImpactStat 
-                key={index}
-                value={stat.value}
-                label={stat.label}
-              />
-            ))}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
+            <div className="text-center p-6 reveal">
+              <div className="text-4xl font-bold text-gold mb-2">800+</div>
+              <p className="text-earth-dark">Lives Impacted</p>
+            </div>
+            
+            <div className="text-center p-6 reveal">
+              <div className="text-4xl font-bold text-gold mb-2">12</div>
+              <p className="text-earth-dark">Communities Served</p>
+            </div>
+            
+            <div className="text-center p-6 reveal">
+              <div className="text-4xl font-bold text-gold mb-2">₦100M+</div>
+              <p className="text-earth-dark">Invested in Impact</p>
+            </div>
+            
+            <div className="text-center p-6 reveal">
+              <div className="text-4xl font-bold text-gold mb-2">25</div>
+              <p className="text-earth-dark">Impact Projects</p>
+            </div>
           </div>
         </div>
       </section>
       
       {/* Get Involved */}
-      <section className="section-padding bg-royal text-center">
+      <section className="py-20 bg-royal text-white text-center">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto reveal">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-playfair gold-gradient">
-              Partner With Us For Impact
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-playfair">Partner With Us For Impact</h2>
             <p className="text-xl mb-8 text-white/90">
               Join us in our mission to create meaningful change and build sustainable futures. Whether as a corporate partner, donor, or volunteer, there are many ways to get involved.
             </p>
-            <Link to="/contact" className="btn-primary inline-flex items-center">
+            <Link to="/contact" className="btn-primary bg-gold hover:bg-gold-dark inline-flex items-center">
               <span>Get Involved</span>
               <ArrowRight size={18} className="ml-2" />
             </Link>
@@ -372,7 +315,7 @@ const Impact = () => {
       </section>
       
       {/* Annual Report */}
-      <section className="section-padding bg-white">
+      <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 reveal">
@@ -392,9 +335,15 @@ const Impact = () => {
             </div>
             
             <div className="order-1 lg:order-2 reveal">
-              <h2 className="section-title gold-gradient mb-4">Annual Impact Report</h2>
-              <p className="mb-6 text-black">
-                Our Annual Impact Report provides a comprehensive overview of our impact initiatives, including detailed metrics, beneficiary stories, and financial transparency. Download the report to learn more about how we're making a difference at Elfrida's.
+              <SectionTitle 
+                title="Annual Impact Report" 
+                subtitle="Detailed insights into our social impact initiatives and outcomes."
+                align="left"
+                className="mb-8"
+              />
+              
+              <p className="text-earth-dark mb-6">
+                Our Annual Impact Report provides a comprehensive overview of our impact initiatives, including detailed metrics, beneficiary stories, and financial transparency. Download the report to learn more about how we're making a difference.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -406,18 +355,6 @@ const Impact = () => {
                 </Link>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Address Footer */}
-      <section className="py-10 bg-earth-dark">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-white/80 text-sm">
-              Elfrida's Suite, No 235 RIVTAF Shopping Complex (Golf Estate), <br />
-              Off Peter Odili Road, Port Harcourt, Rivers State.
-            </p>
           </div>
         </div>
       </section>

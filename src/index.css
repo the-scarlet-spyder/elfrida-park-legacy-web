@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
@@ -7,33 +8,33 @@
 
 @layer base {
   :root {
-    --background: 276 3% 25%;
-    --foreground: 0 0% 98%;
+    --background: 30 33% 98%;
+    --foreground: 30 10% 15%;
 
-    --card: 276 3% 30%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 15%;
 
-    --popover: 276 3% 30%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 15%;
 
-    --primary: 45 76% 52%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 37 45% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 276 3% 20%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 220 70% 33%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 276 3% 20%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 30 5% 96%;
+    --muted-foreground: 30 5% 45%;
 
-    --accent: 45 76% 52%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 220 70% 33%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 276 3% 30%;
-    --input: 276 3% 30%;
-    --ring: 45 76% 52%;
+    --border: 30 15% 90%;
+    --input: 30 15% 90%;
+    --ring: 37 45% 60%;
 
     --radius: 0.5rem;
   }
@@ -45,15 +46,11 @@
   }
   
   body {
-    @apply bg-black text-white antialiased;
+    @apply bg-background text-foreground font-inter antialiased;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-playfair font-medium text-white;
-  }
-
-  p {
-    @apply text-white/90 leading-relaxed;
+    @apply font-playfair font-medium;
   }
 }
 
@@ -63,7 +60,7 @@
   }
   
   .btn-primary {
-    @apply bg-gold text-black hover:bg-gold-light px-6 py-3 rounded-md transition-all duration-300 inline-flex items-center justify-center font-medium;
+    @apply bg-gold text-white hover:bg-gold-dark px-6 py-3 rounded-md transition-all duration-300 inline-flex items-center justify-center font-medium;
   }
   
   .btn-secondary {
@@ -75,7 +72,7 @@
   }
   
   .section-subtitle {
-    @apply text-xl text-white/90 font-medium mb-12 max-w-2xl;
+    @apply text-xl text-earth font-medium mb-12 max-w-2xl;
   }
   
   .section-padding {
@@ -84,26 +81,6 @@
   
   .animate-on-scroll {
     @apply opacity-0;
-  }
-  
-  .glass-effect {
-    @apply bg-black-light/50 backdrop-blur-lg border border-ash-dark/20;
-  }
-
-  .page-hero {
-    @apply pt-32 pb-20 bg-black relative overflow-hidden;
-  }
-
-  .page-hero-overlay {
-    @apply absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/80 z-10;
-  }
-
-  .page-hero-content {
-    @apply container-custom relative z-20;
-  }
-
-  .text-content {
-    @apply text-white/90 leading-relaxed;
   }
 }
 
@@ -133,275 +110,4 @@
 .reveal.active {
   transform: translateY(0);
   opacity: 1;
-}
-
-/* Gold gradient text effect */
-.gold-gradient {
-  background: linear-gradient(to right, #D4AF37, #F2D87A, #D4AF37);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Gold glow effect */
-.gold-glow {
-  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-}
-
-/* Glass card effect */
-.glass-card {
-  @apply bg-black-light/70 backdrop-blur-md border border-ash-dark/30 rounded-lg shadow-lg;
-}
-
-/* Hero section inspired by the reference image */
-.hero-container {
-  @apply relative overflow-hidden h-screen flex items-center bg-black;
-}
-
-.hero-content {
-  @apply container-custom z-20 relative;
-}
-
-.hero-image-container {
-  @apply absolute top-0 right-0 w-full h-full z-10 overflow-hidden;
-}
-
-.hero-image {
-  @apply w-full h-full object-cover opacity-60;
-}
-
-.hero-overlay {
-  @apply absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/70 z-10;
-}
-
-.hero-stats {
-  @apply mt-12 grid grid-cols-3 gap-8 max-w-xl border-t border-gold/30 pt-8;
-}
-
-.hero-stat {
-  @apply text-center;
-}
-
-.hero-stat-number {
-  @apply text-3xl md:text-4xl font-bold text-gold mb-1;
-}
-
-.hero-stat-label {
-  @apply text-sm md:text-base text-white/80;
-}
-
-/* Service page consistent styling */
-.service-section {
-  @apply py-20 bg-black;
-}
-
-.service-grid {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
-}
-
-.service-card {
-  @apply glass-card p-8 hover:shadow-gold/20 hover:border-gold/30 transition-all duration-300;
-}
-
-.service-icon {
-  @apply text-gold mb-4 w-12 h-12 flex items-center justify-center rounded-full bg-black-light border border-gold/20;
-}
-
-.service-title {
-  @apply text-xl font-semibold mb-3 text-white;
-}
-
-.service-description {
-  @apply text-white/90;
-}
-
-/* Updated feature section */
-.feature-section {
-  @apply py-20 bg-black-light relative overflow-hidden;
-}
-
-.feature-bg {
-  @apply absolute inset-0 opacity-10;
-  background-image: radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 40%);
-}
-
-.feature-content {
-  @apply container-custom relative z-10;
-}
-
-/* Updated text visibility for all pages */
-.text-content, 
-.prose p,
-.prose li,
-.text-earth,
-.text-earth-dark,
-.text-earth-light,
-.text-earth-lighter {
-  @apply text-white/90;
-}
-
-.text-black, 
-.text-black-light {
-  @apply text-white;
-}
-
-/* Ensure proper contrast for dark backgrounds */
-.bg-black p, 
-.bg-black-light p,
-.glass-card p,
-.enhanced-glass p {
-  @apply text-white/90;
-}
-
-/* Ensure headings are visible */
-.glass-card h1,
-.glass-card h2, 
-.glass-card h3,
-.glass-card h4,
-.glass-card h5,
-.glass-card h6,
-.enhanced-glass h1,
-.enhanced-glass h2,
-.enhanced-glass h3,
-.enhanced-glass h4,
-.enhanced-glass h5,
-.enhanced-glass h6 {
-  @apply text-white;
-}
-
-/* Add enhancing styles */
-.gold-border {
-  border: 1px solid #D4AF37;
-}
-
-.gold-shadow {
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
-}
-
-.gold-hover:hover {
-  color: #D4AF37;
-}
-
-.hover-shadow:hover {
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  transform: translateY(-5px);
-}
-
-/* Text visibility fixes */
-p, h1, h2, h3, h4, h5, h6, label, span, a {
-  @apply text-white;
-}
-
-.bg-white p, 
-.bg-white span, 
-.bg-white div, 
-.bg-white label, 
-.bg-earth-lightest p, 
-.bg-earth-lightest span, 
-.bg-earth-lightest div, 
-.bg-earth-lightest label {
-  @apply text-black;
-}
-
-h1.gold-gradient, 
-h2.gold-gradient, 
-h3.gold-gradient, 
-h4.gold-gradient, 
-h5.gold-gradient, 
-h6.gold-gradient {
-  background: linear-gradient(to right, #D4AF37, #F2D87A, #D4AF37);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Fix for blue or royal gradients sections */
-.bg-gradient-to-r.from-royal p,
-.bg-gradient-to-b.from-royal p,
-.bg-royal p,
-.bg-royal-light p {
-  @apply text-white;
-}
-
-/* Fix for dark backgrounds where text needs to be white */
-.bg-earth-dark p,
-.bg-black p,
-.bg-black-dark p {
-  @apply text-white;
-}
-
-/* Shimmer effect for elements */
-.shimmer {
-  position: relative;
-  overflow: hidden;
-}
-
-.shimmer::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(255, 255, 255, 0.05) 50%,
-    transparent 100%
-  );
-  transform: rotate(30deg);
-  animation: shimmer 4s infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    transform: rotate(30deg) translateX(-100%);
-  }
-  100% {
-    transform: rotate(30deg) translateX(100%);
-  }
-}
-
-/* Glow pulse for CTA elements */
-.glow-pulse {
-  animation: glowPulse 2s infinite;
-}
-
-@keyframes glowPulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
-  }
-}
-
-/* Text reveal animation */
-.text-reveal {
-  overflow: hidden;
-}
-
-.text-reveal span {
-  display: inline-block;
-  transform: translateY(100%);
-  animation: textReveal 1s forwards;
-}
-
-@keyframes textReveal {
-  to {
-    transform: translateY(0);
-  }
-}
-
-/* Enhanced glass effect */
-.enhanced-glass {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0));
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(212, 175, 55, 0.1);
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.36),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }

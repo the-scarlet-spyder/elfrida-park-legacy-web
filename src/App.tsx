@@ -11,8 +11,6 @@ import Advisory from "./pages/Advisory";
 import About from "./pages/About";
 import Impact from "./pages/Impact";
 import Contact from "./pages/Contact";
-import Properties from "./pages/Properties";
-import PropertyDetails from "./pages/PropertyDetails";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,8 +29,6 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/impact" element={<Impact />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/properties" element={<Properties />} />
-          <Route path="/properties/:id" element={<PropertyDetails />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
