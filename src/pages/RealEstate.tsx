@@ -75,7 +75,7 @@ const RealEstate = () => {
     link: "/contact"
   },
   {
-    image: "https://images.unsplash.com/photo-1594673213454-5e4b9d2b6e8a?q=80&w=1000", // Consider updating to a relevant image later
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1932", // Consider updating to a relevant image later
     title: "Exclusive Prime Land",
     location: "Guzape II, Abuja",
     type: "20 Hectares",
