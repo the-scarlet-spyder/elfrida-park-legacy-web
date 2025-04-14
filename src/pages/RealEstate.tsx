@@ -67,7 +67,7 @@ const RealEstate = () => {
   
  const featuredProperties = [
   {
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000", // Consider updating to a relevant image later
+    image: "https://images.unsplash.com/photo-1503453363464-743ee9ce1584?q=80&w=1772", // Consider updating to a relevant image later
     title: "Exclusive Prime Land",
     location: "Apo-Tafyi, Abuja",
     type: "47.9 Hectares",
