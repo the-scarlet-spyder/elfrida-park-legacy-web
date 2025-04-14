@@ -58,8 +58,8 @@ const Contact = () => {
                   title="Visit Us"
                   content={
                     <p>
-                      123 Lagos Business District<br />
-                      Victoria Island, Lagos<br />
+                      48 Marina Parade, Riverside Drive<br />
+                      Lagos Island, Lagos<br />
                       Nigeria
                     </p>
                   }
@@ -147,19 +147,20 @@ const Contact = () => {
         <div className="container-custom">
           <SectionTitle 
             title="Find Us" 
-            subtitle="Visit our office in the heart of Lagos Business District."
+            subtitle="Visit our office on Marina Parade, Riverside Drive, Lagos Island."
             className="reveal"
           />
           
           <div className="mt-8 rounded-lg overflow-hidden shadow-md h-96 reveal">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63427.97620499433!2d3.3790121935070164!3d6.45478826727042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sVictoria%20Island%2C%20Lagos!5e0!3m2!1sen!2sng!4v1650000000000!5m2!1sen!2sng" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.5858032334455!2d3.4110428752955596!3d6.444396693544847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf4c19ae31bef%3A0x530d7e2a6d487b9a!2sMarina%20Parade!5e0!3m2!1sen!2sng!4v1713839951092!5m2!1sen!2sng" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
               allowFullScreen 
               loading="lazy" 
               title="Elfrida Limited Office Location"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>

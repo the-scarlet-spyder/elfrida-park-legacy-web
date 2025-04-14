@@ -9,6 +9,7 @@ interface SectionTitleProps {
   className?: string;
   subtitleClassName?: string;
   light?: boolean;
+  underline?: boolean;
 }
 
 const SectionTitle: React.FC<SectionTitleProps> = ({
@@ -18,6 +19,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   className,
   subtitleClassName,
   light = false,
+  underline = true,
 }) => {
   return (
     <div className={cn(
@@ -30,7 +32,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
       <h2 className={cn(
         'section-title relative inline-block',
         'text-gold',
-        'after:content-[""] after:block after:w-2/3 after:h-[3px] after:bg-gold after:mt-2'
+        underline && 'after:content-[""] after:block after:w-2/3 after:h-[3px] after:bg-gold after:mt-2'
       )}>
         {title}
       </h2>

@@ -4,36 +4,9 @@ import MainLayout from '@/components/MainLayout';
 import SectionTitle from '@/components/SectionTitle';
 import { Heart, Users, Sprout, GraduationCap, Award, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-interface ImpactCardProps {
-  title: string;
-  description: string;
-  image: string;
-  stats: string[];
-}
-
-const ImpactCard: React.FC<ImpactCardProps> = ({ title, description, image, stats }) => (
-  <div className="bg-darkgrey-light rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all reveal">
-    <div className="aspect-[16/9] overflow-hidden">
-      <img 
-        src={image} 
-        alt={title} 
-        className="w-full h-full object-cover"
-      />
-    </div>
-    <div className="p-6">
-      <h3 className="text-xl font-semibold mb-3 font-playfair text-gold">{title}</h3>
-      <p className="text-white/80 mb-6">{description}</p>
-      <div className="grid grid-cols-2 gap-4 mt-4">
-        {stats.map((stat, index) => (
-          <div key={index} className="bg-darkgrey p-3 rounded-md text-center">
-            <p className="text-white/80 text-sm">{stat}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-);
+import ImpactInitiatives from '@/components/impact/ImpactInitiatives';
+import ImpactMetrics from '@/components/impact/ImpactMetrics';
+import TestimonialSlider from '@/components/TestimonialSlider';
 
 interface PartnerLogoProps {
   name: string;
@@ -41,7 +14,7 @@ interface PartnerLogoProps {
 }
 
 const PartnerLogo: React.FC<PartnerLogoProps> = ({ name, logo }) => (
-  <div className="bg-darkgrey-light p-4 rounded-lg shadow-sm flex items-center justify-center h-24">
+  <div className="bg-darkgrey-light p-4 rounded-lg shadow-sm flex items-center justify-center h-24 hover:shadow-md transition-all">
     <img src={logo} alt={name} className="max-h-12 max-w-full" />
   </div>
 );
@@ -102,14 +75,58 @@ const Impact = () => {
   
   const testimonials = [
     {
-      quote: "The youth empowerment program changed my life completely. I went from being unemployed to starting my own business.",
+      id: 1,
+      quote: "The youth empowerment program changed my life completely. I went from being unemployed to starting my own tech business that now employs five people.",
       name: "Chidinma Okonkwo",
-      role: "Program Beneficiary"
+      role: "Program Beneficiary",
+      rating: 5
     },
     {
-      quote: "Elfrida Park's support for female entrepreneurs has created opportunities that simply didn't exist before.",
+      id: 2,
+      quote: "Elfrida's support for female entrepreneurs has created opportunities that simply didn't exist before. Their mentorship and funding helped me scale my business beyond my wildest dreams.",
       name: "Aisha Bello",
-      role: "Women in Business Initiative Participant"
+      role: "Women in Business Initiative Participant",
+      rating: 5
+    },
+    {
+      id: 3,
+      quote: "Our community has seen incredible transformation through Elfrida's development projects. The new water system has improved health outcomes dramatically.",
+      name: "Chief Emeka Nwosu",
+      role: "Community Leader",
+      rating: 5
+    },
+    {
+      id: 4,
+      quote: "The training I received through the Youth Empowerment Program gave me skills that universities don't teach. I'm now financially independent and supporting my family.",
+      name: "Tunde Adeyemi",
+      role: "Program Graduate",
+      rating: 4
+    },
+    {
+      id: 5,
+      quote: "As a community partner, I've witnessed firsthand how Elfrida's holistic approach to development creates lasting change rather than just temporary relief.",
+      name: "Dr. Fatima Mohammed",
+      role: "NGO Director",
+      rating: 5
+    }
+  ];
+
+  const impactMetrics = [
+    {
+      value: "800+",
+      label: "Lives Directly Impacted"
+    },
+    {
+      value: "12",
+      label: "Communities Served"
+    },
+    {
+      value: "₦100M+",
+      label: "Invested in Impact"
+    },
+    {
+      value: "25",
+      label: "Impact Projects"
     }
   ];
 
@@ -180,21 +197,7 @@ const Impact = () => {
       </section>
       
       {/* Impact Initiatives */}
-      <section className="py-20 bg-darkgrey-light">
-        <div className="container-custom">
-          <SectionTitle 
-            title="Our Impact Initiatives" 
-            subtitle="See how our programs are making a difference in communities across Nigeria."
-            className="reveal"
-          />
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {initiatives.map((initiative, index) => (
-              <ImpactCard key={index} {...initiative} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <ImpactInitiatives initiatives={initiatives} />
       
       {/* SDG Alignment */}
       <section className="py-20 bg-darkgrey">
@@ -229,21 +232,8 @@ const Impact = () => {
             className="reveal"
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-darkgrey-light/10 backdrop-blur-sm rounded-lg p-8 shadow-lg reveal">
-                <p className="text-white/90 italic text-lg mb-6">"{testimonial.quote}"</p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center">
-                    <Users size={20} className="text-darkgrey" />
-                  </div>
-                  <div className="ml-4">
-                    <p className="font-medium text-white">{testimonial.name}</p>
-                    <p className="text-sm text-gold">{testimonial.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="mt-12 reveal">
+            <TestimonialSlider testimonials={testimonials} autoplaySpeed={6000} />
           </div>
         </div>
       </section>
@@ -274,27 +264,7 @@ const Impact = () => {
             className="reveal"
           />
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
-            <div className="text-center p-6 reveal">
-              <div className="text-4xl font-bold text-gold mb-2">800+</div>
-              <p className="text-white/80">Lives Impacted</p>
-            </div>
-            
-            <div className="text-center p-6 reveal">
-              <div className="text-4xl font-bold text-gold mb-2">12</div>
-              <p className="text-white/80">Communities Served</p>
-            </div>
-            
-            <div className="text-center p-6 reveal">
-              <div className="text-4xl font-bold text-gold mb-2">₦100M+</div>
-              <p className="text-white/80">Invested in Impact</p>
-            </div>
-            
-            <div className="text-center p-6 reveal">
-              <div className="text-4xl font-bold text-gold mb-2">25</div>
-              <p className="text-white/80">Impact Projects</p>
-            </div>
-          </div>
+          <ImpactMetrics metrics={impactMetrics} className="mt-12" />
         </div>
       </section>
       
