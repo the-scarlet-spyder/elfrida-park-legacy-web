@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
@@ -60,7 +61,7 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
                 ))}
               </div>
 
-              <blockquote className="text-xl md:text-2xl font-light italic mb-6 text-earth-dark">
+              <blockquote className="text-xl md:text-2xl font-light italic mb-6 text-white">
                 "{testimonial.content}"
               </blockquote>
 
@@ -75,10 +76,10 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
                   </div>
                 )}
                 <div className="text-left">
-                  <p className="font-medium text-foreground">
+                  <p className="font-medium text-white">
                     {testimonial.name}
                   </p>
-                  <p className="text-sm text-earth">{testimonial.position}</p>
+                  <p className="text-sm text-gold">{testimonial.position}</p>
                 </div>
               </div>
             </div>
@@ -90,14 +91,14 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
         <div className="flex justify-center mt-8 space-x-4">
           <button
             onClick={prevSlide}
-            className="p-2 rounded-full border border-earth-light text-earth-dark hover:bg-gold hover:text-white hover:border-gold transition-colors"
+            className="p-2 rounded-full border border-gold text-gold hover:bg-gold hover:text-darkgrey hover:border-gold transition-colors"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={20} />
           </button>
           <button
             onClick={nextSlide}
-            className="p-2 rounded-full border border-earth-light text-earth-dark hover:bg-gold hover:text-white hover:border-gold transition-colors"
+            className="p-2 rounded-full border border-gold text-gold hover:bg-gold hover:text-darkgrey hover:border-gold transition-colors"
             aria-label="Next testimonial"
           >
             <ChevronRight size={20} />
