@@ -12,14 +12,14 @@ const ServiceCard = ({ icon, title, description }: {
   description: string;
 }) => {
   return (
-    <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all reveal">
+    <div className="bg-darkgrey p-8 rounded-lg shadow-md hover:shadow-lg transition-all reveal">
       <div className="mb-6">
-        <div className="w-14 h-14 rounded-full bg-earth-lightest flex items-center justify-center">
+        <div className="w-14 h-14 rounded-full bg-darkgrey-light flex items-center justify-center">
           {icon}
         </div>
       </div>
-      <h3 className="text-xl font-semibold mb-3 font-playfair">{title}</h3>
-      <p className="text-earth-dark">{description}</p>
+      <h3 className="text-xl font-semibold mb-3 font-playfair text-gold">{title}</h3>
+      <p className="text-gray-300">{description}</p>
     </div>
   );
 };
@@ -78,13 +78,13 @@ const Advisory = () => {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-b from-earth-dark to-earth">
+      <section className="pt-32 pb-20 bg-darkgrey-dark">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair reveal">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair reveal text-gold">
               Advisory Services
             </h1>
-            <p className="text-xl mb-8 text-earth-lighter reveal">
+            <p className="text-xl mb-8 text-gray-300 reveal">
               Strategic guidance to help you navigate complex decisions and build sustainable futures.
             </p>
             <Link to="/contact" className="btn-primary reveal">
@@ -95,7 +95,7 @@ const Advisory = () => {
       </section>
       
       {/* Services Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-darkgrey">
         <div className="container-custom">
           <SectionTitle 
             title="Our Advisory Expertise" 
@@ -115,7 +115,7 @@ const Advisory = () => {
       </section>
       
       {/* Why Choose Us */}
-      <section className="py-20 bg-earth-lightest">
+      <section className="py-20 bg-darkgrey-dark">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal">
@@ -125,8 +125,8 @@ const Advisory = () => {
                   alt="Advisory Meeting" 
                   className="rounded-lg shadow-lg w-full h-auto"
                 />
-                <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-lg shadow-lg max-w-xs">
-                  <p className="text-earth-dark italic">
+                <div className="absolute -bottom-6 -right-6 bg-darkgrey p-6 rounded-lg shadow-lg max-w-xs">
+                  <p className="text-gray-300 italic">
                     "The strategic guidance from Elfrida Limited helped us navigate a complex regulatory landscape while maintaining our growth trajectory."
                   </p>
                   <p className="text-gold font-medium mt-2">
@@ -148,7 +148,7 @@ const Advisory = () => {
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start">
                     <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                    <span>{benefit}</span>
+                    <span className="text-gray-300">{benefit}</span>
                   </li>
                 ))}
               </ul>
@@ -165,7 +165,7 @@ const Advisory = () => {
       </section>
       
       {/* Impact Stats Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-darkgrey">
         <div className="container-custom">
           <SectionTitle 
             title="Our Impact" 
@@ -175,16 +175,16 @@ const Advisory = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             {impactStats.map((stat, index) => (
-              <div key={index} className="text-center p-6 border border-earth-lightest rounded-lg reveal">
+              <div key={index} className="text-center p-6 border border-darkgrey-light rounded-lg reveal bg-darkgrey-dark">
                 <div className="text-3xl font-bold text-gold mb-2">{stat.value}</div>
-                <h4 className="text-lg font-medium mb-2">{stat.label}</h4>
-                <p className="text-sm text-earth">{stat.description}</p>
+                <h4 className="text-lg font-medium mb-2 text-white">{stat.label}</h4>
+                <p className="text-sm text-gray-300">{stat.description}</p>
               </div>
             ))}
           </div>
           
           <div className="mt-12 text-center reveal">
-            <p className="text-lg text-earth-dark max-w-3xl mx-auto">
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               Our advisory work extends beyond transactions, focusing on creating long-term value and sustainable impact for our clients and the communities they serve.
             </p>
           </div>
@@ -192,7 +192,7 @@ const Advisory = () => {
       </section>
       
       {/* Process Section */}
-      <section className="py-20 bg-earth-lightest">
+      <section className="py-20 bg-darkgrey-dark">
         <div className="container-custom">
           <SectionTitle 
             title="Our Advisory Process" 
@@ -201,38 +201,38 @@ const Advisory = () => {
           />
           
           <div className="mt-12 relative">
-            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-earth-light -translate-y-1/2"></div>
+            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-darkgrey-light -translate-y-1/2"></div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-md relative reveal">
-                <div className="w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center font-semibold absolute -top-5 left-1/2 transform -translate-x-1/2">1</div>
+              <div className="bg-darkgrey p-6 rounded-lg shadow-md relative reveal">
+                <div className="w-10 h-10 rounded-full bg-gold text-darkgrey flex items-center justify-center font-semibold absolute -top-5 left-1/2 transform -translate-x-1/2">1</div>
                 <div className="mt-6 text-center">
-                  <h3 className="text-lg font-semibold mb-3">Consultation</h3>
-                  <p className="text-earth-dark text-sm">In-depth discovery session to understand your goals, challenges, and vision.</p>
+                  <h3 className="text-lg font-semibold mb-3 text-gold">Consultation</h3>
+                  <p className="text-gray-300 text-sm">In-depth discovery session to understand your goals, challenges, and vision.</p>
                 </div>
               </div>
               
-              <div className="bg-white p-6 rounded-lg shadow-md relative reveal">
-                <div className="w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center font-semibold absolute -top-5 left-1/2 transform -translate-x-1/2">2</div>
+              <div className="bg-darkgrey p-6 rounded-lg shadow-md relative reveal">
+                <div className="w-10 h-10 rounded-full bg-gold text-darkgrey flex items-center justify-center font-semibold absolute -top-5 left-1/2 transform -translate-x-1/2">2</div>
                 <div className="mt-6 text-center">
-                  <h3 className="text-lg font-semibold mb-3">Analysis</h3>
-                  <p className="text-earth-dark text-sm">Comprehensive assessment of your situation and potential strategic options.</p>
+                  <h3 className="text-lg font-semibold mb-3 text-gold">Analysis</h3>
+                  <p className="text-gray-300 text-sm">Comprehensive assessment of your situation and potential strategic options.</p>
                 </div>
               </div>
               
-              <div className="bg-white p-6 rounded-lg shadow-md relative reveal">
-                <div className="w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center font-semibold absolute -top-5 left-1/2 transform -translate-x-1/2">3</div>
+              <div className="bg-darkgrey p-6 rounded-lg shadow-md relative reveal">
+                <div className="w-10 h-10 rounded-full bg-gold text-darkgrey flex items-center justify-center font-semibold absolute -top-5 left-1/2 transform -translate-x-1/2">3</div>
                 <div className="mt-6 text-center">
-                  <h3 className="text-lg font-semibold mb-3">Strategy Development</h3>
-                  <p className="text-earth-dark text-sm">Creation of tailored solutions and actionable implementation plans.</p>
+                  <h3 className="text-lg font-semibold mb-3 text-gold">Strategy Development</h3>
+                  <p className="text-gray-300 text-sm">Creation of tailored solutions and actionable implementation plans.</p>
                 </div>
               </div>
               
-              <div className="bg-white p-6 rounded-lg shadow-md relative reveal">
-                <div className="w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center font-semibold absolute -top-5 left-1/2 transform -translate-x-1/2">4</div>
+              <div className="bg-darkgrey p-6 rounded-lg shadow-md relative reveal">
+                <div className="w-10 h-10 rounded-full bg-gold text-darkgrey flex items-center justify-center font-semibold absolute -top-5 left-1/2 transform -translate-x-1/2">4</div>
                 <div className="mt-6 text-center">
-                  <h3 className="text-lg font-semibold mb-3">Implementation & Support</h3>
-                  <p className="text-earth-dark text-sm">Ongoing guidance, monitoring, and refinement as your journey evolves.</p>
+                  <h3 className="text-lg font-semibold mb-3 text-gold">Implementation & Support</h3>
+                  <p className="text-gray-300 text-sm">Ongoing guidance, monitoring, and refinement as your journey evolves.</p>
                 </div>
               </div>
             </div>
@@ -241,12 +241,12 @@ const Advisory = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-16 bg-earth-dark text-white">
+      <section className="py-16 bg-darkgrey-light text-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center reveal">
             <BarChart3 size={48} className="text-gold mx-auto mb-6" />
-            <h2 className="text-3xl font-bold mb-4 font-playfair">Ready to Build a Strategic Future?</h2>
-            <p className="text-xl mb-8 text-earth-lighter">
+            <h2 className="text-3xl font-bold mb-4 font-playfair text-gold">Ready to Build a Strategic Future?</h2>
+            <p className="text-xl mb-8 text-gray-300">
               Partner with Elfrida Limited's advisory team to navigate complexity and unlock sustainable growth.
             </p>
             <Link to="/contact" className="btn-primary">
@@ -257,7 +257,7 @@ const Advisory = () => {
       </section>
       
       {/* Contact Form */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-darkgrey">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="reveal">
@@ -268,7 +268,7 @@ const Advisory = () => {
                 className="mb-8"
               />
               
-              <div className="prose max-w-none text-earth-dark">
+              <div className="prose max-w-none text-gray-300">
                 <p>
                   Our team of experts is ready to provide the strategic guidance you need to navigate complex challenges and seize opportunities. Whether you're seeking legal advice, financial planning, or CSR strategies, Elfrida Limited is your trusted partner.
                 </p>
@@ -278,8 +278,9 @@ const Advisory = () => {
               </div>
             </div>
             
-            <div className="bg-earth-lightest p-8 rounded-lg shadow-md reveal">
+            <div className="bg-darkgrey-dark p-8 rounded-lg shadow-md reveal">
               <ContactForm 
+                dark={true}
                 title=""
                 subtitle=""
               />

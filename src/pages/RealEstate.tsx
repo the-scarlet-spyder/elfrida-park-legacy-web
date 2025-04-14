@@ -25,9 +25,9 @@ const PropertyCard = ({ image, title, location, type, price, link }: {
       </div>
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2 font-playfair text-gold">{title}</h3>
-        <p className="text-earth mb-2">{location}</p>
+        <p className="text-gray-300 mb-2">{location}</p>
         <div className="flex justify-between items-center mb-4">
-          <span className="text-sm text-earth-dark px-3 py-1 bg-darkgrey-light rounded-full">{type}</span>
+          <span className="text-sm text-gray-300 px-3 py-1 bg-darkgrey-light rounded-full">{type}</span>
           <span className="font-medium text-gold">{price}</span>
         </div>
         <Link to={link} className="btn-secondary w-full text-center">Contact Us</Link>
@@ -95,7 +95,7 @@ const RealEstate = () => {
 
   return (
     <MainLayout>
-      {/* Hero Section - Updated to use darkgrey-dark */}
+      {/* Hero Section */}
       <section className="pt-32 pb-20 bg-darkgrey-dark">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center text-white">
@@ -112,7 +112,7 @@ const RealEstate = () => {
         </div>
       </section>
       
-      {/* Services Section - Updated to use darkgrey as main theme */}
+      {/* Services Section */}
       <section className="py-20 bg-darkgrey">
         <div className="container-custom">
           <SectionTitle 
@@ -135,7 +135,7 @@ const RealEstate = () => {
         </div>
       </section>
       
-      {/* Featured Properties - Kept dark */}
+      {/* Featured Properties */}
       <section className="bg-darkgrey-dark py-20">
         <div className="container-custom">
           <SectionTitle 
@@ -154,7 +154,7 @@ const RealEstate = () => {
         </div>
       </section>
       
-      {/* Why Choose Us - Updated to use darkgrey */}
+      {/* Why Choose Us */}
       <section className="py-20 bg-darkgrey">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -204,7 +204,7 @@ const RealEstate = () => {
         </div>
       </section>
       
-      {/* Contact Form - Updated to use secondary color (darkgrey-light) for background */}
+      {/* Contact Form */}
       <section id="contact-form" className="py-20 bg-darkgrey-light text-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

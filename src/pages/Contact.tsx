@@ -17,8 +17,8 @@ const ContactInfoItem: React.FC<ContactInfoItemProps> = ({ icon, title, content 
       {icon}
     </div>
     <div>
-      <h3 className="font-semibold text-lg mb-1">{title}</h3>
-      <div className="text-earth-dark">{content}</div>
+      <h3 className="font-semibold text-lg mb-1 text-gold">{title}</h3>
+      <div className="text-gray-300">{content}</div>
     </div>
   </div>
 );
@@ -27,13 +27,13 @@ const Contact = () => {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-b from-earth-dark to-earth">
+      <section className="pt-32 pb-20 bg-darkgrey-dark">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair reveal">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair reveal text-gold">
               Contact Us
             </h1>
-            <p className="text-xl mb-8 text-earth-lighter reveal">
+            <p className="text-xl mb-8 text-gray-300 reveal">
               Reach out to our team for inquiries, collaborations, or to learn more about our services.
             </p>
           </div>
@@ -41,7 +41,7 @@ const Contact = () => {
       </section>
       
       {/* Contact Form Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-darkgrey">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="reveal">
@@ -107,7 +107,7 @@ const Contact = () => {
                         href="https://www.instagram.com/elfridasltd" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="bg-earth-lightest hover:bg-gold hover:text-white transition-colors w-10 h-10 rounded-full flex items-center justify-center"
+                        className="bg-darkgrey-light hover:bg-gold hover:text-darkgrey transition-colors w-10 h-10 rounded-full flex items-center justify-center"
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                       </a>
@@ -115,7 +115,7 @@ const Contact = () => {
                         href="https://www.linkedin.com/company/elfridas-ltd" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="bg-earth-lightest hover:bg-gold hover:text-white transition-colors w-10 h-10 rounded-full flex items-center justify-center"
+                        className="bg-darkgrey-light hover:bg-gold hover:text-darkgrey transition-colors w-10 h-10 rounded-full flex items-center justify-center"
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                       </a>
@@ -123,7 +123,7 @@ const Contact = () => {
                         href="https://www.elfridas.com" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="bg-earth-lightest hover:bg-gold hover:text-white transition-colors w-10 h-10 rounded-full flex items-center justify-center"
+                        className="bg-darkgrey-light hover:bg-gold hover:text-darkgrey transition-colors w-10 h-10 rounded-full flex items-center justify-center"
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
                       </a>
@@ -133,15 +133,17 @@ const Contact = () => {
               </div>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-md reveal">
-              <ContactForm />
+            <div className="bg-darkgrey-dark p-6 rounded-lg shadow-md reveal">
+              <ContactForm 
+                dark={true}
+              />
             </div>
           </div>
         </div>
       </section>
       
       {/* Map Section */}
-      <section className="py-20 bg-earth-lightest">
+      <section className="py-20 bg-darkgrey-light">
         <div className="container-custom">
           <SectionTitle 
             title="Find Us" 
@@ -164,7 +166,7 @@ const Contact = () => {
       </section>
       
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-darkgrey">
         <div className="container-custom">
           <SectionTitle 
             title="Frequently Asked Questions" 
@@ -175,22 +177,22 @@ const Contact = () => {
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="reveal">
               <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-3 font-playfair">What services does Elfrida Limited offer?</h3>
-                <p className="text-earth-dark">
+                <h3 className="text-xl font-semibold mb-3 font-playfair text-gold">What services does Elfrida Limited offer?</h3>
+                <p className="text-gray-300">
                   Elfrida Limited offers integrated solutions in Real Estate (property sales, rentals, and development), Event Management (corporate, state, and social events), and Strategic Advisory Services (legal, financial, and CSR consulting).
                 </p>
               </div>
               
               <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-3 font-playfair">Where are your properties located?</h3>
-                <p className="text-earth-dark">
+                <h3 className="text-xl font-semibold mb-3 font-playfair text-gold">Where are your properties located?</h3>
+                <p className="text-gray-300">
                   We offer premium properties across Nigeria's major cities, with a focus on Lagos, Abuja, and Port Harcourt. Contact us for our current property listings and locations.
                 </p>
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3 font-playfair">How can I invest with Elfrida Limited?</h3>
-                <p className="text-earth-dark">
+                <h3 className="text-xl font-semibold mb-3 font-playfair text-gold">How can I invest with Elfrida Limited?</h3>
+                <p className="text-gray-300">
                   We offer various investment opportunities in real estate and other sectors. Contact our investment advisory team for personalized guidance on investment options that align with your goals.
                 </p>
               </div>
@@ -198,22 +200,22 @@ const Contact = () => {
             
             <div className="reveal">
               <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-3 font-playfair">What types of events do you manage?</h3>
-                <p className="text-earth-dark">
+                <h3 className="text-xl font-semibold mb-3 font-playfair text-gold">What types of events do you manage?</h3>
+                <p className="text-gray-300">
                   We manage a wide range of events, including corporate conferences, product launches, diplomatic gatherings, weddings, social celebrations, and cultural festivals. Our team tailors each event to meet your specific needs.
                 </p>
               </div>
               
               <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-3 font-playfair">How can I partner with your CSR initiatives?</h3>
-                <p className="text-earth-dark">
+                <h3 className="text-xl font-semibold mb-3 font-playfair text-gold">How can I partner with your CSR initiatives?</h3>
+                <p className="text-gray-300">
                   We welcome partnerships with organizations that share our commitment to creating positive social impact. Contact our CSR team to discuss potential collaboration opportunities.
                 </p>
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3 font-playfair">What is your response time for inquiries?</h3>
-                <p className="text-earth-dark">
+                <h3 className="text-xl font-semibold mb-3 font-playfair text-gold">What is your response time for inquiries?</h3>
+                <p className="text-gray-300">
                   We strive to respond to all inquiries within 24-48 business hours. For urgent matters, please indicate so in your message, and we will prioritize your request.
                 </p>
               </div>
@@ -223,14 +225,14 @@ const Contact = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-16 bg-gold text-white text-center">
+      <section className="py-16 bg-darkgrey-light text-white text-center">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto reveal">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-playfair">Ready to Begin Your Journey?</h2>
-            <p className="text-xl mb-8 text-white/90">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-playfair text-gold">Ready to Begin Your Journey?</h2>
+            <p className="text-xl mb-8 text-gray-300">
               Whether you're interested in real estate, planning an event, or seeking advisory services, we're here to help you achieve your goals.
             </p>
-            <a href="tel:09160002771" className="btn-secondary bg-white text-gold hover:bg-white/90">
+            <a href="tel:09160002771" className="btn-secondary bg-darkgrey text-gold hover:bg-darkgrey-dark">
               Call Us Today
             </a>
           </div>
