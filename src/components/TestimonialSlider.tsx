@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 interface Testimonial {
   id: number;
@@ -27,7 +26,6 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
-    // Autoplay functionality
     const interval = setInterval(() => {
       if (!isTransitioning) {
         handleNextSlide();
@@ -41,14 +39,6 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
     setIsTransitioning(true);
     setActiveIndex((current) =>
       current === testimonials.length - 1 ? 0 : current + 1
-    );
-    setTimeout(() => setIsTransitioning(false), 500);
-  };
-
-  const handlePrevSlide = () => {
-    setIsTransitioning(true);
-    setActiveIndex((current) =>
-      current === 0 ? testimonials.length - 1 : current - 1
     );
     setTimeout(() => setIsTransitioning(false), 500);
   };
@@ -99,9 +89,7 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
                     </div>
                   )}
                   <div className="text-left">
-                    <p className="font-medium text-white">
-                      {testimonial.name}
-                    </p>
+                    <p className="font-medium text-white">{testimonial.name}</p>
                     <p className="text-sm text-gold">{testimonial.position}</p>
                   </div>
                 </div>
@@ -110,44 +98,6 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
           ))}
         </div>
       </div>
-
-      {testimonials.length > 1 && (
-        <div className="flex justify-center mt-4 space-x-4">
-          <button
-            onClick={handlePrevSlide}
-            disabled={isTransitioning}
-            className="p-2 rounded-full border border-gold text-gold hover:bg-gold hover:text-darkgrey hover:border-gold transition-colors"
-            aria-label="Previous testimonial"
-          >
-            <ChevronLeft size={20} />
-          </button>
-          <div className="flex space-x-2 items-center">
-            {testimonials.map((_, index) => (
-              <button 
-                key={index}
-                onClick={() => {
-                  setIsTransitioning(true);
-                  setActiveIndex(index);
-                  setTimeout(() => setIsTransitioning(false), 500);
-                }}
-                className={cn(
-                  "w-2 h-2 rounded-full transition-all",
-                  activeIndex === index ? "bg-gold w-4" : "bg-gray-400"
-                )}
-                aria-label={`Go to testimonial ${index + 1}`}
-              />
-            ))}
-          </div>
-          <button
-            onClick={handleNextSlide}
-            disabled={isTransitioning}
-            className="p-2 rounded-full border border-gold text-gold hover:bg-gold hover:text-darkgrey hover:border-gold transition-colors"
-            aria-label="Next testimonial"
-          >
-            <ChevronRight size={20} />
-          </button>
-        </div>
-      )}
     </div>
   );
 };
