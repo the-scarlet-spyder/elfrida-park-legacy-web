@@ -81,6 +81,22 @@ const RealEstate = () => {
     type: "20 Hectares",
     price: "₦5 Billion",
     link: "/contact"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1932", // Consider updating to a relevant image later
+    title: "Exclusive Prime Land",
+    location: "Guzape II, Abuja",
+    type: "20 Hectares",
+    price: "₦5 Billion",
+    link: "/contact"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1932", // Consider updating to a relevant image later
+    title: "Exclusive Prime Land",
+    location: "Guzape II, Abuja",
+    type: "20 Hectares",
+    price: "₦5 Billion",
+    link: "/contact"
   }
 ];
   
