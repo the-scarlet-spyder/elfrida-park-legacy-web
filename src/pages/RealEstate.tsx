@@ -136,7 +136,7 @@ const RealEstate = () => {
       </section>
       
       {/* Featured Properties */}
-      <section className="py-20 bg-earth-lightest">
+      <section className="bg-darkgrey-dark text-white">
         <div className="container-custom">
           <SectionTitle 
             title="Featured Properties" 
