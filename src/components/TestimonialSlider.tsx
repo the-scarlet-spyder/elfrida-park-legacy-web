@@ -54,9 +54,7 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
                 "transition-all duration-500 ease-in-out absolute w-full",
                 activeIndex === index ? 
                   "opacity-100 z-10 translate-x-0" : 
-                  index < activeIndex ? 
-                    "opacity-0 z-0 -translate-x-full" : 
-                    "opacity-0 z-0 translate-x-full"
+                  "opacity-0 z-0 translate-x-full"
               )}
             >
               <div className="text-center py-8">
