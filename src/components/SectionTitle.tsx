@@ -40,7 +40,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
           'mt-4 max-w-2xl',
           align === 'center' && 'mx-auto',
           align === 'right' && 'ml-auto',
-          'text-gray-300',
+          light ? 'text-white/80' : 'text-white/80',
           subtitleClassName
         )}>
           {subtitle}

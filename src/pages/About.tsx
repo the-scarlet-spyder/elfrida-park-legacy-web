@@ -12,7 +12,7 @@ interface TeamMemberProps {
 }
 
 const TeamMember: React.FC<TeamMemberProps> = ({ name, position, image }) => (
-  <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all text-center group reveal">
+  <div className="bg-darkgrey-light rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all text-center group reveal">
     <div className="aspect-square overflow-hidden">
       <img 
         src={image} 
@@ -21,8 +21,8 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, position, image }) => (
       />
     </div>
     <div className="p-6">
-      <h3 className="text-xl font-semibold font-playfair">{name}</h3>
-      <p className="text-earth">{position}</p>
+      <h3 className="text-xl font-semibold font-playfair text-gold">{name}</h3>
+      <p className="text-white/80">{position}</p>
     </div>
   </div>
 );
@@ -115,13 +115,13 @@ const About = () => {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-b from-earth-dark to-earth">
+      <section className="pt-32 pb-20 bg-gradient-to-b from-darkgrey-dark to-darkgrey">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair reveal">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair reveal text-gold">
               About Elfrida Limited
             </h1>
-            <p className="text-xl mb-8 text-earth-lighter reveal">
+            <p className="text-xl mb-8 text-white/80 reveal">
               Our story, our mission, and the values that drive us to nurture dreams and build legacies.
             </p>
           </div>
@@ -129,7 +129,7 @@ const About = () => {
       </section>
       
       {/* Our Story Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-darkgrey-light">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal">
@@ -140,15 +140,15 @@ const About = () => {
                 className="mb-8"
               />
               
-              <p className="text-earth-dark mb-6">
+              <p className="text-white/80 mb-6">
                 Elfrida Limited is a dynamic, people-first company built on a foundation of purpose, integrity, and innovation. We offer integrated solutions across Real Estate, Event Management, and Strategic Advisory Services — designed to empower individuals, elevate businesses, and drive sustainable growth.
               </p>
               
-              <p className="text-earth-dark mb-6">
+              <p className="text-white/80 mb-6">
                 Our approach is deeply rooted in value creation. Whether helping a family secure their dream home, curating unforgettable events, or guiding organizations toward sound investment decisions, we operate with a singular focus: to enrich lives, build legacies, and lead change.
               </p>
               
-              <p className="text-earth-dark">
+              <p className="text-white/80">
                 With a growing reputation for excellence, impact, and trust, we have become a preferred partner to both local and international clients who seek meaningful, tailored experiences and results. At Elfrida Limited, we don't just provide services — we build stories, create memories, and catalyze generational transformation.
               </p>
             </div>
@@ -165,25 +165,25 @@ const About = () => {
       </section>
       
       {/* Mission & Vision Section */}
-      <section className="py-20 bg-earth-lightest">
+      <section className="py-20 bg-darkgrey">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-white p-8 rounded-lg shadow-md reveal">
+            <div className="bg-darkgrey-light p-8 rounded-lg shadow-md reveal">
               <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
                 <Target size={32} className="text-gold" />
               </div>
-              <h3 className="text-2xl font-semibold mb-4 font-playfair">Our Mission</h3>
-              <p className="text-earth-dark">
+              <h3 className="text-2xl font-semibold mb-4 font-playfair text-gold">Our Mission</h3>
+              <p className="text-white/80">
                 Driven by a passion for creating value beyond transactions, we are committed to nurturing authentic relationships, delivering exceptional services, and fostering environments that promote growth, connection, and faith in a brighter future.
               </p>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-md reveal">
+            <div className="bg-darkgrey-light p-8 rounded-lg shadow-md reveal">
               <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
                 <Eye size={32} className="text-gold" />
               </div>
-              <h3 className="text-2xl font-semibold mb-4 font-playfair">Our Vision</h3>
-              <p className="text-earth-dark">
+              <h3 className="text-2xl font-semibold mb-4 font-playfair text-gold">Our Vision</h3>
+              <p className="text-white/80">
                 To be Nigeria's heartbeat company, delivering integrated solutions that transcend real estate — shaping lives, communities, and industries with bold innovation and timeless impact.
               </p>
             </div>
@@ -192,7 +192,7 @@ const About = () => {
       </section>
       
       {/* Our Values */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-darkgrey-light">
         <div className="container-custom">
           <SectionTitle 
             title="Our Core Values: D.I.P.P.E.N." 
@@ -202,18 +202,18 @@ const About = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {values.map((value, index) => (
-              <div key={index} className="p-8 border border-earth-lightest rounded-lg hover:shadow-md transition-all text-center reveal">
+              <div key={index} className="p-8 border border-darkgrey rounded-lg hover:shadow-md transition-all text-center reveal bg-darkgrey">
                 <div className="mx-auto mb-4 w-16 h-16 flex items-center justify-center bg-gold/10 rounded-full">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-4 font-playfair text-gold">{value.title}</h3>
-                <p className="text-earth-dark">{value.description}</p>
+                <p className="text-white/80">{value.description}</p>
               </div>
             ))}
           </div>
           
           <div className="text-center mt-10 reveal">
-            <p className="text-earth-dark text-lg italic">
+            <p className="text-white/80 text-lg italic">
               "We don't just deliver — we care, connect, and create value that lasts."
             </p>
           </div>
@@ -221,7 +221,7 @@ const About = () => {
       </section>
       
       {/* Our Journey Timeline */}
-      <section className="py-20 bg-earth-lightest">
+      <section className="py-20 bg-darkgrey">
         <div className="container-custom">
           <SectionTitle 
             title="Our Journey" 
@@ -241,16 +241,16 @@ const About = () => {
                 } reveal`}
               >
                 <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:text-left md:pl-12' : 'md:text-right md:pr-12'}`}>
-                  <div className={`bg-white p-6 rounded-lg shadow-md ${index % 2 === 0 ? '' : 'ml-auto'}`}>
+                  <div className={`bg-darkgrey-light p-6 rounded-lg shadow-md ${index % 2 === 0 ? '' : 'ml-auto'}`}>
                     <span className="text-gold font-bold text-lg">{milestone.year}</span>
-                    <h3 className="text-xl font-semibold mt-1 mb-3 font-playfair">{milestone.title}</h3>
-                    <p className="text-earth-dark">{milestone.description}</p>
+                    <h3 className="text-xl font-semibold mt-1 mb-3 font-playfair text-gold">{milestone.title}</h3>
+                    <p className="text-white/80">{milestone.description}</p>
                   </div>
                 </div>
                 
                 {/* Timeline Node */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-gold items-center justify-center">
-                  <Star size={20} className="text-white" />
+                  <Star size={20} className="text-darkgrey" />
                 </div>
               </div>
             ))}
@@ -259,7 +259,7 @@ const About = () => {
       </section>
       
       {/* Team Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-darkgrey-light">
         <div className="container-custom">
           <SectionTitle 
             title="Our Leadership Team" 
@@ -276,7 +276,7 @@ const About = () => {
       </section>
       
       {/* Approach Section */}
-      <section className="py-20 bg-gradient-to-r from-royal to-royal-light text-white">
+      <section className="py-20 bg-gradient-to-r from-darkgrey to-darkgrey-light text-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal">
@@ -292,7 +292,7 @@ const About = () => {
                 <div className="flex items-start">
                   <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-medium mb-1">Divine Inspiration</h4>
+                    <h4 className="text-lg font-medium mb-1 text-gold">Divine Inspiration</h4>
                     <p className="text-white/80">We act with a higher purpose in mind, guided by principles that transcend mere business interests.</p>
                   </div>
                 </div>
@@ -300,7 +300,7 @@ const About = () => {
                 <div className="flex items-start">
                   <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-medium mb-1">Integrity First</h4>
+                    <h4 className="text-lg font-medium mb-1 text-gold">Integrity First</h4>
                     <p className="text-white/80">We maintain transparency, honesty, and trustworthiness in all our dealings and relationships.</p>
                   </div>
                 </div>
@@ -308,7 +308,7 @@ const About = () => {
                 <div className="flex items-start">
                   <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-medium mb-1">Passion-Driven</h4>
+                    <h4 className="text-lg font-medium mb-1 text-gold">Passion-Driven</h4>
                     <p className="text-white/80">We're emotionally invested in your success, bringing enthusiasm and dedication to every project.</p>
                   </div>
                 </div>
@@ -316,7 +316,7 @@ const About = () => {
                 <div className="flex items-start">
                   <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-medium mb-1">People-Centric</h4>
+                    <h4 className="text-lg font-medium mb-1 text-gold">People-Centric</h4>
                     <p className="text-white/80">We view our clients as partners, not transactions, focusing on building meaningful relationships.</p>
                   </div>
                 </div>
@@ -324,7 +324,7 @@ const About = () => {
                 <div className="flex items-start">
                   <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-medium mb-1">Excellence Always</h4>
+                    <h4 className="text-lg font-medium mb-1 text-gold">Excellence Always</h4>
                     <p className="text-white/80">High standards are our baseline, and we continuously strive to exceed expectations.</p>
                   </div>
                 </div>
@@ -332,7 +332,7 @@ const About = () => {
                 <div className="flex items-start">
                   <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-medium mb-1">Nurturing Growth</h4>
+                    <h4 className="text-lg font-medium mb-1 text-gold">Nurturing Growth</h4>
                     <p className="text-white/80">We support your journey at every stage, fostering sustainable development and advancement.</p>
                   </div>
                 </div>
@@ -348,7 +348,7 @@ const About = () => {
                 />
                 <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
                   <div className="w-24 h-24 bg-gold/80 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <Layers size={40} className="text-white" />
+                    <Layers size={40} className="text-darkgrey" />
                   </div>
                 </div>
               </div>
@@ -358,11 +358,11 @@ const About = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-20 bg-earth-dark text-white text-center">
+      <section className="py-20 bg-darkgrey-dark text-white text-center">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto reveal">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-playfair">Ready to Partner with Us?</h2>
-            <p className="text-xl mb-8 text-earth-lighter">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-playfair text-gold">Ready to Partner with Us?</h2>
+            <p className="text-xl mb-8 text-white/80">
               Let us help you nurture your dreams and build lasting legacies. Get in touch today.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

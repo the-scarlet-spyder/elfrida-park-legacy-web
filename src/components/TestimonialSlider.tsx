@@ -55,7 +55,7 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
                     className={
                       i < testimonial.rating
                         ? "fill-gold text-gold"
-                        : "text-gray-300"
+                        : "text-darkgrey-lightest"
                     }
                   />
                 ))}

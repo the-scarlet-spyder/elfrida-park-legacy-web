@@ -132,7 +132,7 @@ const Index = () => {
       </section>
       
       {/* Services Section */}
-      <section id="services" className="py-20 bg-earth-lightest">
+      <section id="services" className="py-20 bg-darkgrey-light">
         <div className="container-custom">
           <SectionTitle 
             title="Our Services" 
@@ -153,7 +153,7 @@ const Index = () => {
       </section>
       
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-darkgrey">
         <div className="container-custom">
           <SectionTitle 
             title="Why Elfrida Limited?" 
@@ -163,12 +163,12 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             {values.map((value, index) => (
-              <div key={index} className="bg-earth-lightest p-8 rounded-lg text-center reveal">
-                <div className="mx-auto mb-4 w-16 h-16 flex items-center justify-center bg-white rounded-full">
+              <div key={index} className="bg-darkgrey-light p-8 rounded-lg text-center reveal">
+                <div className="mx-auto mb-4 w-16 h-16 flex items-center justify-center bg-darkgrey rounded-full">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                <p className="text-earth-dark">{value.description}</p>
+                <h3 className="text-xl font-semibold mb-3 text-gold">{value.title}</h3>
+                <p className="text-white/80">{value.description}</p>
               </div>
             ))}
           </div>
@@ -176,12 +176,12 @@ const Index = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-24 bg-earth-dark text-white text-center bg-[url('https://images.unsplash.com/photo-1460574283810-2aab119d8511?q=80&w=1000')] bg-cover bg-center relative">
-        <div className="absolute inset-0 bg-earth-dark/80"></div>
+      <section className="py-24 bg-darkgrey-dark text-white text-center bg-[url('https://images.unsplash.com/photo-1460574283810-2aab119d8511?q=80&w=1000')] bg-cover bg-center relative">
+        <div className="absolute inset-0 bg-darkgrey-dark/80"></div>
         <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto reveal">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-playfair">Ready to Transform Your Vision into Reality?</h2>
-            <p className="text-xl mb-8 text-earth-lighter">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-playfair text-gold">Ready to Transform Your Vision into Reality?</h2>
+            <p className="text-xl mb-8 text-white/90">
               Partner with Elfrida Limited to bring your dreams to life with our expertise and dedication to excellence.
             </p>
             <Link to="/contact" className="btn-primary">
@@ -192,7 +192,7 @@ const Index = () => {
       </section>
       
       {/* Testimonials Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-darkgrey-light">
         <div className="container-custom">
           <SectionTitle 
             title="What Our Clients Say" 
@@ -207,7 +207,7 @@ const Index = () => {
       </section>
       
       {/* Contact Form Section */}
-      <section className="py-20 bg-earth-lightest">
+      <section className="py-20 bg-darkgrey">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="reveal">
@@ -218,7 +218,7 @@ const Index = () => {
                 className="mb-8"
               />
               
-              <div className="prose max-w-none text-earth-dark">
+              <div className="prose max-w-none text-white/80">
                 <p>
                   At Elfrida Limited, we believe in building lasting relationships with our clients. Whether you're looking to invest in real estate, plan a memorable event, or seek strategic advisory services, our team is here to help you achieve your goals.
                 </p>
@@ -228,7 +228,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-md reveal">
+            <div className="bg-darkgrey-light p-8 rounded-lg shadow-md reveal">
               <ContactForm 
                 title="" 
                 subtitle=""
