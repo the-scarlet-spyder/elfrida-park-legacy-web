@@ -222,21 +222,24 @@ const Impact = () => {
         </div>
       </section>
       
-      {/* Impact Testimonials */}
-      <section className="py-20 bg-gradient-to-r from-darkgrey-dark to-darkgrey text-white">
-        <div className="container-custom">
-          <SectionTitle 
-            title="Impact Stories" 
-            subtitle="Hear from those whose lives have been transformed through our initiatives."
-            light={true}
-            className="reveal"
-          />
-          
-          <div className="mt-12 reveal">
-            <TestimonialSlider testimonials={testimonials} autoplaySpeed={6000} />
-          </div>
-        </div>
-      </section>
+     {/*
+  Impact Testimonials
+  <section className="py-20 bg-gradient-to-r from-darkgrey-dark to-darkgrey text-white">
+    <div className="container-custom">
+      <SectionTitle 
+        title="Impact Stories" 
+        subtitle="Hear from those whose lives have been transformed through our initiatives."
+        light={true}
+        className="reveal"
+      />
+      
+      <div className="mt-12 reveal">
+        <TestimonialSlider testimonials={testimonials} autoplaySpeed={6000} />
+      </div>
+    </div>
+  </section>
+*/}
+
       
       {/* Partners */}
       <section className="py-20 bg-darkgrey-light">
