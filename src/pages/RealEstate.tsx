@@ -15,7 +15,7 @@ const PropertyCard = ({ image, title, location, type, price, link }: {
   link: string;
 }) => {
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all">
+    <div className="bg-darkgrey rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all">
       <div className="aspect-[16/10] overflow-hidden">
         <img
           src={image}
@@ -24,10 +24,10 @@ const PropertyCard = ({ image, title, location, type, price, link }: {
         />
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2 font-playfair">{title}</h3>
+        <h3 className="text-xl font-semibold mb-2 font-playfair text-gold">{title}</h3>
         <p className="text-earth mb-2">{location}</p>
         <div className="flex justify-between items-center mb-4">
-          <span className="text-sm text-earth-dark px-3 py-1 bg-earth-lightest rounded-full">{type}</span>
+          <span className="text-sm text-earth-dark px-3 py-1 bg-darkgrey-light rounded-full">{type}</span>
           <span className="font-medium text-gold">{price}</span>
         </div>
         <Link to={link} className="btn-secondary w-full text-center">Contact Us</Link>
@@ -67,7 +67,7 @@ const RealEstate = () => {
   
  const featuredProperties = [
   {
-    image: "https://images.unsplash.com/photo-1503453363464-743ee9ce1584?q=80&w=1772", // Consider updating to a relevant image later
+    image: "https://images.unsplash.com/photo-1503453363464-743ee9ce1584?q=80&w=1772",
     title: "Exclusive Prime Land",
     location: "Apo-Tafyi, Abuja",
     type: "47.9 Hectares",
@@ -75,7 +75,7 @@ const RealEstate = () => {
     link: "/contact"
   },
   {
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1932", // Consider updating to a relevant image later
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1932",
     title: "Exclusive Prime Land",
     location: "Guzape II, Abuja",
     type: "20 Hectares",
@@ -95,14 +95,14 @@ const RealEstate = () => {
 
   return (
     <MainLayout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-b from-earth-dark to-earth">
+      {/* Hero Section - Updated to use darkgrey-dark */}
+      <section className="pt-32 pb-20 bg-darkgrey-dark">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair reveal">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair reveal text-gold">
               Real Estate Solutions
             </h1>
-            <p className="text-xl mb-8 text-earth-lighter reveal">
+            <p className="text-xl mb-8 text-gray-300 reveal">
               Discover exceptional properties and comprehensive real estate services tailored to your unique needs.
             </p>
             <Link to="/contact" className="btn-primary reveal">
@@ -112,8 +112,8 @@ const RealEstate = () => {
         </div>
       </section>
       
-      {/* Services Section */}
-      <section className="py-20 bg-white">
+      {/* Services Section - Updated to use darkgrey as main theme */}
+      <section className="py-20 bg-darkgrey">
         <div className="container-custom">
           <SectionTitle 
             title="Our Real Estate Services" 
@@ -123,20 +123,20 @@ const RealEstate = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {services.map((service, index) => (
-              <div key={index} className="p-8 border border-earth-lightest rounded-lg hover:shadow-md transition-all reveal">
+              <div key={index} className="p-8 border border-darkgrey-light rounded-lg hover:shadow-md transition-all reveal bg-darkgrey-dark">
                 <div className="flex items-center mb-4">
                   {service.icon}
-                  <h3 className="text-xl font-semibold ml-3">{service.title}</h3>
+                  <h3 className="text-xl font-semibold ml-3 text-gold">{service.title}</h3>
                 </div>
-                <p className="text-earth-dark">{service.description}</p>
+                <p className="text-gray-300">{service.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
       
-      {/* Featured Properties */}
-      <section className="bg-darkgrey-dark text-white">
+      {/* Featured Properties - Kept dark */}
+      <section className="bg-darkgrey-dark py-20">
         <div className="container-custom">
           <SectionTitle 
             title="Featured Properties" 
@@ -154,8 +154,8 @@ const RealEstate = () => {
         </div>
       </section>
       
-      {/* Why Choose Us */}
-      <section className="py-20 bg-white">
+      {/* Why Choose Us - Updated to use darkgrey */}
+      <section className="py-20 bg-darkgrey">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal">
@@ -170,7 +170,7 @@ const RealEstate = () => {
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start">
                     <CheckCircle size={20} className="text-gold mt-1 mr-3 flex-shrink-0" />
-                    <span>{benefit}</span>
+                    <span className="text-gray-300">{benefit}</span>
                   </li>
                 ))}
               </ul>
@@ -190,8 +190,8 @@ const RealEstate = () => {
                   alt="Luxury Building" 
                   className="rounded-lg shadow-lg w-full h-auto"
                 />
-                <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg max-w-xs">
-                  <p className="text-earth-dark italic">
+                <div className="absolute -bottom-6 -left-6 bg-darkgrey p-6 rounded-lg shadow-lg max-w-xs">
+                  <p className="text-gray-300 italic">
                     "Elfrida Limited helped us find our dream home with unparalleled professionalism and attention to detail."
                   </p>
                   <p className="text-gold font-medium mt-2">
@@ -204,8 +204,8 @@ const RealEstate = () => {
         </div>
       </section>
       
-      {/* Contact Form */}
-      <section id="contact-form" className="py-20 bg-earth-dark text-white">
+      {/* Contact Form - Updated to use secondary color (darkgrey-light) for background */}
+      <section id="contact-form" className="py-20 bg-darkgrey-light text-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="reveal">
@@ -217,7 +217,7 @@ const RealEstate = () => {
                 className="mb-8"
               />
               
-              <div className="prose max-w-none text-earth-lighter">
+              <div className="prose max-w-none text-gray-300">
                 <p>
                   Whether you're looking to buy, sell, rent, or develop property, our team at Elfrida Limited is here to assist you every step of the way. We pride ourselves on delivering personalized service that exceeds expectations.
                 </p>
